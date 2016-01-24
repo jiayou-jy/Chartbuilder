@@ -22,7 +22,7 @@ div.renderer-wrapper
 svg
   &.renderer-svg
     fill $color-bg
-    font-family $font-sans-light
+    font-family $font-sans
     text-rendering optimizeLegibility
     box-sizing border-box
     .svg-background
@@ -74,7 +74,7 @@ svg
           text-anchor start
 
   .concealer-label
-    font-family $font-sans-light
+    font-family $font-sans
     text
       fill $color-chart-axis-text
     rect
@@ -96,7 +96,7 @@ svg
         stroke-linecap round
         stroke-linejoin round
     .label
-      font-family $font-sans-light
+      font-family $font-sans
 
   .column-label
     fill $color-chart-axis-text
@@ -108,7 +108,7 @@ svg
     shape-rendering crispEdges
 
 .svg-text
-  font-family $font-sans-light
+  font-family $font-sans
   font-size $em_size
   
   tspan
@@ -122,11 +122,11 @@ svg
       font-family $font-sans-bold
       font-style italic
 
-  &.svg-text-credit
+  &.svg-text-credit // Customize credit text
     font-size $em_size*0.6
     fill $color-chart-meta
     text-anchor start
-  &.svg-text-source
+  &.svg-text-source // Customize source text
     font-size $em_size*0.6
     fill $color-chart-meta
     //text
@@ -135,9 +135,9 @@ svg
       text-anchor start
     &.right
       text-anchor end
-  &.svg-text-title
+  &.svg-text-title // Customize title text
     fill $color-body-text
-    font-family $font-sans
+    font-family $font-sans-bold
     font-size $em_size
 
 .svg-source-pipe
@@ -147,7 +147,7 @@ svg
 
 .svg-label-text
   font-size $em_size
-  font-family $font-sans-light
+  font-family $font-sans
   cursor move
 
 .crosshair
@@ -158,6 +158,8 @@ svg
 
 .hidden-svg
   visibility hidden
+
+// Size specific customizations
 
 .medium
   .em-size
