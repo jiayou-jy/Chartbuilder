@@ -95,7 +95,7 @@ var ChartGridXY = React.createClass({
 		var dimensions = clone(this.props.dimensions);
 
 		if (this.props.hasTitle) {
-			extraPadding.top = extraPadding.top + displayConfig.afterTitle;
+			extraPadding.top = extraPadding.top + displayConfig.afterTitle + displayConfig.afterSub;
 		}
 
 		/* Divide total width by number of grids, also subtracting the spade to be
