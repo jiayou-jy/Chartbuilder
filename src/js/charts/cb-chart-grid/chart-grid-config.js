@@ -10,6 +10,7 @@ var ChartConfig = require("../ChartConfig");
 * @static
 * @memberof chart_grid_config
 * @property {Nem|number} afterTitle - Distance btwn top of title and top of legend or chart
+* @property {Nem|number} afterSub - Distance btwn top of sub and top of legend or chart
 * @property {Nem|number} afterLegend - Distance btwn top of legend and top of chart
 * @property {Nem|number} blockerRectOffset - Distance btwn text of axis and its background blocker
 * @property {Nem|number} paddingBerBar - Space btwn two bars in a bar grid
@@ -24,8 +25,9 @@ var ChartConfig = require("../ChartConfig");
 * @property {object} padding - Distances btwn inner chart elements and container
 */
 var display = {
-	afterTitle: "1.25em", // distance between top of title and top of legend or chart
-	afterLegend: "0.5em", // distance between top of legend and top of chart
+	afterTitle: "1.5em", // distance between top of title and top of legend or chart
+	afterSub: "1.2em", // distance between top of sub and top of legend or chart
+	afterLegend: "0em", // distance between top of legend and top of chart
 	blockerRectOffset: 6, // distance between text and background blocker rect
 	paddingPerBar: "0.7em", // extra space around bars
 	barHeight: "0.9em", // height of each bars
@@ -109,7 +111,6 @@ var defaultProps = {
 	 */
 	metadata: {
 		id: null,
-		chartType: "chartgrid",
 		title: "TK Title Lorem Ipsum Something Nice",
 		sub: "TK Sub of some added description",
 		source: "TK Databank.com",
