@@ -20,42 +20,46 @@ Create a directory `fonts` to `Chartbuilder/src/` and dump whatever fonts you pl
 
 Open `Chartbuilder/src/styl/fonts.styl` and call your fonts like so:
 
-    @font-face {
-      font-family: 'Open Sans';
-      font-style: normal;
-      font-weight: 400;
-      src: url('/fonts/Open_Sans/OpenSans-Regular.ttf');
-    }
-    
-    @font-face {
-      font-family: 'Open Sans Bold';
-      font-style: bold;
-      font-weight: 700;
-      src: url('/fonts/Open_Sans/OpenSans-Bold.ttf');
-    }
-    
-    @font-face {
-      font-family: 'Open Sans Light';
-      font-style: normal;
-      font-weight: 300;
-      src: url('/fonts/Open_Sans/OpenSans-Light.ttf');
-    }
+```stylus
+@font-face {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+src: url('/fonts/Open_Sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+font-family: 'Open Sans Bold';
+font-style: bold;
+font-weight: 700;
+src: url('/fonts/Open_Sans/OpenSans-Bold.ttf');
+}
+
+@font-face {
+font-family: 'Open Sans Light';
+font-style: normal;
+font-weight: 300;
+src: url('/fonts/Open_Sans/OpenSans-Light.ttf');
+}
+```
 
 Keep the old references or don't (probably don't).
 Save.
 
 Open `Chartbuilder/src/styl/type.styl` and use your new fonts:
 
-    // Typography
-    
-    // Fonts
-    $font-sans = 'Open Sans', sans-serif
-    $font-sans-light = 'Open Sans Light', sans-serif
-    $font-sans-bold = 'Open Sans Bold', sans-serif
-    $font-serif = Georgia,'Times New Roman',Times,serif
-    $primary-font-family = $font-sans
-    $secondary-font-family = $font-serif
-    $monospaced-font-family = Monaco, Lucida Console, monspace
+```stylus
+// Typography
+
+// Fonts
+$font-sans = 'Open Sans', sans-serif
+$font-sans-light = 'Open Sans Light', sans-serif
+$font-sans-bold = 'Open Sans Bold', sans-serif
+$font-serif = Georgia,'Times New Roman',Times,serif
+$primary-font-family = $font-sans
+$secondary-font-family = $font-serif
+$monospaced-font-family = Monaco, Lucida Console, monspace
+```
 
 Save.
 
