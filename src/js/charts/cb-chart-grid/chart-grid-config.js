@@ -111,6 +111,7 @@ var defaultProps = {
 	 */
 	metadata: {
 		id: null,
+		chartType: "chartgrid",
 		title: "TK Title Lorem Ipsum Something Nice",
 		sub: "TK Sub of some added description",
 		source: "TK Databank.com",
