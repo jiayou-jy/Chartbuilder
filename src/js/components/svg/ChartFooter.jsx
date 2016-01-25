@@ -7,6 +7,7 @@ var React = require("react");
 var ReactDom = require("react-dom")
 var PropTypes = React.PropTypes;
 var SvgText = require("./SvgText.jsx");
+var SvgImage = require("./SvgImage.jsx");
 var update = require("react-addons-update");
 
 /**
@@ -69,6 +70,7 @@ var ChartFooter = React.createClass({
 	},
 
 	render: function() {
+		console.log(this.props.translate);
 		var sourceLineText = this._createSourceLine();
 		var chartSource = null;
 		var chartCredit;
@@ -96,8 +98,18 @@ var ChartFooter = React.createClass({
 				text={this.props.metadata.credit}
 				className="svg-text-credit"
 				onUpdate={this.props.onUpdate}
-				translate={[this.props.translate.left, this.props.translate.bottom - this.props.extraHeight]}
+				translate={[this.props.translate.left + 30, this.props.translate.bottom - this.props.extraHeight]}
 				updateState={this._handleStateUpdate.bind(null, "creditWidth")}
+			/>
+		);
+
+		chartCreditImg = (
+			<ChartCreditImg
+				url='{this.props.url}'
+				width='{this.props.width}'
+				height='{this.props.height'
+				className="svg-img-credit"
+				translate={this.props.translate}
 			/>
 		);
 
@@ -108,12 +120,45 @@ var ChartFooter = React.createClass({
 					pixelsPerCharacter={this.state.pixelsPerCharacter}
 					onUpdate={this._handleStateUpdate.bind(null, "pixelsPerCharacter")}
 				/>
+				{chartCreditImg}
 				{chartCredit}
 				{chartSource}
 			</g>
 		);
 	}
 
+});
+
+// Credit image
+
+var ChartCreditImg = React.createClass({
+
+	render: function() {
+
+		var configCreditImg = {};
+			configCreditImg.logowidth = 25;
+			configCreditImg.logoheight = 25;
+			configCreditImg.logooffset = 15;
+			configCreditImg.url = './assets/logo.png';
+
+		var offsetLogoLeft = configCreditImg.logowidth + configCreditImg.logooffset,
+			offsetLogoHeight = configCreditImg.logoheight + 22;
+
+		var _translate = this.props.translate;
+		var translate;
+
+		translate = [_translate.left, _translate.bottom - (offsetLogoHeight / 2)];
+
+		return (
+			<SvgImage
+				url={configCreditImg.url}
+				width={configCreditImg.logowidth}
+				height={configCreditImg.logoheight}
+				translate={translate}
+				className="svg-img-credit"
+			/>
+		);
+	}
 });
 
 // Credit text
