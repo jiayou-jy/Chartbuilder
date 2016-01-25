@@ -1568,7 +1568,7 @@ svg.renderer-svg tspan {
   font-size: 20px;
 }
 .d4 .axis .tick {
-  font-family: 'Open Sans Light', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 .d4 .axis .tick[data-anchor="middle"] text {
   text-anchor: middle;
@@ -1577,6 +1577,7 @@ svg.renderer-svg tspan {
   fill: #666;
   shape-rendering: crispEdges;
   text-anchor: middle;
+  font-size: 14px;
 }
 .d4 .axis .tick:first-child text {
   text-anchor: middle;
@@ -1661,10 +1662,12 @@ svg.renderer-svg tspan {
   font-size: 12px;
   fill: #fff;
   text-anchor: start;
+  text-transform: uppercase;
 }
 .svg-text.svg-text-source {
   font-size: 12px;
   fill: #fff;
+  text-transform: uppercase;
 }
 .svg-text.svg-text-source.left {
   text-anchor: start;
@@ -1685,6 +1688,7 @@ svg.renderer-svg tspan {
 .svg-label-text {
   font-size: 20px;
   font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
   cursor: move;
 }
 .crosshair line {

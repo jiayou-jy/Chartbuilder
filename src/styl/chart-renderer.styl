@@ -35,7 +35,7 @@ svg
   font-size $em_size
   .axis
     .tick
-      font-family $font-sans-light
+      font-family $font-sans
       &[data-anchor="middle"]
         text
           text-anchor middle
@@ -43,6 +43,7 @@ svg
         fill $color-chart-axis-text
         shape-rendering crispEdges
         text-anchor middle
+        font-size $em_size_small
       &:first-child
         text
           text-anchor middle
@@ -126,9 +127,11 @@ svg
     font-size $em_size*0.6
     fill $color-chart-meta
     text-anchor start
+    text-transform uppercase
   &.svg-text-source // Customize source text
     font-size $em_size*0.6
     fill $color-chart-meta
+    text-transform uppercase
     //text
       //dominant-baseline central
     &.left
@@ -148,6 +151,7 @@ svg
 .svg-label-text
   font-size $em_size
   font-family $font-sans
+  font-weight bold
   cursor move
 
 .crosshair

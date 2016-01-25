@@ -46,7 +46,7 @@ var display = {
 		smallSpot: (3 / 4)
 	},
 	margin: {
-		top: "0.8em",
+		top: "0.85em",
 		right: "0.5em",
 		bottom: "0.5em",
 		left: "0.5em"
