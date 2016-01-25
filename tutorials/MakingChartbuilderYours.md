@@ -69,8 +69,8 @@ Open `Chartbuilder/src/styl/layout.styl`
 
 Find `h1` under `.header` and add `font-family $font-sans-bold` so it looks like this:
 
-    ~~~
-    .header
+```stylus
+.header
         background-color #333
         margin-top 0
         top 0
@@ -85,7 +85,7 @@ Find `h1` under `.header` and add `font-family $font-sans-bold` so it looks like
             line-height 1
             padding 0
             font-family $font-sans-bold
-    ~~~
+```
 
 Save. Look, now your title bar is bold.
 
