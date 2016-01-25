@@ -7,7 +7,7 @@ Also ICYMI: Chartbuilder uses [Stylus](http://stylus-lang.com/) for its CSS. Sty
 Sections:
 
 - [Title](##title)
-- [Typography](##typography)
+- [Typography](##TYPOGRAPHY)
 - [Colors](##colors)
 - [Formatting](##formatting)
 - [Adding a subtitle](##adding-a-subtitle)
