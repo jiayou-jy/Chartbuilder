@@ -42,7 +42,7 @@ var scaleNames = ["primaryScale", "secondaryScale"];
  * @property {boolean} editable - Allow the rendered component to interacted with and edited
  * @property {object} displayConfig - Parsed visual display configuration for chart grid
  * @property {object} chartProps - Properties used to draw this chart
- * @property {object} metadata - Title, data source, etc
+ * @property {object} metadata - Title, sub, data source, etc
  * @instance
  * @memberof renderers
  */
@@ -130,7 +130,7 @@ var XYRenderer = React.createClass({
 
 		// apply `chartSettings` to data
 		var dataWithSettings = this._applySettingsToData(_chartProps);
-		// compute margin based on existence of labels and title, based on default
+		// compute margin based on existence of labels, title and sub based on default
 		// margin set in config
 		var labels = _chartProps._annotations.labels;
 		var hasTitle = (this.props.metadata.title.length > 0 && this.props.showMetadata);
@@ -304,8 +304,9 @@ var XYChart = React.createClass({
 	componentWillReceiveProps: function(nextProps) {
 		var yOffset;
 		if (nextProps.hasTitle) {
-			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle;
-		} else {
+			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.displayConfig.afterSub;
+		}
+		else {
 			yOffset = nextProps.displayConfig.margin.top;
 		}
 
@@ -414,7 +415,8 @@ var XYLabels = React.createClass({
 		var yOffset;
 		if (nextProps.hasTitle) {
 			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle;
-		} else {
+		}
+		else {
 			yOffset = nextProps.displayConfig.margin.top;
 		}
 
@@ -833,9 +835,9 @@ function computePadding(props, chartHeight) {
 	var _top = (props.labelYMax * props.chartAreaDimensions.height) + displayConfig.afterLegend;
 
 	if (props.hasTitle) {
-		_top += displayConfig.afterTitle;
+		_top += displayConfig.afterTitle + displayConfig.afterSub;
 	}
-
+	
 	// Maintain space between legend and chart area unless all legend labels
 	// have been dragged
 	var allLabelsDragged = reduce(labels.values, function(prev, value) {
