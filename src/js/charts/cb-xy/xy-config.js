@@ -47,9 +47,9 @@ var display = {
 	},
 	margin: {
 		top: "0.8em",
-		right: "0.25em",
-		bottom: "0.15em",
-		left: "0.25em"
+		right: "0.5em",
+		bottom: "0.5em",
+		left: "0.5em"
 	},
 	padding: {
 		top: 0,
