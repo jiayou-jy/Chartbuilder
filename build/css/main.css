@@ -1675,6 +1675,11 @@ svg.renderer-svg tspan {
 .svg-text.svg-text-source.right {
   text-anchor: end;
 }
+.svg-text.svg-text-sub {
+  fill: #666;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
 .svg-text.svg-text-title {
   fill: #000;
   font-family: 'Open Sans Bold', sans-serif;
