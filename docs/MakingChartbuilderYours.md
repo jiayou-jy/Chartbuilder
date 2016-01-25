@@ -132,10 +132,48 @@ If you must have more than the default 11 colors, here's how:
 
 Get your list of colors finalized. Count how many colors you have. Open `Chartbuilder/src/js/config/chart-style.js` and find `numColors:`. Change the number to correspond with the counting performed earlier.
 
-
-
 # FORMATTING
+
+Chartbuilder doesn't come with much space around the edges. Let's add some padding. Before we do, it's worth noting here that for every tweak made regarding the charts that are not encompassed by `.styl` sheet changes we'll often have to make 2 or more changes one for each of Chartbuilder's chart type iterations (namely, the default **xy** and the **grid** types).
+
+**XY CHART FILES**
+
+- `Chartbuilder/src/js/charts/cb-xy`
+- `Chartbuilder/src/js/components/chart-xy`
+
+**GRID CHART FILES**
+
+- `Chartbuilder/src/js/charts/cb-chart-grid`
+- `Chartbuilder/src/js/components/chart-grid`
+
+**NOTE**: There are general files that apply to all chart types within both `Chartbuilder/src/js/charts/` and `Chartbuilder/src/js/components/`.
+
+To fix the padding we're going to pull up `Chartbuilder/src/js/charts/cb-xy/xy-config.js` and `Chartbuilder/src/js/charts/cb-chart-grid/chart-grid-config.js`.
+
+In each file find `margin:` and set the desired margins. I went for ... 
+
+```javascript
+margin: {
+        top: "0.85em",
+        right: "0.5em",
+        bottom: "0.5em",
+        left: "0.5em"
+    },
+```
+
+... in `xy-config.js` and ...
+
+```javascript
+margin: {
+        top: "0.9em",
+        right: "0.5em",
+        bottom: "0.5em",
+        left: "0.5em"
+    },
+```
+
+... in `chart-grid-config.js` which behaved slightly different at the top.
+
+
 # ADD A LOGO
 # ADD A SUBTITLE
-
-
