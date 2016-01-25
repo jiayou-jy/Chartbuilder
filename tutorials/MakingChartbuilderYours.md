@@ -12,6 +12,34 @@ Sections:
 - [Formatting](#formatting)
 - [Adding a subtitle](#adding-a-subtitle)
 
+# TITLE
+
+Change the display and page title at `Chartbuilder/src/htdocs/index.html`
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+ 	<title>George's Charts - A Chartbuilder Fork</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+	<div class="header">
+		<h1>George's Charts</h1>
+	</div>
+	<div class="chartbuilder-container">
+	</div>
+	<script src="js/main.js"></script>
+</body>
+</html>
+```
+
+Save.
+
 # TYPOGRAPHY
 
 Getting Google's webfonts to work with @import or even a link reference in `<head>` was a total nightmare so I went with downloaded fonts. (Might have something to do with Chartbuilder converting all fonts to base64. Also might not.)
@@ -89,7 +117,10 @@ Find `h1` under `.header` and add `font-family $font-sans-bold` so it looks like
 
 Save. Look, now your title bar is bold.
 
-Change the display and page title at `Chartbuilder/src/htdocs/index.html`
+I don't like the way the 'light' version of Open Sans looks, so we're going to mostly remove it from the chart. That happens at `Chartbuilder/src/styl/chart-renderer.styl`. Compare [my version](https://github.com/golfecholima/Chartbuilder/blob/master/src/styl/chart-renderer.styl) with the Chartbuilder [master version](https://github.com/Quartz/Chartbuilder/blob/master/src/styl/chart-renderer.styl). (Hint: Don't worry about the missing `.svg-text-sub` that's only present if you want to [add a subtitle](#add-a-subtitle) to your Chartbuilder.)
 
-I don't like the way the 'light' version of Open Sans looks, so we're going to mostly remove it from the chart. That happens at `Chartbuilder/src/styl/chart-renderer.styl`. Compare [my version](https://github.com/golfecholima/Chartbuilder/blob/master/src/styl/chart-renderer.styl) with the Chartbuilder [master version](https://github.com/Quartz/Chartbuilder/blob/master/src/styl/chart-renderer.styl). (Hint: Don't worry about the missing `.svg-text-sub` that's only present if you want to [add a subtitle][] to your Chartbuilder
+# COLORS
+# FORMATTING
+# ADD A SUBTITLE
+
 
