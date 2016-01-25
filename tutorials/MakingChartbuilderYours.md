@@ -7,12 +7,12 @@ Also ICYMI: Chartbuilder uses [Stylus](http://stylus-lang.com/) for its CSS. Sty
 Sections:
 
 - [Title](#title)
-- [Typography](#TYPOGRAPHY)
+- [Typography](#typography)
 - [Colors](#colors)
 - [Formatting](#formatting)
 - [Adding a subtitle](#adding-a-subtitle)
 
-#TYPOGRAPHY
+# TYPOGRAPHY
 
 Getting Google's webfonts to work with @import or even a link reference in `<head>` was a total nightmare so I went with downloaded fonts. (Might have something to do with Chartbuilder converting all fonts to base64. Also might not.)
 
