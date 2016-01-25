@@ -127,9 +127,10 @@ var defaultProps = {
 	 */
 	metadata: {
 		chartType: 'xy',
-		title: "",
-		source: "",
-		credit: "Made with Chartbuilder",
+		title: "TK Title Lorem Ipsum Something Nice",
+		sub: "TK Sub of some added description",
+		source: "TK Databank.com",
+		credit: "TK Name | GeorgeNews",
 		size: "auto"
 	}
 };
