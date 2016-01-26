@@ -200,12 +200,59 @@ Most folks are going to want their chart branded. Here we'll add a logo in the b
 
 Add your logo file to `src/assets/`. Don't worry too much about size at the moment, it will get adjusted later.
 
-Open `Chartbuilder/src/js/components/svg/ChartFooter.jsx`. There's a lot of changes here so I'll [link to](https://github.com/golfecholima/Chartbuilder/commit/4606247b7d3931f362c037f11eb718edfea6a601) the actual commit. There are two important areas to note here for further tweaking:
+Open `Chartbuilder/src/js/components/svg/ChartFooter.jsx`. There's a lot of changes here so I'll link to the [actual commit](https://github.com/golfecholima/Chartbuilder/commit/4606247b7d3931f362c037f11eb718edfea6a601). There are two important areas to note here for further tweaking:
 
 - Lines 99-101, where the ` + 30` dictates the offset distance of the credit text from the left side of the chart.
 - Lines 139-140, which dictate the size of the logo.
 
+Next create the file `SvgImage.jsx` in `Chartbuilder/src/js/components/svg/`. Add the following contents to that file:
 
+```babel
+// Svg image elements used to annotate chart
+var React = require("react");
+var PropTypes = React.PropTypes;
+var ChartViewActions = require("../../actions/ChartViewActions");
+
+/**
+ * An Svg <image> element with width and height
+ * @instance
+ * @memberof RendererWrapper
+ */
+var SvgImage = React.createClass({
+
+    propTypes: {
+        className: PropTypes.string,
+        onUpdate: PropTypes.func,
+        translate: PropTypes.array.isRequired,
+        url: PropTypes.string.isRequired
+    },
+
+    render: function() {
+        var imgNodes;
+        
+            imgNodes = (
+                <svg dangerouslySetInnerHTML={{__html: "<image xlink:href='" + this.props.url +
+                 "' width='" + this.props.width +
+                 "' height='" + this.props.height +
+                 "'/>" }} />
+            )
+        
+        return (
+            <g
+                className={["svg-img", this.props.className].join(" ")}
+                transform={"translate(" + this.props.translate + ")"}
+            >
+                {imgNodes}
+            </g>
+        );
+    }
+
+});
+
+module.exports = SvgImage;
+```
+
+Save.
 
 
 
