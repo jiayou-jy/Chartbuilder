@@ -1,6 +1,6 @@
 # Making Chartbuilder Yours
 
-The following assumes you have a dev instance of Chartbuilder up and running at `localhost:3000`. Best to also have a gander at [Diving into Chartbuilder](https://github.com/Quartz/Chartbuilder/blob/master/docs/01-introduction.md) and [Customizing Chartbuiler](https://github.com/Quartz/Chartbuilder/blob/master/docs/02-customizing-chartbuilder.md) (though this documentation aims to clarify some of that.
+The following assumes you have a dev instance of Chartbuilder up and running at `localhost:3000`. Best to also have a gander at [Diving into Chartbuilder](https://github.com/Quartz/Chartbuilder/blob/master/docs/01-introduction.md) and [Customizing Chartbuilder](https://github.com/Quartz/Chartbuilder/blob/master/docs/02-customizing-chartbuilder.md) (though this documentation aims to clarify some of that.
 
 Also ICYMI: Chartbuilder uses [Stylus](http://stylus-lang.com/) for its CSS. Stylus is a lot like SASS or LESS and has supporting syntax highlight for Sublime Text (and I'm sure others). It also uses `.jsx` files, which are syntax highlighted using the Babel package in Sublime Text. I found it to be very helpful because standard JS highlighting makes it look like everything is broken.
 
@@ -258,58 +258,4 @@ Save.
 
 # ADD A SUBTITLE
 
-In this section we'll add a subtitle with one caveat. Adding the subtitle in this fashion (the only fashion I know how) requires the use of both a title and subtitle and breaks chartbuilder without both.
-
-1. Add subtitle to `Chartbuilder/src/js/components/ChartMetadata.jsx`
-
-Add `{ name: "sub", content: "Sub" },` at `var text_input_values = [`
-
-```babel
-var text_input_values = [
-    { name: "title", content: "Title" },
-    { name: "sub", content: "Sub" },
-    { name: "credit", content: "Credit" },
-    { name: "source", content: "Source" }
-];
-```
-
-And make [these changes](https://github.com/golfecholima/Chartbuilder/commit/3c341a559d84e49b9a054ded80ea673a8d740675) to that same file. Save.
-
-2. Add subtitle fields to `src/js/charts/cb-xy/xy-config.js` and `src/js/charts/cb-chart-grid/chart-grid-config.js`. (I also swap out the placeholder text here.)
-
-`src/js/charts/cb-xy/xy-config.js`
-
-```javascript
-metadata: {
-        chartType: 'xy',
-        title: "TK Title Lorem Ipsum Something Nice",
-        sub: "TK Sub of some added description",
-        source: "TK Databank.com",
-        credit: "TK Name | GeorgeNews",
-        size: "auto"
-    }
-```
-
-`src/js/charts/cb-chart-grid/chart-grid-config.js`
-
-```javascript
-metadata: {
-        id: null,
-        chartType: "chartgrid",
-        title: "TK Title Lorem Ipsum Something Nice",
-        sub: "TK Sub of some added description",
-        source: "TK Databank.com",
-        credit: "TK Name | GeorgeNews",
-        size: "auto"
-    }
-```
-
-Here's [the commit](https://github.com/golfecholima/Chartbuilder/commit/44de1e2296a6cf01e9dfd1997df52a6e49f49347) for reference.
-
-Also make [these changes]()
-
-3. Make [these changes](https://github.com/golfecholima/Chartbuilder/commit/b16e77c2de11d2ca73b781f7d1cc247da912072a) to `src/js/components/chart-xy/XYRenderer.jsx`
-
-4. Make [these changes]() to 
-
-5. Add some spacing.
+Adding a subtitle involves changing 10 different files. Instead of detailing all the changes here, I've pushed a commit to GitHub that has all the modifications in one place. That commit lives [here](https://github.com/golfecholima/Chartbuilder/commit/6baf13f47952e2a09c50875031e28b14240010c3).
