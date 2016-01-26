@@ -129,8 +129,8 @@ var defaultProps = {
 	 */
 	metadata: {
 		chartType: 'xy',
-		title: "TK Title Lorem Ipsum Something Nice",
-		sub: "TK Sub of some added description",
+		title: "",
+		sub: "",
 		source: "TK Databank.com",
 		credit: "TK Name | GeorgeNews",
 		size: "auto"
