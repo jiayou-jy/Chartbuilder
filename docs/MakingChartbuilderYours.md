@@ -203,9 +203,11 @@ Add your logo file to `src/assets/`. Don't worry too much about size at the mome
 Open `Chartbuilder/src/js/components/svg/ChartFooter.jsx`. There's a lot of changes here so I'll link to the [actual commit](https://github.com/golfecholima/Chartbuilder/commit/4606247b7d3931f362c037f11eb718edfea6a601). There are two important areas to note here for further tweaking:
 
 - Lines 99-101, where the ` + 30` dictates the offset distance of the credit text from the left side of the chart.
-- Lines 139-140, which dictate the size of the logo.
+- Lines 139-142, which dictate the size of the logo and where the logo file itself lives should you need to change that.
 
-Next create the file `SvgImage.jsx` in `Chartbuilder/src/js/components/svg/`. Add the following contents to that file:
+Once you've made all the changes in the aforementioned commit, save.
+
+Next, create the file `SvgImage.jsx` in `Chartbuilder/src/js/components/svg/`. Add the following contents to that file:
 
 ```babel
 // Svg image elements used to annotate chart
@@ -254,6 +256,60 @@ module.exports = SvgImage;
 
 Save.
 
-
-
 # ADD A SUBTITLE
+
+In this section we'll add a subtitle with one caveat. Adding the subtitle in this fashion (the only fashion I know how) requires the use of both a title and subtitle and breaks chartbuilder without both.
+
+1. Add subtitle to `Chartbuilder/src/js/components/ChartMetadata.jsx`
+
+Add `{ name: "sub", content: "Sub" },` at `var text_input_values = [`
+
+```babel
+var text_input_values = [
+    { name: "title", content: "Title" },
+    { name: "sub", content: "Sub" },
+    { name: "credit", content: "Credit" },
+    { name: "source", content: "Source" }
+];
+```
+
+And make [these changes](https://github.com/golfecholima/Chartbuilder/commit/3c341a559d84e49b9a054ded80ea673a8d740675) to that same file. Save.
+
+2. Add subtitle fields to `src/js/charts/cb-xy/xy-config.js` and `src/js/charts/cb-chart-grid/chart-grid-config.js`. (I also swap out the placeholder text here.)
+
+`src/js/charts/cb-xy/xy-config.js`
+
+```javascript
+metadata: {
+        chartType: 'xy',
+        title: "TK Title Lorem Ipsum Something Nice",
+        sub: "TK Sub of some added description",
+        source: "TK Databank.com",
+        credit: "TK Name | GeorgeNews",
+        size: "auto"
+    }
+```
+
+`src/js/charts/cb-chart-grid/chart-grid-config.js`
+
+```javascript
+metadata: {
+        id: null,
+        chartType: "chartgrid",
+        title: "TK Title Lorem Ipsum Something Nice",
+        sub: "TK Sub of some added description",
+        source: "TK Databank.com",
+        credit: "TK Name | GeorgeNews",
+        size: "auto"
+    }
+```
+
+Here's [the commit](https://github.com/golfecholima/Chartbuilder/commit/44de1e2296a6cf01e9dfd1997df52a6e49f49347) for reference.
+
+Also make [these changes]()
+
+3. Make [these changes](https://github.com/golfecholima/Chartbuilder/commit/b16e77c2de11d2ca73b781f7d1cc247da912072a) to `src/js/components/chart-xy/XYRenderer.jsx`
+
+4. Make [these changes]() to 
+
+5. Add some spacing.
