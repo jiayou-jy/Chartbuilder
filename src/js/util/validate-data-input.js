@@ -1,9 +1,9 @@
 // Return input with validation statuses. These get sent to the UI in order
 // to prevent drawing and give error messages.
 
-var map = require("lodash/collection/map");
-var filter = require("lodash/collection/filter");
-var some = require("lodash/collection/some");
+var map = require("lodash/map");
+var filter = require("lodash/filter");
+var some = require("lodash/some");
 
 function makeInputObj(rawInput, status, isValid) {
 	return {
@@ -17,7 +17,7 @@ function validateDataInput(input, series, hasDate) {
 	if (input.length === 0) {
 		// Check whether we have input
 		return makeInputObj(input, "EMPTY", false);
-		} else if (series.length && !series[0].values.length) {
+	} else if (series.length && !series[0].values.length) {
 		// Check that we have at least 1 value row (i.e. minimum header + 1 data row)
 		return makeInputObj(input, "TOO_FEW_SERIES", false);
 	} else if (series.length > 12) {

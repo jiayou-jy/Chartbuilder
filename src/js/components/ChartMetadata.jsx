@@ -3,8 +3,8 @@
 
 var React = require("react");
 var PropTypes = React.PropTypes;
-var PureRenderMixin = React.addons.PureRenderMixin;
-var clone = require("lodash/lang/clone");
+var PureRenderMixin = require("react-addons-pure-render-mixin");
+var clone = require("lodash/clone");
 
 // Flux stores
 var ChartMetadataStore = require("../stores/ChartMetadataStore");

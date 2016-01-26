@@ -1,16 +1,16 @@
 var test = require("tape");
 
 var React = require("react");
-require("react/addons");
+var ReactDOM = require("react-dom");
 
 var d3 = require("d3");
 var _ = require("lodash");
-var TU = React.addons.TestUtils;
+var TU = require("react-addons-test-utils");
 var util = require("../util/util");
 
 var RendererWrapper = require("../../src/js/components/RendererWrapper.jsx");
 
-var test_charts = require("../render/test_charts.json");
+var test_charts = require("../test-page/test_charts.json");
 var bar_grids = _.filter(test_charts, function(chart) {
 	if (chart.metadata.chartType === "chartgrid") {
 		return (chart.chartProps._grid.type === "bar");
@@ -33,10 +33,15 @@ test("Renderer: Chart grid bars", function(t) {
 		/>
 	);
 
-	var svg = TU.findRenderedDOMComponentWithTag(rw, "svg");
-	var d3svg = d3.select(svg.getDOMNode());
+	var svg = TU.findRenderedDOMComponentWithTag(
+		rw,
+		"svg"
+	);
 
 	t.ok(TU.isDOMComponent(svg), "svg rendered to DOM");
+
+	var svg_dom = ReactDOM.findDOMNode(svg);
+	var d3svg = d3.select(svg_dom);
 
 	var num_series = randBarGrid.chartProps._grid.cols * randBarGrid.chartProps._grid.rows;
 	var num_vals = _.reduce(randBarGrid.chartProps.data, function(numVals, d) {
@@ -57,7 +62,7 @@ test("Renderer: Chart grid bars", function(t) {
 	t.equal(num_vals, num_label_text, "number of bar grid labels matches data");
 	t.equal(num_vals, num_label_rect, "number of bar grid label rects matches data");
 
-	React.unmountComponentAtNode(rw.getDOMNode());
+	ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(rw).parentNode);
 	t.end();
 });
 

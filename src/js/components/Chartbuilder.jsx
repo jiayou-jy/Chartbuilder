@@ -6,8 +6,7 @@
 
 /* Node modules */
 var React = require("react");
-require("react/addons");
-var update = React.addons.update;
+var update = require("react-addons-update");
 var PropTypes = React.PropTypes;
 
 /* Flux stores */
@@ -200,6 +199,7 @@ var Chartbuilder = React.createClass({
 						metadata={this.state.metadata}
 						stepNumber={String(editorSteps + 3)}
 						additionalComponents={this.props.additionalComponents.misc}
+						model={this.state}
 					/>
 				</div>
 				<div className="chartbuilder-canvas">

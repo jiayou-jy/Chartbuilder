@@ -5,6 +5,7 @@ if (process.env.NODE_ENV == "dev") {
 }
 
 var React = require("react");
+var ReactDOM = require("react-dom");
 var ChartbuilderLocalStorageAPI = require("./util/ChartbuilderLocalStorageAPI");
 var Chartbuilder = require("./components/Chartbuilder.jsx");
 var container = document.querySelector(".chartbuilder-container");
@@ -14,9 +15,15 @@ document.addEventListener("DOMContentLoaded", function() {
 	// Initialize data from localStorage
 	ChartbuilderLocalStorageAPI.defaultChart();
 	// Render parent chartbuilder component
-	React.render(
+	ReactDOM.render(
 		<Chartbuilder
 			showMobilePreview={false}
 		/>,
 	container );
+
+	//append the current timestamp to the end of the stylesheets on load so that the fonts will load
+	Array.prototype.slice.call(document.querySelectorAll('link[rel="stylesheet"]'))
+		.forEach(function(el){
+			el.setAttribute("href",el.getAttribute("href").split("?")[0] + "?t=" + (new Date().getTime()))
+		})
 });

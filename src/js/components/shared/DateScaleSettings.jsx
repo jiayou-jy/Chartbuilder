@@ -1,10 +1,10 @@
 var React = require("react");
-var clone = require("lodash/lang/clone");
+var clone = require("lodash/clone");
 
-var shallowEqual = require("react/lib/shallowEqual");
-var PureRenderMixin = React.addons.PureRenderMixin;
+var shallowEqual = require('react-addons-shallow-compare');
+var PureRenderMixin = require("react-addons-pure-render-mixin");
 var PropTypes = React.PropTypes;
-var update = React.addons.update;
+var update = require("react-addons-update");
 
 var chartbuilderUI = require("chartbuilder-ui");
 var Dropdown = chartbuilderUI.Dropdown;
@@ -27,18 +27,6 @@ var DateScaleSettings = React.createClass({
 		scale: PropTypes.object.isRequired,
 		onUpdate: PropTypes.func,
 		stepNumber: PropTypes.string
-	},
-
-	shouldComponentUpdate: function(nextProps, nextState) {
-		var newStep = (this.props.stepNumber !== nextProps.stepNumber);
-		if (newStep) {
-			return true;
-		}
-		var newScale = !shallowEqual(this.props.scale.dateSettings, nextProps.scale.dateSettings);
-		if (newScale) {
-			return true;
-		}
-		return false;
 	},
 
 	_config: {

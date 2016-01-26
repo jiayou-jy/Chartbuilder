@@ -4,7 +4,7 @@ var ChartbuilderLocalStorageAPI = require("../util/ChartbuilderLocalStorageAPI")
 
 /* Node modules */
 var React = require("react");
-var cx = React.addons.classSet;
+var cx = require("classnames");
 var PropTypes = React.PropTypes;
 
 /* Chartbuilder UI components */
@@ -34,13 +34,11 @@ var LocalStorageTimer = React.createClass({
 	},
 
 	componentWillMount: function() {
-		if (localStorage.hasOwnProperty("model")) {
+		if (this.props.timerOn) {
 			timer = setTimeout(function() {
 				this._disableTimer();
 			}.bind(this), TIMER_DURATION);
 			ChartViewActions.startTimer();
-		} else {
-			ChartViewActions.stopTimer();
 		}
 	},
 

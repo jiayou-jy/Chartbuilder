@@ -1,5 +1,4 @@
-
-var assign = require("lodash/object/assign");
+var assign = require("lodash/assign");
 var EventEmitter = require("events").EventEmitter;
 
 /* Flux dispatcher */
@@ -9,7 +8,7 @@ var _session = {
 	separators: detectNumberSeparators(),
 	emSize: 10,
 	width: 640,
-	timerOn: true
+	timerOn: (localStorage.hasOwnProperty("model") === true)
 };
 
 var CHANGE_EVENT = "change";

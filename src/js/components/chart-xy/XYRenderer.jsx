@@ -3,21 +3,23 @@
 
 // React
 var React = require("react");
-var PureRenderMixin = require('react/addons').addons.PureRenderMixin;
+var ReactDOM = require("react-dom");
+var PureRenderMixin = require("react-addons-pure-render-mixin");
 var PropTypes = React.PropTypes;
-var update = React.addons.update;
+var update = require("react-addons-update");
 
 // Node modules
 var d3 = require("d3");
 var d4 = require("d4");
 
-var clone = require("lodash/lang/clone");
-var map = require("lodash/collection/map");
-var assign = require("lodash/object/assign");
-var each = require("lodash/collection/each");
-var filter = require("lodash/collection/filter");
-var reduce = require("lodash/collection/reduce");
-var some = require("lodash/collection/some");
+var assign = require("lodash/assign");
+var bind = require("lodash/bind");
+var clone = require("lodash/clone");
+var each = require("lodash/each");
+var filter = require("lodash/filter");
+var map = require("lodash/map");
+var reduce = require("lodash/reduce");
+var some = require("lodash/some");
 
 var ChartRendererMixin = require("../mixins/ChartRendererMixin.js");
 var DateScaleMixin = require("../mixins/DateScaleMixin.js");
@@ -163,7 +165,7 @@ var XYRenderer = React.createClass({
 		// Render hidden y-axis ticks in order to compute the maxTickWidth
 		// independent of rendering the chart itself, this is needed to set the
 		// appropriate padding for the chart. We must do this for each y-axis.
-		var HiddenAxes = map(axisTicks, function(axis, i) {
+		var HiddenAxes = map(axisTicks, bind(function(axis, i) {
 			return (
 				<HiddenSvg.HiddenSvgAxis
 					className="tick"
@@ -175,7 +177,7 @@ var XYRenderer = React.createClass({
 					onUpdate={this._handleMaxTickWidth.bind(null, axis.name)}
 				/>
 			);
-		}, this);
+		}, this));
 
 		if (this.state.maxTickWidth.primaryScale <= 0) {
 			// We have not yet calculated maxTickWidth
@@ -279,7 +281,7 @@ var XYChart = React.createClass({
 
 	componentDidMount: function() {
 		// Draw chart once mounted
-		var el = this.getDOMNode();
+		var el = ReactDOM.findDOMNode(this);
 
 		if (this.props.chartProps.data.length === 0) {
 			return;
@@ -294,7 +296,7 @@ var XYChart = React.createClass({
 
 	shouldComponentUpdate: function(nextProps, nextState) {
 		// always update by redrawing the chart
-		var el = this.getDOMNode();
+		var el = ReactDOM.findDOMNode(this);
 		drawXY(el, this._getChartState(nextProps));
 		return false;
 	},
@@ -341,7 +343,7 @@ var XYChart = React.createClass({
 	},
 
 	render: function() {
-		// empty <svg:g> that will be drawn into using `this.getDOMNode()`
+		// empty <svg:g> that will be drawn into using `ReactDOM.findDOMNode(this)`
 		return (
 			<g className="renderer-chart">
 			</g>
@@ -422,7 +424,7 @@ var XYLabels = React.createClass({
 		* reloaded later.
 		*/
 		/* Make sure only undragged labels exist in XYLabels state, removing others */
-		var updateUndragged = reduce(nextProps.chartProps._annotations.labels.values, function(obj, v, i) {
+		var updateUndragged = reduce(nextProps.chartProps._annotations.labels.values, bind(function(obj, v, i) {
 			if (!v.dragged) {
 				if (this.state.undraggedLabels[i]) {
 					obj[i] = this.state.undraggedLabels[i];
@@ -433,7 +435,8 @@ var XYLabels = React.createClass({
 			} else {
 				return obj;
 			}
-		}, {}, this);
+		}, this), {});
+
 		this.setState({
 			yOffset: yOffset,
 			undraggedLabels: updateUndragged,
@@ -537,7 +540,7 @@ var XYLabels = React.createClass({
 
 		var labelComponents = [];
 		if (this.props.chartProps.data.length > 1) {
-			each(this.props.chartProps.data, function(d, i) {
+			each(this.props.chartProps.data, bind(function(d, i) {
 				var labelSettings = {};
 				var prevNode = null;
 				var chartSetting = this.props.chartProps.chartSettings[i];
@@ -587,7 +590,7 @@ var XYLabels = React.createClass({
 						scale={scale}
 					/>
 				);
-			}, this);
+			}, this));
 		}
 		return (
 			<g

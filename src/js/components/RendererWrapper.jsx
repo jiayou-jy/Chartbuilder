@@ -6,16 +6,17 @@
 */
 
 var React = require("react");
+var ReactDOM = require("react-dom")
 var PropTypes = React.PropTypes;
 
-var assign = require("lodash/object/assign");
-var clone = require("lodash/lang/clone");
-var isDate = require("lodash/lang/isDate");
-var isEqual = require("lodash/lang/isEqual");
-var throttle = require("lodash/function/throttle");
-var reduce = require("lodash/collection/reduce");
-var keys = require("lodash/object/keys");
-var update = React.addons.update;
+var assign = require("lodash/assign");
+var clone = require("lodash/clone");
+var isDate = require("lodash/isDate");
+var isEqual = require("lodash/isEqual");
+var throttle = require("lodash/throttle");
+var reduce = require("lodash/reduce");
+var keys = require("lodash/keys");
+var update = require("react-addons-update");
 
 var SvgText = require("./svg/SvgText.jsx");
 
@@ -24,8 +25,6 @@ var convertConfig = require("../util/parse-config-values");
 var SessionStore = require("../stores/SessionStore");
 var breakpoints = require("../config/chart-breakpoints");
 var ChartFooter = require("./svg/ChartFooter.jsx");
-
-var CVM = require("react-component-visibility");
 
 /*
  * `chartConfig` is an object that sets default properties for chart types, and
@@ -60,8 +59,6 @@ var RendererWrapper = React.createClass({
 		return true;
 	},
 
-	mixins: [ CVM ],
-
 	getInitialState: function() {
 		return {
 			domNodeWidth: null,
@@ -86,7 +83,7 @@ var RendererWrapper = React.createClass({
 		var chartType = this.props.model.metadata.chartType;
 		var size_calcs = {};
 		if (this.props.width) {
-			var bp = this._getBreakpointObj(this.props.width);
+			var bp = breakpoints.getBreakpointObj(this.props.enableResponsive, this.props.width);
 			size_calcs = this._resizeUpdate(this.props, bp, this.props.width);
 		}
 
@@ -126,16 +123,14 @@ var RendererWrapper = React.createClass({
 	},
 
 	_updateWidth: function(force) {
-		//if (this.state.visible || force === true) {
-			var domNodeWidth = this.getDOMNode().offsetWidth;
-			var bp = this._getBreakpointObj(domNodeWidth);
-			if (domNodeWidth !== this.state.domNodeWidth) {
-				var resized = this._resizeUpdate(this.props, bp, domNodeWidth);
-				if (resized) {
-					this.setState(resized);
-				}
+		var domNodeWidth = ReactDOM.findDOMNode(this).offsetWidth;
+		var bp = breakpoints.getBreakpointObj(this.props.enableResponsive, domNodeWidth);
+		if (domNodeWidth !== this.state.domNodeWidth) {
+			var resized = this._resizeUpdate(this.props, bp, domNodeWidth);
+			if (resized) {
+				this.setState(resized);
 			}
-		//}
+		}
 	},
 
 	componentDidMount: function() {
@@ -149,16 +144,6 @@ var RendererWrapper = React.createClass({
 	componentWillUnmount: function() {
 		if (this.props.enableResponsive) {
 			window.removeEventListener("resize", this._updateWidth);
-		}
-	},
-
-	_getBreakpointObj: function(width) {
-		if (this.props.enableResponsive || !width) {
-			return breakpoints.filter(function(bp) {
-				return width > bp.min_size;
-			})[0];
-		} else {
-			return breakpoints[1];
 		}
 	},
 
