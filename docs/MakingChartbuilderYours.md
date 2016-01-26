@@ -39,6 +39,8 @@ Change the display and page title at `Chartbuilder/src/htdocs/index.html`
 </html>
 ```
 
+`<title>` changes the page title and `<h1>` changes the displayed title.
+
 Save.
 
 # TYPOGRAPHY
@@ -72,7 +74,7 @@ src: url('/fonts/Open_Sans/OpenSans-Light.ttf');
 }
 ```
 
-Keep the old references or don't (probably don't).
+Keep the old references or don't. (Probably don't).
 Save.
 
 Open `Chartbuilder/src/styl/type.styl` and use your new fonts:
@@ -120,6 +122,22 @@ Save. Look, now your title bar is bold.
 
 I don't like the way the 'light' version of Open Sans looks, so we're going to mostly remove it from the chart. That happens at `Chartbuilder/src/styl/chart-renderer.styl`. Compare [my version](https://github.com/golfecholima/Chartbuilder/blob/master/src/styl/chart-renderer.styl) with the Chartbuilder [master version](https://github.com/Quartz/Chartbuilder/blob/master/src/styl/chart-renderer.styl). (Hint: Don't worry about the missing `.svg-text-sub` that's only present if you want to [add a subtitle](#add-a-subtitle) to your Chartbuilder.)
 
+I like the way uppercase looks for my credit and source information. Again in `Chartbuilder/src/styl/chart-renderer.styl` under `&.svg-text-credit` and `&.svg-text-source` add `text-transform uppercase` to each like so:
+
+```stylus
+  &.svg-text-credit // Customize credit text
+    font-size $em_size*0.6
+    fill $color-chart-meta
+    text-anchor start
+    text-transform uppercase
+  &.svg-text-source // Customize source text
+    font-size $em_size*0.6
+    fill $color-chart-meta
+    text-transform uppercase
+```
+
+Save.
+
 # COLORS
 
 Colors are all handled at `Chartbuilder/src/styl/colors.styl`. As mentioned in the documentation, Chartbuilder needs to know how many colors are being used in the chart. If you don't need more than 11 colors, perfect. Swap out hex values to your hearts content from the list under `$chart-colors =\`. Changing anything in this file before `$chart-colors =\` will affect a variety of elements in the Chartbuilder interface and on the chart itself. Everything with a `$` is a variable in Stylus, so search through the files to determine exactly what color variables are assigned to what. (Much of it can be found in the `/chart-renderer.styl` sheet mentioned earlier.)
@@ -134,7 +152,7 @@ Get your list of colors finalized. Count how many colors you have. Open `Chartbu
 
 # FORMATTING
 
-Chartbuilder doesn't come with much space around the edges. Let's add some padding. Before we do, it's worth noting here that for every tweak made regarding the charts that are not encompassed by `.styl` sheet changes we'll often have to make 2 or more changes one for each of Chartbuilder's chart type iterations (namely, the default **xy** and the **grid** types).
+It's worth noting here that for most tweaks made not encompassed by `.styl` sheet changes, we'll often have to make 2 or more changes one for each of Chartbuilder's chart type iterations (namely, the default **xy** and the **grid** types). This will be the case for most anything that involves positioning elements around on the chart.
 
 **XY CHART FILES**
 
@@ -148,7 +166,9 @@ Chartbuilder doesn't come with much space around the edges. Let's add some paddi
 
 **NOTE**: There are general files that apply to all chart types within both `Chartbuilder/src/js/charts/` and `Chartbuilder/src/js/components/`.
 
-To fix the padding we're going to pull up `Chartbuilder/src/js/charts/cb-xy/xy-config.js` and `Chartbuilder/src/js/charts/cb-chart-grid/chart-grid-config.js`.
+### Padding
+
+Chartbuilder doesn't come with much space around the edges. Let's add some padding. To fix the padding we're going to pull up `Chartbuilder/src/js/charts/cb-xy/xy-config.js` and `Chartbuilder/src/js/charts/cb-chart-grid/chart-grid-config.js`.
 
 In each file find `margin:` and set the desired margins. I went for ... 
 
@@ -174,6 +194,19 @@ margin: {
 
 ... in `chart-grid-config.js` which behaved slightly different at the top.
 
-
 # ADD A LOGO
+
+Most folks are going to want their chart branded. Here we'll add a logo in the bottom left corner.
+
+Add your logo file to `src/assets/`. Don't worry too much about size at the moment, it will get adjusted later.
+
+Open `Chartbuilder/src/js/components/svg/ChartFooter.jsx`. There's a lot of changes here so I'll [link to](https://github.com/golfecholima/Chartbuilder/commit/4606247b7d3931f362c037f11eb718edfea6a601) the actual commit. There are two important areas to note here for further tweaking:
+
+- Lines 99-101, where the ` + 30` dictates the offset distance of the credit text from the left side of the chart.
+- Lines 139-140, which dictate the size of the logo.
+
+
+
+
+
 # ADD A SUBTITLE
