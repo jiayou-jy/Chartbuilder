@@ -25,8 +25,8 @@ var ChartConfig = require("../ChartConfig");
 * @property {object} padding - Distances btwn inner chart elements and container
 */
 var display = {
-	afterTitle: "1.5em", // distance between top of title and top of legend or chart
-	afterSub: "1.2em", // distance between top of sub and top of legend or chart
+	afterTitle: "1.25em", // distance between top of title and top of sub, legend or chart
+	afterSub: "1em", // distance between top of sub and top of legend or chart
 	afterLegend: "0.5em", // distance between top of legend and top of chart
 	blockerRectOffset: 6, // distance between text and background blocker rect
 	paddingPerBar: "0.7em", // extra space around bars
@@ -114,8 +114,8 @@ var defaultProps = {
 		chartType: "chartgrid",
 		title: "",
 		sub: "",
-		source: "TK Databank.com",
-		credit: "TK Name | GeorgeNews",
+		source: "",
+		credit: "Made with Chartbuilder",
 		size: "auto"
 	}
 };

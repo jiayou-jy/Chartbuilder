@@ -14,7 +14,7 @@ var ChartConfig = require("../ChartConfig");
 * @property {Nem|number} labelTextMargin - Horiz distance btwn label rect and text
 * @property {Nem|number} labelRowHeight - Vert distance btwn rows of labels
 * items with colors the appropriate indexed CSS class
-* @property {Nem|number} afterTitle - Distance btwn top of title and top of legend or chart
+* @property {Nem|number} afterTitle - Distance btwn top of title and top of legend, sub or chart
 * @property {Nem|number} afterSub - Distance btwn top of sub and top of legend or chart
 * @property {Nem|number} afterLegend - Distance btwn top of legend and top of chart
 * @property {Nem|number} blockerRectOffset - Distance btwn text of axis and its background blocker
@@ -35,9 +35,9 @@ var display = {
 	labelXMargin: "0.6em",
 	labelTextMargin: "0.3em",
 	labelRowHeight: "1.2em",
-	afterTitle: "3em",
-	afterSub: "0em",
-	afterLegend: "1em",
+	afterTitle: "1.6em",
+	afterSub: "1em",
+	afterLegend: "1.6em",
 	blockerRectOffset: "0.3em",
 	columnPaddingCoefficient: 0.3,
 	minPaddingOuter: "1em",
@@ -131,8 +131,8 @@ var defaultProps = {
 		chartType: 'xy',
 		title: "",
 		sub: "",
-		source: "TK Databank.com",
-		credit: "TK Name | GeorgeNews",
+		source: "",
+		credit: "Made with Chartbuilder",
 		size: "auto"
 	}
 };

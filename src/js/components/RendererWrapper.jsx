@@ -242,7 +242,8 @@ var RendererWrapper = React.createClass({
 
 		var margin = this.state.chartConfig.display.margin;
 		var metadataSvg = [];
-		var title,sub;
+		var title;
+		var sub;
 
 		var translate = {
 			top: margin.top,
