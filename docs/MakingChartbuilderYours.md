@@ -196,6 +196,8 @@ margin: {
 
 # ADD A LOGO
 
+(H/T to @petulla for this one.)
+
 Most folks are going to want their chart branded. Here we'll add a logo in the bottom left corner.
 
 Add your logo file to `src/assets/`. Don't worry too much about size at the moment, it will get adjusted later.
