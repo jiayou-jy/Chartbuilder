@@ -10,8 +10,8 @@ Sections:
 - [Typography](#typography)
 - [Colors](#colors)
 - [Formatting](#formatting)
-- [Adding a logo](#adding-a-logo)
-- [Adding a subtitle](#adding-a-subtitle)
+- [Add a logo](#add-a-logo)
+- [Add a subtitle](#add-a-subtitle)
 
 # TITLE
 
