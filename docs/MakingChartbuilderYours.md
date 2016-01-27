@@ -12,6 +12,7 @@ Sections:
 - [Formatting](#formatting)
 - [Add a logo](#add-a-logo)
 - [Add a subtitle](#add-a-subtitle)
+- [Deploy to gh-pages](#deploy)
 
 # TITLE
 
@@ -45,9 +46,9 @@ Save.
 
 # TYPOGRAPHY
 
-Getting Google's webfonts to work with @import or even a link reference in `<head>` was a total nightmare so I went with downloaded fonts. (Might have something to do with Chartbuilder converting all fonts to base64. Also might not.)
+Getting Google's webfonts to work with @import or even a link reference in `<head>` was a total nightmare, so I went with downloaded fonts. (Might have something to do with Chartbuilder converting all fonts to base64. Also might not.)
 
-Create a directory `fonts` to `Chartbuilder/src/` and dump whatever fonts you plan to use in there. I'm using [_Open Sans_](https://www.google.com/fonts) from Google. 
+Create a directory `fonts` in `Chartbuilder/src/` and dump whatever fonts you plan to use in there. I'm using [_Open Sans_](https://www.google.com/fonts) from Google. 
 
 Open `Chartbuilder/src/styl/fonts.styl` and call your fonts like so:
 
@@ -142,7 +143,7 @@ Save.
 
 Colors are all handled at `Chartbuilder/src/styl/colors.styl`. As mentioned in the documentation, Chartbuilder needs to know how many colors are being used in the chart. If you don't need more than 11 colors, perfect. Swap out hex values to your hearts content from the list under `$chart-colors =\`. Changing anything in this file before `$chart-colors =\` will affect a variety of elements in the Chartbuilder interface and on the chart itself. Everything with a `$` is a variable in Stylus, so search through the files to determine exactly what color variables are assigned to what. (Much of it can be found in the `/chart-renderer.styl` sheet mentioned earlier.)
 
-**NOTE**: Chartbuilder relies heavily on SVG to work its magic. The CSS property `color` and many other normal CSS properties (such as `background`) do not function as expected. When you're looking at elements in your browser inspector the color of the element will instead correspond to the `fill` property. Folks new to SVG (like me) will find [this SVG documentation](https://developer.mozilla.org/en-US/docs/Web/SVG) useful.
+**NOTE**: Chartbuilder relies heavily on SVG to work its magic. The CSS property `color` and many other normal CSS properties (such as `background`) do not function as expected. When you're looking at elements in your browser inspector, the color of the element will instead correspond to the `fill` property. Folks new to SVG (like me) will find [this SVG documentation](https://developer.mozilla.org/en-US/docs/Web/SVG) useful.
 
 ### Adding colors
 
@@ -205,7 +206,7 @@ Add your logo file to `src/assets/`. Don't worry too much about size at the mome
 Open `Chartbuilder/src/js/components/svg/ChartFooter.jsx`. There's a lot of changes here so I'll link to the [actual commit](https://github.com/golfecholima/Chartbuilder/commit/4606247b7d3931f362c037f11eb718edfea6a601). There are two important areas to note here for further tweaking:
 
 - Lines 99-101, where the ` + 30` dictates the offset distance of the credit text from the left side of the chart.
-- Lines 139-142, which dictate the size of the logo and where the logo file itself lives should you need to change that.
+- Lines 139-142, which dictate the size of the logo and where the logo file itself lives, should you need to change that.
 
 Once you've made all the changes in the aforementioned commit, save.
 
