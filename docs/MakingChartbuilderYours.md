@@ -1,6 +1,6 @@
 # Making Chartbuilder Yours
 
-The following assumes you have a dev instance of Chartbuilder up and running at `localhost:3000`. Best to also have a gander at [Diving into Chartbuilder](https://github.com/Quartz/Chartbuilder/blob/master/docs/01-introduction.md) and [Customizing Chartbuilder](https://github.com/Quartz/Chartbuilder/blob/master/docs/02-customizing-chartbuilder.md) (though this documentation aims to clarify some of that.
+The following assumes you have a dev instance of Chartbuilder up and running at `localhost:3000`. Best to also have a gander at [Diving into Chartbuilder](https://github.com/Quartz/Chartbuilder/blob/master/docs/01-introduction.md) and [Customizing Chartbuilder](https://github.com/Quartz/Chartbuilder/blob/master/docs/02-customizing-chartbuilder.md) (though this documentation aims to clarify some of that.)
 
 Also ICYMI: Chartbuilder uses [Stylus](http://stylus-lang.com/) for its CSS. Stylus is a lot like SASS or LESS and has supporting syntax highlight for Sublime Text (and I'm sure others). It also uses `.jsx` files, which are syntax highlighted using the Babel package in Sublime Text. I found it to be very helpful because standard JS highlighting makes it look like everything is broken.
 
