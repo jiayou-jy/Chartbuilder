@@ -203,10 +203,11 @@ Most folks are going to want their chart branded. Here we'll add a logo in the b
 
 Add your logo file to `src/assets/`. Don't worry too much about size at the moment, it will get adjusted later.
 
-Open `Chartbuilder/src/js/components/svg/ChartFooter.jsx`. There's a lot of changes here so I'll link to the [actual commit](https://github.com/golfecholima/Chartbuilder/commit/4606247b7d3931f362c037f11eb718edfea6a601). There are two important areas to note here for further tweaking:
+Open `Chartbuilder/src/js/components/svg/ChartFooter.jsx`. There's a lot of changes here so I'll link to the [actual commit](https://github.com/golfecholima/Chartbuilder/commit/4606247b7d3931f362c037f11eb718edfea6a601). There are three important areas to note here for further tweaking:
 
 - Lines 99-101, where the ` + 30` dictates the offset distance of the credit text from the left side of the chart.
 - Lines 139-142, which dictate the size of the logo and where the logo file itself lives, should you need to change that.
+- Line 150 controls the position of the logo. Add or subtract from the left and bottom positioning to move the logo into place.
 
 Once you've made all the changes in the aforementioned commit, save.
 
