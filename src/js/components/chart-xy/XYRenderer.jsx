@@ -803,6 +803,7 @@ function yAxisUsing(location, axis, el, state) {
 	// hidden axes, so we pass them in here
 	var axisTicks = isPrimary ? state.axisTicks[0] : state.axisTicks[1];
 	axis.tickValues(axisTicks.tickValues);
+	axis.title(scale.axislabel);
 
 	// format using our precision and suffix/prefix
 	axis.tickFormat(function(d) {
@@ -812,10 +813,17 @@ function yAxisUsing(location, axis, el, state) {
 				help.roundToPrecision(d, scale.precision),
 				scale.suffix
 			].join("");
+
 		} else {
 			return help.roundToPrecision(d, scale.precision);
 		}
+
 	});
+	//this clears out any .title before the chart renders to avoid multiple axis labels produced with each typing in the axis label field. Need to find cleaner way to do this
+	axis.beforeRender(function() {
+		d3.selectAll(".title").remove();
+	});
+
 
 	axis.afterRender(function(feature,data,chartArea,selection) {
 		this.container.select(".axis." + scaleId).selectAll(".tick text")
@@ -836,6 +844,7 @@ function yAxisUsing(location, axis, el, state) {
 
 	axis.innerTickSize( innerTickSize );
 	axis.scaleId(scaleId);
+
 }
 
 function computePadding(props, chartHeight) {

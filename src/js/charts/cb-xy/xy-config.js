@@ -89,6 +89,7 @@ var defaultProps = {
 			primaryScale: {
 				ticks: 5,
 				precision: 0,
+				axislabel: "",
 				prefix: "",
 				suffix: ""
 			},
