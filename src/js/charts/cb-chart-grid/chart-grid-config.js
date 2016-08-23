@@ -121,7 +121,7 @@ var defaultProps = {
 };
 
 var chart_grid_config = new ChartConfig({
-	displayName: "Chart grid",
+	displayName: "Individual charts",
 	parser: require("./parse-chart-grid"),
 	calculateDimensions: require("./chart-grid-dimensions"),
 	display: display,

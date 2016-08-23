@@ -138,7 +138,7 @@ var defaultProps = {
 };
 
 var xy_config = new ChartConfig({
-	displayName: "XY Chart",
+	displayName: "Combined chart",
 	parser: require("./parse-xy"),
 	calculateDimensions: require("./xy-dimensions"),
 	display: display,
