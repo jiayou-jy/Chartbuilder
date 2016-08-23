@@ -133,7 +133,7 @@ var defaultProps = {
 		title: "",
 		sub: "",
 		source: "",
-		credit: "Made with Chartbuilder",
+		credit: "/Science",
 		size: "auto"
 	}
 };
