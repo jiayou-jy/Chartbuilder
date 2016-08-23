@@ -7,17 +7,17 @@ div.renderer-wrapper
   width 100%
   margin 0
   padding 0
-	.em-size-wrapper
-		width 100%
-	.em-size
-		position absolute
-		visibility hidden
-		top 0
-		line-height 1em
-		margin 0 0 0 -1000px
-		padding 0
-		width 1em
-		height 1em
+  .em-size-wrapper
+    width 100%
+  .em-size
+    position absolute
+    visibility hidden
+    top 0
+    line-height 1em
+    margin 0 0 0 -1000px
+    padding 0
+    width 1em
+    height 1em
 
 svg
   &.renderer-svg
@@ -34,6 +34,9 @@ svg
 .d4
   font-size $em_size
   .axis
+    .title
+      font-family $font-sans
+      fill $color-chart-axis-text
     .tick
       font-family $font-sans
       &[data-anchor="middle"]
@@ -61,7 +64,7 @@ svg
 
     &.leftAxis
       text
-        text-anchor start
+        text-anchor middle
 
     &.rightAxis
       text
@@ -69,10 +72,10 @@ svg
     &[data-scale="time"]
       .tick:not([data-anchor="middle"])
         text
-          text-anchor start
+          text-anchor middle
       .tick:first-child
         text
-          text-anchor start
+          text-anchor middle
 
   .concealer-label
     font-family $font-sans
@@ -148,9 +151,9 @@ svg
     font-size $em_size
 
 .svg-source-pipe
-	stroke $color-chart-meta
-	fill none
-	stroke-width 0.8px
+  stroke $color-chart-meta
+  fill none
+  stroke-width 0.8px
 
 .svg-label-text
   font-size $em_size
@@ -240,4 +243,4 @@ svg
     font-size $em_size
 
 .cb-credit-logo
-	fill $color-chart-meta
+  fill $color-chart-meta

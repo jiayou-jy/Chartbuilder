@@ -1689,10 +1689,10 @@ div.renderer-wrapper {
   margin: 0;
   padding: 0;
 }
-.em-size-wrapper {
+div.renderer-wrapper .em-size-wrapper {
   width: 100%;
 }
-.em-size {
+div.renderer-wrapper .em-size {
   position: absolute;
   visibility: hidden;
   top: 0;
@@ -1719,6 +1719,10 @@ svg.renderer-svg tspan {
 }
 .d4 {
   font-size: 20px;
+}
+.d4 .axis .title {
+  font-family: 'Benton Sans Condensed', sans-serif;
+  fill: #333;
 }
 .d4 .axis .tick {
   font-family: 'Benton Sans Condensed', sans-serif;
@@ -1749,16 +1753,16 @@ svg.renderer-svg tspan {
   shape-rendering: crispEdges;
 }
 .d4 .axis.leftAxis text {
-  text-anchor: start;
+  text-anchor: middle;
 }
 .d4 .axis.rightAxis text {
   text-anchor: end;
 }
 .d4 .axis[data-scale="time"] .tick:not([data-anchor="middle"]) text {
-  text-anchor: start;
+  text-anchor: middle;
 }
 .d4 .axis[data-scale="time"] .tick:first-child text {
-  text-anchor: start;
+  text-anchor: middle;
 }
 .d4 .concealer-label {
   font-family: 'Benton Sans Condensed', sans-serif;
