@@ -89,7 +89,7 @@ var ChartGridXY = React.createClass({
 			top: chartProps.extraPadding.top,
 			right: chartProps.extraPadding.right + displayConfig.afterXYRight,
 			bottom: chartProps.extraPadding.bottom + this.state.extraHeight,
-			left: this.state.maxTickWidth
+			left: this.state.maxTickWidth + displayConfig.beforeXYLeft
 		};
 
 		var dimensions = clone(this.props.dimensions);
@@ -103,7 +103,7 @@ var ChartGridXY = React.createClass({
 		/* Divide total width by number of grids, also subtracting the spade to be
 		* used to the right of a chart */
 		var dimensionsPerGrid = {
-			width: (dimensions.width - this.state.maxTickWidth - displayConfig.afterXYRight) / chartProps._grid.cols
+			width: (dimensions.width - this.state.maxTickWidth - displayConfig.afterXYRight - displayConfig.beforeXYLeft) / chartProps._grid.cols
 		};
 
 		/*

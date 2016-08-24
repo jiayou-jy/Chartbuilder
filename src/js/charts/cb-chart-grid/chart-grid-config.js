@@ -33,6 +33,7 @@ var display = {
 	barHeight: "0.9em", // height of each bars
 	afterXYBottom: "2em",
 	afterXYRight: "0.8em",
+	beforeXYLeft: "1.5em",
 	columnExtraPadding: "0.5em",
 	bottomPaddingWithoutFooter: "0.5em",
 	xy: require("../cb-xy/xy-config").display,
