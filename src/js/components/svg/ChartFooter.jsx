@@ -120,7 +120,6 @@ var ChartFooter = React.createClass({
 					pixelsPerCharacter={this.state.pixelsPerCharacter}
 					onUpdate={this._handleStateUpdate.bind(null, "pixelsPerCharacter")}
 				/>
-				{chartCreditImg}
 				{chartCredit}
 				{chartSource}
 			</g>
