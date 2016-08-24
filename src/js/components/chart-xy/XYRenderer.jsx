@@ -819,7 +819,7 @@ function yAxisUsing(location, axis, el, state) {
 		}
 
 	});
-	//this clears out any .title before the chart renders to avoid multiple axis labels produced with each typing in the axis label field. Need to find cleaner way to do this
+	//NEED FIX: this clears out any .title before the chart renders to avoid multiple axis labels produced with each typing in the axis label field. Need to find cleaner way to do this
 	axis.beforeRender(function() {
 		d3.selectAll(".title").remove();
 	});

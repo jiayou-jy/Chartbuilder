@@ -51,13 +51,13 @@ var display = {
 		top: "0.85em",
 		right: "0.5em",
 		bottom: "0.5em",
-		left: "1em"
+		left: "0.5em"
 	},
 	padding: {
 		top: 0,
 		right: 0,
 		bottom: "4em",
-		left: 0
+		left: "1em"
 	}
 };
 
