@@ -32,7 +32,7 @@ var display = {
 	paddingPerBar: "0.7em", // extra space around bars
 	barHeight: "0.9em", // height of each bars
 	afterXYBottom: "2em",
-	afterXYRight: "0.8em",
+	afterXYRight: "1.5em",
 	columnExtraPadding: "0.5em",
 	bottomPaddingWithoutFooter: "0.5em",
 	xy: require("../cb-xy/xy-config").display,
