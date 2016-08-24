@@ -46,7 +46,7 @@ var display = {
 		top: "0.5em",
 		right: 0,
 		bottom: "1.5em",
-		left: 0
+		left: "1em"
 	}
 };
 /**
@@ -82,6 +82,7 @@ var defaultProps = {
 			primaryScale: {
 				ticks: 5,
 				precision: 0,
+				axislabel: "",
 				prefix: "",
 				suffix: ""
 			},

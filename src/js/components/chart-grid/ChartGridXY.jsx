@@ -340,9 +340,10 @@ function yAxisUsing(location, axis, state) {
 	var chartProps = state.chartProps;
 	var isPrimary = (location === "primary");
 	var scale = chartProps.scale;
-
+	
 	axis.tickValues(help.exactTicks(scale.primaryScale.domain, scale.primaryScale.ticks));
 	axis.innerTickSize(state.dimensions.width);
+	axis.title(scale.primaryScale.axislabel);
 
 	var maxTickVal = d3.max(axis.tickValues());
 	axis.tickFormat(function(d) {

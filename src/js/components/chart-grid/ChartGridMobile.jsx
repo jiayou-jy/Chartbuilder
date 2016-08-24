@@ -59,6 +59,14 @@ var ChartGridMobile = React.createClass({
 		var scaleSettings = [];
 		scaleSettings.push(
 			<TextInput
+				id="axislabel"
+				className="scale-option"
+				onChange={this._handleScaleUpdate.bind(null, "axislabel")}
+				value={this.state.scale.primaryScale.axislabel}
+				placeholder="Axis label"
+				key="axislabel"
+			/>,
+			<TextInput
 				className="scale-option"
 				onChange={this._handleScaleUpdate.bind(null, "prefix")}
 				value={this.state.scale.primaryScale.prefix}
