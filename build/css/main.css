@@ -1522,7 +1522,7 @@ h1,
 h2,
 h4,
 h5 {
-  font-family: 'Benton Sans Condensed Bold', sans-serif;
+  font-family: 'Benton Sans Condensed', sans-serif;
   color: #000;
 }
 h1 {
@@ -1627,7 +1627,7 @@ canvas {
   margin: 0;
   line-height: 1;
   padding: 0;
-  font-family: 'Benton Sans Condensed Bold', sans-serif;
+  font-family: 'Benton Sans Condensed', sans-serif;
 }
 .chartbuilder-container {
   margin-top: 3.45em;
@@ -1809,11 +1809,11 @@ svg.renderer-svg tspan {
   font-style: italic;
 }
 .svg-text tspan.strong {
-  font-family: 'Benton Sans Condensed Bold', sans-serif;
+  font-family: 'Benton Sans Condensed', sans-serif;
 }
 .svg-text tspan.strong .em,
 .svg-text tspan.em .strong {
-  font-family: 'Benton Sans Condensed Bold', sans-serif;
+  font-family: 'Benton Sans Condensed', sans-serif;
   font-style: italic;
 }
 .svg-text.svg-text-credit {
@@ -1840,7 +1840,7 @@ svg.renderer-svg tspan {
 }
 .svg-text.svg-text-title {
   fill: #000;
-  font-family: 'Benton Sans Condensed Bold', sans-serif;
+  font-family: 'Benton Sans Condensed', sans-serif;
   font-size: 20px;
 }
 .svg-source-pipe {
@@ -1882,7 +1882,8 @@ svg.renderer-svg tspan {
   font-size: 12px;
 }
 .medium .svg-text.svg-text-title {
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: bold;
 }
 .small .em-size {
   font-size: 14px;
@@ -2257,7 +2258,7 @@ svg.renderer-svg tspan {
   width: 98%;
 }
 .chartbuilder-editor .mobile-overrides> h2:first-child {
-  font-family: 'Benton Sans Condensed Bold', sans-serif;
+  font-family: 'Benton Sans Condensed', sans-serif;
   margin-bottom: 1em;
 }
 .chartbuilder-editor .mobile-overrides .scale-options {
