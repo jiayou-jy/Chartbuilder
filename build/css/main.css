@@ -1718,7 +1718,7 @@ svg.renderer-svg tspan {
   line-height: 1em;
 }
 .d4 {
-  font-size: 20px;
+  font-size: 8px;
 }
 .d4 .axis .title {
   font-family: 'Benton Sans Condensed', sans-serif;
@@ -1786,7 +1786,7 @@ svg.renderer-svg tspan {
 .d4 .margins .line path,
 .d4 .margins .other-line path {
   fill: none;
-  stroke-width: 3px;
+  stroke-width: 1px;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -1804,7 +1804,7 @@ svg.renderer-svg tspan {
 }
 .svg-text {
   font-family: 'Benton Sans Condensed', sans-serif;
-  font-size: 20px;
+  font-size: 8px;
 }
 .svg-text tspan.em {
   font-style: italic;
@@ -1818,13 +1818,13 @@ svg.renderer-svg tspan {
   font-style: italic;
 }
 .svg-text.svg-text-credit {
-  font-size: 12px;
+  font-size: 4.8px;
   fill: #666;
   text-anchor: start;
   text-transform: uppercase;
 }
 .svg-text.svg-text-source {
-  font-size: 12px;
+  font-size: 4.8px;
   fill: #666;
   text-transform: uppercase;
 }
@@ -1837,12 +1837,12 @@ svg.renderer-svg tspan {
 .svg-text.svg-text-sub {
   fill: #333;
   font-family: 'Benton Sans Condensed', sans-serif;
-  font-size: 20px;
+  font-size: 8px;
 }
 .svg-text.svg-text-title {
   fill: #000;
   font-family: 'Benton Sans Condensed', sans-serif;
-  font-size: 20px;
+  font-size: 8px;
 }
 .svg-source-pipe {
   stroke: #666;
@@ -1850,7 +1850,7 @@ svg.renderer-svg tspan {
   stroke-width: 0.8px;
 }
 .svg-label-text {
-  font-size: 20px;
+  font-size: 8px;
   font-family: 'Benton Sans Condensed', sans-serif;
   font-weight: bold;
   cursor: move;
@@ -1864,23 +1864,23 @@ svg.renderer-svg tspan {
   visibility: hidden;
 }
 .medium .em-size {
-  font-size: 20px;
+  font-size: 8px;
 }
 .medium .d4 {
-  font-size: 20px;
+  font-size: 8px;
 }
 .medium .d4 .margins .line path,
 .medium .d4 .margins .other-line path {
   stroke-width: 3px;
 }
 .medium .svg-text {
-  font-size: 20px;
+  font-size: 8px;
 }
 .medium .svg-text.svg-text-credit {
-  font-size: 12px;
+  font-size: 4.8px;
 }
 .medium .svg-text.svg-text-source {
-  font-size: 12px;
+  font-size: 4.8px;
 }
 .medium .svg-text.svg-text-title {
   font-size: 24px;
@@ -1900,14 +1900,14 @@ svg.renderer-svg tspan {
   font-size: 14px;
 }
 .small .svg-text.svg-text-credit {
-  font-size: 10px;
+  font-size: 4px;
 }
 .small .svg-text.svg-text-source {
-  font-size: 10px;
+  font-size: 4px;
 }
 .small .svg-text.svg-text-pipe text {
   dominant-baseline: central;
-  font-size: 12px;
+  font-size: 4.8px;
 }
 .small .svg-text.svg-text-title {
   font-size: 14px;
@@ -1916,35 +1916,42 @@ svg.renderer-svg tspan {
   font-size: 14px;
 }
 .large .em-size {
-  font-size: 20px;
+  font-size: 8px;
 }
 .large .d4 {
-  font-size: 20px;
+  font-size: 8px;
 }
 .large .d4 .margins .line path,
 .large .d4 .margins .other-line path {
   stroke-width: 4px;
 }
 .large .svg-text {
-  font-size: 20px;
+  font-size: 8px;
 }
 .large .svg-text.svg-text-credit {
-  font-size: 12px;
+  font-size: 4.8px;
 }
 .large .svg-text.svg-text-source {
-  font-size: 12px;
+  font-size: 4.8px;
 }
 .large .svg-text.svg-text-title {
-  font-size: 20px;
+  font-size: 8px;
 }
 .large .svg-label-text {
-  font-size: 20px;
+  font-size: 8px;
 }
 .cb-credit-logo {
   fill: #666;
 }
 svg.print_two .svg-label-text {
   font-size: 8px;
+}
+svg.print_two .d4 {
+  font-size: 8px;
+}
+svg.print_two .d4 .margins .line path,
+svg.print_two .d4 .margins .other-line path {
+  stroke-width: 1px;
 }
 .chartbuilder-editor {
   margin-left: 740px;

@@ -1,4 +1,6 @@
-$em_size = 20px
+//default settings: what svg export will grab
+
+$em_size = 8px
 $em_size_small = 14px
 $em_size_medium = 16px
 $em_size_large = 24px
@@ -99,7 +101,7 @@ svg
     .line, .other-line
       path
         fill none
-        stroke-width 3px
+        stroke-width 1px
         stroke-linecap round
         stroke-linejoin round
     .label
@@ -250,9 +252,15 @@ svg
   fill $color-chart-meta
 
 
-// Size specific customizations for static charts
+// Size specific customizations for static charts for png export
 
 svg
   &.print_two
     .svg-label-text
       font-size 8px
+    .d4
+      font-size $em_size
+      .margins
+        .line, .other-line
+          path
+            stroke-width 1px
