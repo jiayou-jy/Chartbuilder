@@ -1944,7 +1944,7 @@ svg.renderer-svg tspan {
   fill: #666;
 }
 svg.print_two .svg-label-text {
-  font-size: 8pt;
+  font-size: 8px;
 }
 .chartbuilder-editor {
   margin-left: 740px;
