@@ -12,6 +12,7 @@ function calculate_xy_dimensions(width, opts) {
 	var height;
 	var aspectRatio = opts.displayConfig.aspectRatio;
 	var metadata = opts.model.metadata;
+	var sizeClass = chartSizes[metadata.size].sizeClass;
 
 	if (opts.enableResponsive) {
 		// use current width
@@ -40,10 +41,10 @@ function calculate_xy_dimensions(width, opts) {
 		default:
 			height = width * aspectRatio.wide;
 	}
-
 	return {
 		width: width,
-		height: height + opts.extraHeight
+		height: height + opts.extraHeight,
+		sizeClass: sizeClass
 	};
 }
 

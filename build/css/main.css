@@ -1943,6 +1943,9 @@ svg.renderer-svg tspan {
 .cb-credit-logo {
   fill: #666;
 }
+svg.print_two .svg-label-text {
+  font-size: 8pt;
+}
 .chartbuilder-editor {
   margin-left: 740px;
   margin-bottom: 30px;

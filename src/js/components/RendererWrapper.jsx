@@ -296,7 +296,7 @@ var RendererWrapper = React.createClass({
 			<div className={["renderer-wrapper", this.state.svgSizeClass, this.props.className].join(" ")}>
 				<svg
 					key={chartType}
-					className="renderer-svg"
+					className={["renderer-svg", dimensions.sizeClass].join(" ")}
 					width={dimensions.width}
 					height={dimensions.height}
 				>
