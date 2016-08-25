@@ -315,7 +315,7 @@ function drawXYChartGrid(el, state) {
 	.left(function(y) {
 		y.key("value")
 			.domain(chartProps.scale.primaryScale.domain)
-			.range([this.height - this.padding.bottom, this.padding.top + displayConfig.afterTitle]);
+			.range([this.height - this.padding.bottom, this.padding.top + displayConfig.afterLegend]);
 	})
 	.chartAreaOnTop(false)
 	.mixout("rightAxis")
