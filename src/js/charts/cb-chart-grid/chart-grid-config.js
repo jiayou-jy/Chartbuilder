@@ -45,9 +45,9 @@ var display = {
 	},
 	padding: {
 		top: "0.5em",
-		right: 0,
-		bottom: "0.5em",
-		left: 0
+		right: "0.25em",
+		bottom: "1em",
+		left: "0.25em"
 	}
 };
 /**
