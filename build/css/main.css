@@ -1770,6 +1770,7 @@ svg.renderer-svg tspan {
 }
 .d4 .concealer-label text {
   fill: #333;
+  font-size: 14px;
 }
 .d4 .concealer-label rect {
   fill: #fff;
