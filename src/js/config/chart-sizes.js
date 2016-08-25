@@ -10,11 +10,11 @@ var chart_sizes = {
 		height: 425
 	},
 	printTwo: {
-		width: 500,
+		width: 460,
 		height: 300
 	},
 	onlineVertical: {
-		width: 320,
+		width: 300,
 		height: 390
 	},
 	onlineHalf: {
