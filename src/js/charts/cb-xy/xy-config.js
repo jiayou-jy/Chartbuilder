@@ -44,8 +44,8 @@ var display = {
 	bottomPaddingWithoutFooter: "3em",
 	aspectRatio: {
 		wide: (9 / 16),
-		longSpot: (4 / 3),
-		smallSpot: (3 / 4)
+		vertical: (4 / 3),
+		horizontal: (3 / 4)
 	},
 	margin: {
 		top: "0.85em",

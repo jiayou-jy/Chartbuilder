@@ -1635,7 +1635,7 @@ canvas {
   overflow: hidden;
 }
 .chartbuilder-renderer {
-  width: 640px;
+  width: 700px;
   left: 10px;
   top: 2.7em;
   overflow-y: scroll;
@@ -1645,7 +1645,7 @@ canvas {
   margin-top: 20px;
 }
 .chartbuilder-renderer .desktop {
-  width: 640px;
+  width: 700px;
   position: relative;
 }
 .chartbuilder-renderer .desktop .renderer-wrapper {
@@ -1943,7 +1943,7 @@ svg.renderer-svg tspan {
   fill: #666;
 }
 .chartbuilder-editor {
-  margin-left: 680px;
+  margin-left: 740px;
   margin-bottom: 30px;
   display: inline-block;
   width: 40%;

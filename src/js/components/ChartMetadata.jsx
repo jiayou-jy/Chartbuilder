@@ -18,24 +18,24 @@ var TextInput = chartbuilderUI.TextInput;
 // Give chart sizes friendly names
 var chart_sizes = [
 	{
-		title: "Auto",
-		content: "Auto",
+		title: "Online Full-column",
+		content: "Online Full-column",
 		value: "auto"
 	},
 	{
-		title: "Medium",
-		content: "Medium",
-		value: "medium"
+		title: "Print Two-column",
+		content: "Print Two-column",
+		value: "printTwo"
 	},
 	{
-		title: "Long spot chart",
-		content: "Long spot chart",
-		value: "spotLong"
+		title: "Online Half-column",
+		content: "Online Half-column",
+		value: "onlineHalf"
 	},
 	{
-		title: "Small spot chart",
-		content: "Small spot chart",
-		value: "spotSmall"
+		title: "Online Half-column Vertical",
+		content: "Online Half-column Vertical",
+		value: "onlineVertical"
 	}
 ];
 

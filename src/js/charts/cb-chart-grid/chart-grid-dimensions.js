@@ -12,7 +12,7 @@ function chartGridDimensions(width, opts) {
 	var metadata = model.metadata;
 	var grid = model.chartProps._grid;
 
-	if (metadata.size == "auto" || opts.enableResponsive) {
+	if (opts.enableResponsive) {
 		// use current width
 	} else {
 		width = chartSizes[metadata.size].width;

@@ -13,10 +13,11 @@ function calculate_xy_dimensions(width, opts) {
 	var aspectRatio = opts.displayConfig.aspectRatio;
 	var metadata = opts.model.metadata;
 
-	if (metadata.size == "auto" || opts.enableResponsive) {
+	if (opts.enableResponsive) {
 		// use current width
 	} else {
 		width = chartSizes[metadata.size].width;
+
 	}
 
 	switch (metadata.size) {
@@ -24,16 +25,16 @@ function calculate_xy_dimensions(width, opts) {
 			height = width * aspectRatio.wide;
 			break;
 
-		case 'medium':
+		case "printTwo":
 			height = width * aspectRatio.wide;
 			break;
 
-		case "spotLong":
-			height = width * aspectRatio.longSpot;
+		case "onlineVertical":
+			height = width * aspectRatio.vertical;
 			break;
 
-		case "spotSmall":
-			height = width * aspectRatio.smallSpot;
+		case "onlineHalf":
+			height = width * aspectRatio.horizontal;
 			break;
 
 		default:

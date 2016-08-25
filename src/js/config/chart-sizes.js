@@ -5,16 +5,20 @@
  * @static
  */
 var chart_sizes = {
-	medium: {
-		width: 640,
-		height: 390
+	auto: {
+		width: 699,
+		height: 425
 	},
-	spotLong: {
+	printTwo: {
+		width: 500,
+		height: 300
+	},
+	onlineVertical: {
 		width: 320,
 		height: 390
 	},
-	spotSmall: {
-		width: 320,
+	onlineHalf: {
+		width: 300,
 		height: 250
 	}
 };
