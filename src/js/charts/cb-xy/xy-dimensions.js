@@ -35,7 +35,7 @@ function calculate_xy_dimensions(width, opts) {
 			break;
 
 		case "onlineHalf":
-			height = width * aspectRatio.horizontal;
+			height = width * aspectRatio.square;
 			break;
 
 		default:

@@ -22,7 +22,7 @@ var chart_sizes = {
 	},
 	onlineHalf: {
 		width: 300,
-		height: 250,
+		height: 400,
 		sizeClass: "online_half"
 	}
 };
