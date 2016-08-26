@@ -1926,6 +1926,9 @@ svg.online_full .d4 .margins .other-line path {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+svg.online_full .d4 .concealer-label text {
+  font-size: 12px;
+}
 svg.online_full .svg-text {
   font-size: 12px;
 }
@@ -1966,6 +1969,10 @@ svg.online_half .d4 .axis line.no-label-tick,
 svg.online_vertical .d4 .axis line.no-label-tick {
   stroke-width: 1px;
 }
+svg.online_half .d4 .margins .label,
+svg.online_vertical .d4 .margins .label {
+  font-size: 16px;
+}
 svg.online_half .d4 .margins .line path,
 svg.online_vertical .d4 .margins .line path,
 svg.online_half .d4 .margins .other-line path,
@@ -1974,6 +1981,10 @@ svg.online_vertical .d4 .margins .other-line path {
   stroke-width: 2px;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+svg.online_half .d4 .concealer-label text,
+svg.online_vertical .d4 .concealer-label text {
+  font-size: 12px;
 }
 svg.online_half .svg-text,
 svg.online_vertical .svg-text {
