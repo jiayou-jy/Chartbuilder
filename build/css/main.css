@@ -1722,8 +1722,9 @@ svg.renderer-svg tspan {
 }
 .d4 .axis .title {
   font-family: 'Benton Sans Condensed', sans-serif;
-  fill: #333;
-  font-size: 16px;
+  fill: #000;
+  font-size: 8px;
+  font-weight: bold;
 }
 .d4 .axis .tick {
   font-family: 'Benton Sans Condensed', sans-serif;
@@ -1732,29 +1733,29 @@ svg.renderer-svg tspan {
   text-anchor: middle;
 }
 .d4 .axis .tick text {
-  fill: #333;
+  fill: #000;
   shape-rendering: crispEdges;
   text-anchor: middle;
-  font-size: 14px;
+  font-size: 8px;
 }
 .d4 .axis .tick:first-child text {
   text-anchor: middle;
 }
 .d4 .axis .tick line {
   fill: none;
-  stroke: #555;
-  stroke-width: 1px;
+  stroke: #808285;
+  stroke-width: 0.5px;
   shape-rendering: crispEdges;
 }
 .d4 .axis .tick.zero line {
-  stroke: #000;
+  stroke: none;
 }
 .d4 .axis .tick rect {
   fill: #fff;
   shape-rendering: crispEdges;
 }
-.d4 .axis.leftAxis text {
-  text-anchor: middle;
+.d4 .axis.xAxis text {
+  font-weight: bold;
 }
 .d4 .axis.rightAxis text {
   text-anchor: end;
@@ -1769,24 +1770,23 @@ svg.renderer-svg tspan {
   font-family: 'Benton Sans Condensed', sans-serif;
 }
 .d4 .concealer-label text {
-  fill: #333;
-  font-size: 14px;
+  fill: #000;
+  font-size: 8px;
 }
 .d4 .concealer-label rect {
   fill: #fff;
 }
 .d4 .connectors line {
   fill: none;
-  stroke-width: 1px;
+  stroke-width: 0.4px;
 }
 .d4 line.zero {
-  stroke: #000;
-  shape-rendering: crispEdges;
+  stroke: none;
 }
 .d4 .margins .line path,
 .d4 .margins .other-line path {
   fill: none;
-  stroke-width: 1px;
+  stroke-width: 2px;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -1794,12 +1794,12 @@ svg.renderer-svg tspan {
   font-family: 'Benton Sans Condensed', sans-serif;
 }
 .d4 .column-label {
-  fill: #333;
+  fill: #000;
 }
 .d4 line.no-label-tick {
   fill: none;
-  stroke: #555;
-  stroke-width: 1px;
+  stroke: #808285;
+  stroke-width: 0.4px;
   shape-rendering: crispEdges;
 }
 .svg-text {
@@ -1811,20 +1811,22 @@ svg.renderer-svg tspan {
 }
 .svg-text tspan.strong {
   font-family: 'Benton Sans Condensed', sans-serif;
+  font-weight: bold;
 }
 .svg-text tspan.strong .em,
 .svg-text tspan.em .strong {
   font-family: 'Benton Sans Condensed', sans-serif;
+  font-weight: bold;
   font-style: italic;
 }
 .svg-text.svg-text-credit {
-  font-size: 4.8px;
+  font-size: 8px;
   fill: #666;
   text-anchor: start;
   text-transform: uppercase;
 }
 .svg-text.svg-text-source {
-  font-size: 4.8px;
+  font-size: 8px;
   fill: #666;
   text-transform: uppercase;
 }
@@ -1835,14 +1837,15 @@ svg.renderer-svg tspan {
   text-anchor: end;
 }
 .svg-text.svg-text-sub {
-  fill: #333;
+  fill: #000;
   font-family: 'Benton Sans Condensed', sans-serif;
-  font-size: 8px;
+  font-size: 10px;
 }
 .svg-text.svg-text-title {
   fill: #000;
   font-family: 'Benton Sans Condensed', sans-serif;
-  font-size: 8px;
+  font-weight: bold;
+  font-size: 12px;
 }
 .svg-source-pipe {
   stroke: #666;
@@ -1850,7 +1853,7 @@ svg.renderer-svg tspan {
   stroke-width: 0.8px;
 }
 .svg-label-text {
-  font-size: 8px;
+  font-size: 10px;
   font-family: 'Benton Sans Condensed', sans-serif;
   font-weight: bold;
   cursor: move;
@@ -1863,95 +1866,71 @@ svg.renderer-svg tspan {
 .hidden-svg {
   visibility: hidden;
 }
-.medium .em-size {
+svg.print_two .svg-label-text {
+  font-size: 10px;
+}
+svg.print_two .d4 .axis .tick line {
+  fill: none;
+  stroke: #808285;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+svg.print_two .d4 .axis line.no-label-tick {
+  stroke-width: 1px;
+}
+svg.print_two .svg-text {
   font-size: 8px;
 }
-.medium .d4 {
+svg.print_two .svg-text.svg-text-credit {
   font-size: 8px;
 }
-.medium .d4 .margins .line path,
-.medium .d4 .margins .other-line path {
+svg.print_two .svg-text.svg-text-source {
+  font-size: 8px;
+}
+svg.print_two .svg-text.svg-text-title {
+  font-size: 12px;
+  font-weight: bold;
+}
+svg.print_two .svg-text.svg-text-sub {
+  font-size: 10px;
+}
+svg.online_full .svg-label-text {
+  font-size: 16px;
+}
+svg.online_full .d4 .axis .tick text {
+  font-size: 12px;
+}
+svg.online_full .d4 .axis .tick line {
+  fill: none;
+  stroke: #808285;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+svg.online_full .d4 .axis line.no-label-tick {
+  stroke-width: 1px;
+}
+svg.online_full .d4 .margins .line path,
+svg.online_full .d4 .margins .other-line path {
+  fill: none;
   stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
-.medium .svg-text {
-  font-size: 8px;
+svg.online_full .svg-text {
+  font-size: 12px;
 }
-.medium .svg-text.svg-text-credit {
-  font-size: 4.8px;
+svg.online_full .svg-text.svg-text-credit {
+  font-size: 10px;
 }
-.medium .svg-text.svg-text-source {
-  font-size: 4.8px;
+svg.online_full .svg-text.svg-text-source {
+  font-size: 10px;
 }
-.medium .svg-text.svg-text-title {
+svg.online_full .svg-text.svg-text-title {
   font-size: 24px;
   font-weight: bold;
 }
-.small .em-size {
-  font-size: 14px;
-}
-.small .d4 {
-  font-size: 14px;
-}
-.small .d4 .margins .line path,
-.small .d4 .margins .other-line path {
-  stroke-width: 2px;
-}
-.small .svg-text {
-  font-size: 14px;
-}
-.small .svg-text.svg-text-credit {
-  font-size: 4px;
-}
-.small .svg-text.svg-text-source {
-  font-size: 4px;
-}
-.small .svg-text.svg-text-pipe text {
-  dominant-baseline: central;
-  font-size: 4.8px;
-}
-.small .svg-text.svg-text-title {
-  font-size: 14px;
-}
-.small .svg-label-text {
-  font-size: 14px;
-}
-.large .em-size {
-  font-size: 8px;
-}
-.large .d4 {
-  font-size: 8px;
-}
-.large .d4 .margins .line path,
-.large .d4 .margins .other-line path {
-  stroke-width: 4px;
-}
-.large .svg-text {
-  font-size: 8px;
-}
-.large .svg-text.svg-text-credit {
-  font-size: 4.8px;
-}
-.large .svg-text.svg-text-source {
-  font-size: 4.8px;
-}
-.large .svg-text.svg-text-title {
-  font-size: 8px;
-}
-.large .svg-label-text {
-  font-size: 8px;
-}
-.cb-credit-logo {
-  fill: #666;
-}
-svg.print_two .svg-label-text {
-  font-size: 8px;
-}
-svg.print_two .d4 {
-  font-size: 8px;
-}
-svg.print_two .d4 .margins .line path,
-svg.print_two .d4 .margins .other-line path {
-  stroke-width: 1px;
+svg.online_full .svg-text.svg-text-sub {
+  font-size: 16px;
 }
 .chartbuilder-editor {
   margin-left: 740px;

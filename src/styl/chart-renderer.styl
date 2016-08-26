@@ -1,8 +1,8 @@
 //default settings: what svg export will grab
 
 $em_size = 8px
-$em_size_small = 14px
-$em_size_medium = 16px
+$em_size_online_half = 12px
+$em_size_online = 10px
 $em_size_large = 24px
 
 div.renderer-wrapper
@@ -40,7 +40,8 @@ svg
     .title
       font-family $font-sans
       fill $color-chart-axis-text
-      font-size $em_size_medium
+      font-size $em_size
+      font-weight bold
       
     .tick
       font-family $font-sans
@@ -51,25 +52,25 @@ svg
         fill $color-chart-axis-text
         shape-rendering crispEdges
         text-anchor middle
-        font-size $em_size_small
+        font-size $em_size
       &:first-child
         text
           text-anchor middle
       line
         fill none
         stroke $color-chart-gridline
-        stroke-width 1px
+        stroke-width 0.5px
         shape-rendering crispEdges
       &.zero
         line
-          stroke $color-chart-zeroline
+          stroke none
       rect
         fill $color-bg
         shape-rendering crispEdges
 
-    &.leftAxis
+    &.xAxis
       text
-        text-anchor middle
+        font-weight bold
 
     &.rightAxis
       text
@@ -86,23 +87,22 @@ svg
     font-family $font-sans
     text
       fill $color-chart-axis-text
-      font-size $em_size_small
+      font-size $em_size
     rect
       fill $color-bg
 
   .connectors line
     fill none
-    stroke-width 1px
+    stroke-width 0.4px
 
   line.zero
-    stroke $color-chart-zeroline
-    shape-rendering crispEdges
+    stroke none
 
   .margins
     .line, .other-line
       path
         fill none
-        stroke-width 1px
+        stroke-width 2px
         stroke-linecap round
         stroke-linejoin round
     .label
@@ -114,7 +114,7 @@ svg
   line.no-label-tick
     fill none
     stroke $color-chart-gridline
-    stroke-width 1px
+    stroke-width 0.4px
     shape-rendering crispEdges
 
 .svg-text
@@ -126,19 +126,21 @@ svg
       font-style italic
       
     &.strong
-      font-family $font-sans-bold
+      font-family $font-sans
+      font-weight bold
       
     &.strong .em, &.em .strong
-      font-family $font-sans-bold
+      font-family $font-sans
+      font-weight bold
       font-style italic
 
   &.svg-text-credit // Customize credit text
-    font-size $em_size*0.6
+    font-size $em_size
     fill $color-chart-meta
     text-anchor start
     text-transform uppercase
   &.svg-text-source // Customize source text
-    font-size $em_size*0.6
+    font-size $em_size
     fill $color-chart-meta
     text-transform uppercase
     //text
@@ -150,11 +152,12 @@ svg
   &.svg-text-sub // Customize sub text
     fill $color-chart-axis-text
     font-family $font-sans
-    font-size $em_size
+    font-size $em_size*1.25
   &.svg-text-title // Customize title text
     fill $color-body-text
-    font-family $font-sans-bold
-    font-size $em_size
+    font-family $font-sans
+    font-weight bold
+    font-size $em_size*1.5
 
 .svg-source-pipe
   stroke $color-chart-meta
@@ -162,7 +165,7 @@ svg
   stroke-width 0.8px
 
 .svg-label-text
-  font-size $em_size
+  font-size $em_size*1.25
   font-family $font-sans
   font-weight bold
   cursor move
@@ -176,92 +179,63 @@ svg
 .hidden-svg
   visibility hidden
 
-// Size specific customizations
-
-.medium
-  .em-size
-    font-size $em_size
-  .d4
-    font-size $em_size
-
-    .margins
-      .line, .other-line
-        path
-          stroke-width 3px
-
-  .svg-text
-    font-size $em_size
-    &.svg-text-credit
-      font-size $em_size*0.6
-    &.svg-text-source
-      font-size $em_size*0.6
-    &.svg-text-title
-      font-size $em_size_large
-      font-weight bold
-
-.small
-  .em-size
-    font-size $em_size_small
-  .d4
-    font-size $em_size_small
-
-    .margins
-      .line, .other-line
-        path
-          stroke-width 2px
-
-  .svg-text
-    font-size $em_size_small
-    &.svg-text-credit
-      font-size $em_size*0.5
-    &.svg-text-source
-      font-size $em_size*0.5
-    &.svg-text-pipe
-      text
-        dominant-baseline central
-        font-size $em_size*0.6
-    &.svg-text-title
-      font-size $em_size_small
-
-  .svg-label-text
-    font-size $em_size_small
-
-
-.large
-  .em-size
-    font-size $em_size
-  .d4
-    font-size $em_size
-    .margins
-      .line, .other-line
-        path
-          stroke-width 4px
-
-  .svg-text
-    font-size $em_size
-    &.svg-text-credit
-      font-size $em_size*0.6
-    &.svg-text-source
-      font-size $em_size*0.6
-    &.svg-text-title
-      font-size $em_size
-
-  .svg-label-text
-    font-size $em_size
-
-.cb-credit-logo
-  fill $color-chart-meta
-
-
 // Size specific customizations for static charts for png export
 
 svg
   &.print_two
     .svg-label-text
-      font-size 8px
+      font-size $em_size*1.25
     .d4
+      .axis
+        .tick   
+          line
+            fill none
+            stroke $color-chart-gridline
+            stroke-width 1px
+            shape-rendering crispEdges
+        line.no-label-tick
+          stroke-width 1px
+    .svg-text
       font-size $em_size
+      &.svg-text-credit
+        font-size $em_size
+      &.svg-text-source
+        font-size $em_size
+      &.svg-text-title
+        font-size $em_size*1.5
+        font-weight bold
+      &.svg-text-sub
+        font-size $em_size*1.25
+  &.online_full
+    .svg-label-text
+      font-size $em_size_online*1.6s
+    .d4
+      .axis
+        .tick
+          text
+            font-size $em_size_online*1.2   
+          line
+            fill none
+            stroke $color-chart-gridline
+            stroke-width 1px
+            shape-rendering crispEdges
+        line.no-label-tick
+          stroke-width 1px
       .margins
         .line, .other-line
           path
-            stroke-width 1px
+            fill none
+            stroke-width 3px
+            stroke-linecap round
+            stroke-linejoin round
+    .svg-text
+      font-size $em_size_online*1.2
+      &.svg-text-credit
+        font-size $em_size_online
+      &.svg-text-source
+        font-size $em_size_online
+      &.svg-text-title
+        font-size $em_size_online*2.4
+        font-weight bold
+      &.svg-text-sub
+        font-size $em_size_online*1.6
