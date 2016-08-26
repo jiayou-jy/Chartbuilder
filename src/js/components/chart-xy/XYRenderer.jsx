@@ -822,8 +822,6 @@ function yAxisUsing(location, axis, el, state) {
 	axis.afterRender(function(feature,data,chartArea,selection) {
 		this.container.select(".axis." + scaleId).selectAll(".tick text")
 			.attr("data-color-index", scale.colorIndex);
-
-		//xy_render_options.axis.afterRender.call(this,feature,data,chartArea,selection,isPrimary);
 	});
 
 	var innerTickSize;
