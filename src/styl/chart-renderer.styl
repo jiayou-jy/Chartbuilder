@@ -42,6 +42,7 @@ svg
       fill $color-chart-axis-text
       font-size $em_size
       font-weight bold
+      text-anchor middle
       
     .tick
       font-family $font-sans
@@ -107,6 +108,8 @@ svg
         stroke-linejoin round
     .label
       font-family $font-sans
+      font-size $em_size*1.25
+      font-weight bold
 
   .column-label
     fill $color-chart-axis-text
@@ -211,6 +214,47 @@ svg
       font-size $em_size_online*1.6s
     .d4
       .axis
+        .title
+          font-size $em_size_online*1.6
+          font-weight normal
+        .tick
+          text
+            font-size $em_size_online*1.2   
+          line
+            fill none
+            stroke $color-chart-gridline
+            stroke-width 1px
+            shape-rendering crispEdges
+        line.no-label-tick
+          stroke-width 1px
+      .margins
+        .label
+          font-size $em_size_online*1.6
+        .line, .other-line
+          path
+            fill none
+            stroke-width 3px
+            stroke-linecap round
+            stroke-linejoin round
+    .svg-text
+      font-size $em_size_online*1.2
+      &.svg-text-credit
+        font-size $em_size_online
+      &.svg-text-source
+        font-size $em_size_online
+      &.svg-text-title
+        font-size $em_size_online*2.4
+        font-weight bold
+      &.svg-text-sub
+        font-size $em_size_online*1.6
+  &.online_half, &.online_vertical
+    .svg-label-text
+      font-size $em_size_online*1.6s
+    .d4
+      .axis
+        .title
+          font-size $em_size_online*1.6
+          font-weight normal
         .tick
           text
             font-size $em_size_online*1.2   
@@ -225,7 +269,7 @@ svg
         .line, .other-line
           path
             fill none
-            stroke-width 3px
+            stroke-width 2px
             stroke-linecap round
             stroke-linejoin round
     .svg-text
