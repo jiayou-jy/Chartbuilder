@@ -27,7 +27,7 @@ function calculate_xy_dimensions(width, opts) {
 			break;
 
 		case "printTwo":
-			height = width * aspectRatio.wide;
+			height = width * aspectRatio.horizontal;
 			break;
 
 		case "onlineVertical":
