@@ -423,8 +423,7 @@ var SvgRectLabel = React.createClass({
 		var textOffsetX = null;
 		var textOffsetY = null;
 		var dy = "0.35em";
-
-		if (!this.props.settings.dragged) {
+		
 			rect = <rect
 				className={["svg-label-rect", colorClass].join(" ")}
 				width={this.props.labelConfig.rectSize}
@@ -433,11 +432,6 @@ var SvgRectLabel = React.createClass({
 			/>
 			textOffsetX = this.props.labelConfig.rectSize + this.props.labelConfig.textMargin;
 			textOffsetY = 0;
-		} else {
-			textXOffset = 0;
-			textOffsetY = 0;
-			dy = 0
-		}
 
 		var ch_size = 9
 		var crosshair = null
