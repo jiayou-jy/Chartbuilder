@@ -137,7 +137,7 @@ var DataInput = React.createClass({
 			<div className={this.props.className}
 				onDragOver={this._toggleDropState}
 			>
-				<label>if you have a json file to load, drop that here</label>
+				<label>Clean and rank your data in excel, then paste it in the text box below. The first column must be categories or dates.</label>
 				<TextArea
 					value={this.props.chartProps.input.raw}
 					onChange={this._handleReparseUpdate.bind(null, "input")}

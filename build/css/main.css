@@ -2067,6 +2067,9 @@ svg.online_vertical .svg-text.svg-text-sub {
   font-size: 2em;
   margin-top: 2em;
 }
+.chartbuilder-editor .data-input label {
+  font-size: 1.3em;
+}
 .chartbuilder-editor .data-input.dropping input[type="file"] {
   pointer-events: all;
   z-index: 1;
