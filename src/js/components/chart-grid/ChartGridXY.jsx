@@ -267,13 +267,13 @@ function drawXYChartGrid(el, state) {
 		.using("leftAxis", function(axis){
 			yAxisUsing.call(this, "primary", axis, state);
 		})
-		.outerWidth(state.dimensions.width + chartProps.extraPadding.left);
+		.outerWidth(state.dimensions.width + chartProps.extraPadding.left + chartProps.extraPadding.right);
 		// set tick width to left padding for first row
 		extraPadding.left = chartProps.extraPadding.left;
 		chart.extraPadding(extraPadding);
 	} else {
 		chart
-		.outerWidth(state.dimensions.width)
+		.outerWidth(state.dimensions.width + chartProps.extraPadding.right)
 		.using("series-label",function(lab){
 			lab.x(function() {
 				return 0;
@@ -293,7 +293,7 @@ function drawXYChartGrid(el, state) {
 				return "";
 			});
 		})
-		chart.outerWidth(state.dimensions.width);
+		chart.outerWidth(state.dimensions.width + chartProps.extraPadding.right);
 		chart.extraPadding(extraPadding);
 	}
 
