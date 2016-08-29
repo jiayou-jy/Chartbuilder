@@ -1858,7 +1858,6 @@ svg.renderer-svg tspan {
   font-size: 10px;
   font-family: 'Benton Sans Condensed', sans-serif;
   font-weight: bold;
-  cursor: move;
 }
 .crosshair line {
   stroke-width: 1;
