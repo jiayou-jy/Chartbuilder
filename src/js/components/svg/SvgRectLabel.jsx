@@ -462,8 +462,6 @@ var SvgRectLabel = React.createClass({
 					x={textOffsetX}
 					y={textOffsetY}
 					dy={dy}
-					draggable={this.props.editable}
-					onMouseDown={this._onMouseDown}
 				>
 					{this.props.text}
 				</text>
