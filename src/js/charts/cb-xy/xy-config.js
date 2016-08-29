@@ -58,7 +58,7 @@ var display = {
 		top: 0,
 		right: 0,
 		bottom: "3.5em",
-		left: "1em"
+		left: "1.25em"
 	}
 };
 
