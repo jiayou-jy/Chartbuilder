@@ -46,7 +46,8 @@ var dateParsers = {
 	},
 
 	"mmyy": function(d) {
-		return d.format('{M}/' + dateParsers.yyyy(d).slice(-2));
+		//return d.format('{M}/' + dateParsers.yyyy(d).slice(-2));
+		return d.format('{M}/{yy}');
 	},
 
 	"yy": function(d) {
@@ -59,19 +60,23 @@ var dateParsers = {
 
 	"MM": function(d) {
 		var month = d.getMonth() + 1;
-		if (month == 1) {
-			return "" + d.getFullYear();
-		} else {
-			return d.format('{Month}');
-		}
+		return d.format('{Month}');
+		// if (month == 1) {
+		// 	return "" + d.getFullYear();
+		// } else {
+		// 	return d.format('{Month}');
+		// }
 	},
 
 	"M": function(d) {
 		var month = d.getMonth() + 1;
-		if (month == 1) {
-			return "’" + dateParsers.yyyy(d).slice(-2);
-		} else if (month == 5) {
-			return d.format('{Mon}');
+		// if (month == 1) {
+		// 	return "’" + dateParsers.yyyy(d).slice(-2);
+		// } else 
+		if (month == 9) {
+			return d.format('{Month}').slice(0, 4) + ".";
+		} else if (month == 3 || month == 4 || month == 5 || month == 6 || month == 7) {
+			return d.format('{Month}');
 		} else {
 			return d.format('{Mon}.');
 		}
@@ -284,22 +289,27 @@ function autoDateFormatAndFrequency(minDate, maxDate, dateFormat, availableWidth
 			break;
 
 		case "MM":
+			maxDate = d3.time.day.offset(maxDate, 1);
 			interval = d3.time.month.range(minDate, maxDate, gapInMonths);
 			break;
 
 		case "M":
+			maxDate = d3.time.day.offset(maxDate, 1);
 			interval = d3.time.month.range(minDate, maxDate, gapInMonths);
 			break;
 
 		case "Mdd":
+			maxDate = d3.time.day.offset(maxDate, 1);
 			interval = d3.time.day.range(minDate, maxDate, gapInDays);
 			break;
 
 		case "M1d":
+			maxDate = d3.time.day.offset(maxDate, 1);
 			interval = d3.time.day.range(minDate, maxDate, gapInDays);
 			break;
 
 		case "YY":
+			maxDate = d3.time.day.offset(maxDate, 1);
 			interval = d3.time.year.range(minDate, maxDate, gapInYears);
 			break;
 
