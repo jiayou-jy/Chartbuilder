@@ -114,9 +114,9 @@ function parseXY(config, _chartProps, callback, parseOpts) {
 			currScale.tickValues = help.exactTicks(currScale.domain, ticks);
 			each(currScale.tickValues, function(v) {
 				var tickPrecision = help.precision(Math.round(v*factor)/factor);
-				if (tickPrecision > currScale.precision) {
-					currScale.precision = tickPrecision;
-				}
+				// if (tickPrecision > currScale.precision) {
+				// 	currScale.precision = tickPrecision;
+				// }
 			});
 
 			scale[name] = currScale;
