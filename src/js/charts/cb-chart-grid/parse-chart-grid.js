@@ -89,6 +89,8 @@ function parseChartgrid(config, _chartProps, callback, parseOpts) {
 	if (gridSettings.type != "bar") {
 		primaryScale.ticks = primaryScale.ticks || 5;
 		primaryScale.precision = primaryScale.precision || 0;
+	} else {
+		primaryScale.precision = primaryScale.precision || 0;
 	}
 
 	var newChartProps = assign(chartProps, {

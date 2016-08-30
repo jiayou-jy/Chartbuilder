@@ -33,7 +33,7 @@ var ChartGrid_xScaleSettings = React.createClass({
 		scale: PropTypes.shape({
 			primaryScale: PropTypes.shape({
 				domain: PropTypes.arrayOf(React.PropTypes.number),
-				precision: PropTypes.number,
+				precision: PropTypes.number.isRequired,
 				ticks: PropTypes.number,
 				prefix: PropTypes.string.isRequired,
 				suffix: PropTypes.string.isRequired
@@ -102,6 +102,17 @@ var ChartGrid_xScaleSettings = React.createClass({
 				onInput={this._handleDomainUpdate.bind(null, "max")}
 				value={domain[1]}
 				key="customMax"
+			/>,
+			<LabelledTangle
+				label="Precision"
+				labelClass="editor-label"
+				tangleClass="scale-option tangle-input"
+				onChange={this._handleScaleUpdate.bind(null, "precision")}
+				onInput={this._handleScaleUpdate.bind(null, "precision")}
+				min={0}
+				max={5}
+				value={currScale.precision}
+				key="customPrecision"
 			/>
 		];
 
