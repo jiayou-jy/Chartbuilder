@@ -154,14 +154,17 @@ var dateFrequencies = {
 	},
 	"1h": function(minDate, maxDate) {
 		var interval = d3.time.hour;
+		maxDate = d3.time.hour.offset(maxDate, 1);
 		return interval.range(minDate, maxDate, 1);
 	},
 	"2h": function(minDate, maxDate) {
 		var interval = d3.time.hour;
+		maxDate = d3.time.hour.offset(maxDate, 1);
 		return interval.range(minDate, maxDate, 2);
 	},
 	"3h": function(minDate, maxDate) {
 		var interval = d3.time.hour;
+		maxDate = d3.time.hour.offset(maxDate, 1);
 		return interval.range(minDate, maxDate, 3);
 	},
 	"4h": function(minDate, maxDate) {
@@ -170,26 +173,32 @@ var dateFrequencies = {
 	},
 	"6h": function(minDate, maxDate) {
 		var interval = d3.time.hour;
+		maxDate = d3.time.hour.offset(maxDate, 1);
 		return interval.range(minDate, maxDate, 6);
 	},
 	"1d": function(minDate, maxDate) {
 		var interval = d3.time.day;
+		maxDate = d3.time.day.offset(maxDate, 1);
 		return interval.range(minDate, maxDate, 1);
 	},
 	"1w": function(minDate, maxDate) {
 		var interval = d3.time.week;
+		maxDate = d3.time.week.offset(maxDate, 1);
 		return interval.range(minDate, maxDate, 1);
 	},
 	"1m": function(minDate, maxDate) {
 		var interval = d3.time.month;
+		maxDate = d3.time.month.offset(maxDate, 1);
 		return interval.range(minDate, maxDate, 1);
 	},
 	"3m": function(minDate, maxDate) {
 		var interval = d3.time.month;
+		maxDate = d3.time.month.offset(maxDate, 1);
 		return interval.range(minDate, maxDate, 3);
 	},
 	"6m": function(minDate, maxDate) {
 		var interval = d3.time.month;
+		maxDate = d3.time.month.offset(maxDate, 1);
 		return interval.range(minDate, maxDate, 6);
 	},
 	"1y": function(minDate, maxDate) {
@@ -301,32 +310,26 @@ function autoDateFormatAndFrequency(minDate, maxDate, dateFormat, availableWidth
 			break;
 
 		case "MM":
-			maxDate = d3.time.day.offset(maxDate, 1);
 			interval = d3.time.month.range(minDate, maxDate, gapInMonths);
 			break;
 
 		case "M":
-			maxDate = d3.time.day.offset(maxDate, 1);
 			interval = d3.time.month.range(minDate, maxDate, gapInMonths);
 			break;
 
 		case "Mdd":
-			maxDate = d3.time.day.offset(maxDate, 1);
 			interval = d3.time.day.range(minDate, maxDate, gapInDays);
 			break;
 
 		case "M1d":
-			maxDate = d3.time.day.offset(maxDate, 1);
 			interval = d3.time.day.range(minDate, maxDate, gapInDays);
 			break;
 
 		case "Myy":
-			maxDate = d3.time.day.offset(maxDate, 1);
 			interval = d3.time.month.range(minDate, maxDate, gapInMonths);
 			break;
 
 		case "YY":
-			maxDate = d3.time.day.offset(maxDate, 1);
 			interval = d3.time.year.range(minDate, maxDate, gapInYears);
 			break;
 
