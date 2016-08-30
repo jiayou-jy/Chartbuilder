@@ -72,7 +72,7 @@ var dateParsers = {
 
 	"MM": function(d) {
 		var month = d.getMonth() + 1;
-		return d.format('{Month}');
+		return d.format('{Month}').slice(0, 1);
 		// if (month == 1) {
 		// 	return "" + d.getFullYear();
 		// } else {
