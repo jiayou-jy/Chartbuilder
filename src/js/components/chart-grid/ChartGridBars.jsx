@@ -313,6 +313,10 @@ function drawBarChartGrid(el, state) {
 		.append("g")
 		.datum(chartProps.data)
 		.call(chart);
+
+	//give all bar charts' left axis a barAxis class for formatting
+	d3.selectAll(".leftAxis")
+		.attr("class", "y axis leftAxis barAxis");
 }
 
 function left_bar(_chart, state) {

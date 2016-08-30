@@ -68,6 +68,12 @@ svg
         fill $color-bg
         shape-rendering crispEdges
 
+    &.barAxis
+      text
+        font-weight bold
+      line
+        stroke none  
+
     &.xAxis
       text
         font-weight bold
@@ -197,6 +203,9 @@ svg
             shape-rendering crispEdges
         line.no-label-tick
           stroke-width 1px
+        &.barAxis
+          line
+            stroke none 
     .svg-text
       font-size $em_size
       &.svg-text-credit
@@ -226,6 +235,9 @@ svg
             shape-rendering crispEdges
         line.no-label-tick
           stroke-width 1px
+        &.barAxis
+          line
+            stroke none 
       .margins
         .label
           font-size $em_size_online*1.6
@@ -266,6 +278,9 @@ svg
             shape-rendering crispEdges
         line.no-label-tick
           stroke-width 1px
+        &.barAxis
+          line
+            stroke none 
       .margins
         .label
           font-size $em_size_online*1.6

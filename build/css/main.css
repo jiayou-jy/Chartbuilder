@@ -1754,6 +1754,12 @@ svg.renderer-svg tspan {
   fill: #fff;
   shape-rendering: crispEdges;
 }
+.d4 .axis.barAxis text {
+  font-weight: bold;
+}
+.d4 .axis.barAxis line {
+  stroke: none;
+}
 .d4 .axis.xAxis text {
   font-weight: bold;
 }
@@ -1879,6 +1885,9 @@ svg.print_two .d4 .axis .tick line {
 svg.print_two .d4 .axis line.no-label-tick {
   stroke-width: 1px;
 }
+svg.print_two .d4 .axis.barAxis line {
+  stroke: none;
+}
 svg.print_two .svg-text {
   font-size: 8px;
 }
@@ -1913,6 +1922,9 @@ svg.online_full .d4 .axis .tick line {
 }
 svg.online_full .d4 .axis line.no-label-tick {
   stroke-width: 1px;
+}
+svg.online_full .d4 .axis.barAxis line {
+  stroke: none;
 }
 svg.online_full .d4 .margins .label {
   font-size: 16px;
@@ -1966,6 +1978,10 @@ svg.online_vertical .d4 .axis .tick line {
 svg.online_half .d4 .axis line.no-label-tick,
 svg.online_vertical .d4 .axis line.no-label-tick {
   stroke-width: 1px;
+}
+svg.online_half .d4 .axis.barAxis line,
+svg.online_vertical .d4 .axis.barAxis line {
+  stroke: none;
 }
 svg.online_half .d4 .margins .label,
 svg.online_vertical .d4 .margins .label {
