@@ -9,7 +9,7 @@ require("sugar-date");
 var dateParsers = {
 
 	"lmdy": function(d) {
-		return d.format('{M}/{d}/{yy}');
+		return d.format('{M}/{d}/'+ dateParsers.yyyy(d).slice(-2));
 	},
 
 	"mmdd": function(d) {
@@ -18,7 +18,9 @@ var dateParsers = {
 
 	"Mdd": function(d) {
 		var month = d.getMonth() + 1;
-		if (month == 5) {
+		if (month == 9) {
+			return d.format('{Month}').slice(0, 4) + d.format('. {d}');
+		} else if (month == 3 || month == 4 || month == 5 || month == 6 || month == 7) {
 			return d.format('{Month} {d}');
 		} else {
 			return d.format('{Mon}. {d}');
@@ -36,6 +38,17 @@ var dateParsers = {
 		}
 	},
 
+	"Myy": function(d,i) {
+		var month = d.getMonth() + 1;
+		if (month == 9) {
+			return d.format('{Month}').slice(0, 4) + " '" + dateParsers.yyyy(d).slice(-2);
+		} else if (month == 3 || month == 4 || month == 5 || month == 6 || month == 7) {
+			return d.format("{Month} '" + dateParsers.yyyy(d).slice(-2));
+		} else {
+			return d.format("{Mon}. '" + dateParsers.yyyy(d).slice(-2));
+		}
+	},
+
 	"ddM": function(d) {
 		var month = d.getMonth() + 1;
 		if (month == 5) {
@@ -46,8 +59,7 @@ var dateParsers = {
 	},
 
 	"mmyy": function(d) {
-		//return d.format('{M}/' + dateParsers.yyyy(d).slice(-2));
-		return d.format('{M}/{yy}');
+		return d.format('{M}/' + dateParsers.yyyy(d).slice(-2));
 	},
 
 	"yy": function(d) {
@@ -306,6 +318,11 @@ function autoDateFormatAndFrequency(minDate, maxDate, dateFormat, availableWidth
 		case "M1d":
 			maxDate = d3.time.day.offset(maxDate, 1);
 			interval = d3.time.day.range(minDate, maxDate, gapInDays);
+			break;
+
+		case "Myy":
+			maxDate = d3.time.day.offset(maxDate, 1);
+			interval = d3.time.month.range(minDate, maxDate, gapInMonths);
 			break;
 
 		case "YY":

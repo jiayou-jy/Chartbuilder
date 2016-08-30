@@ -61,6 +61,7 @@ var DateScaleSettings = React.createClass({
 			{ value: "Mdd", content: dateParsers["Mdd"](now) },
 			{ value: "ddM", content: dateParsers["ddM"](now) },
 			{ value: "M1d", content: dateParsers["M1d"](now) + " (months only on the 1st)" },
+			{ value: "Myy", content: dateParsers["Myy"](now) },
 			{ value: "mmyy", content: dateParsers["mmyy"](now) },
 			{ value: "yy", content: dateParsers["yy"](now) },
 			{ value: "yyyy", content: dateParsers["yyyy"](now) },
