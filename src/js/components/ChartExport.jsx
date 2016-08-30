@@ -254,7 +254,7 @@ var ChartExport = React.createClass({
 
 	downloadPNG: function() {
 		filename = this._makeFilename("png");
-		saveSvgAsPng.saveSvgAsPng(this.state.chartNode, filename, { scale: 2.0 });
+		saveSvgAsPng.saveSvgAsPng(this.state.chartNode, filename, { scale: 1.0 });
 	},
 
 	downloadSVG: function() {
