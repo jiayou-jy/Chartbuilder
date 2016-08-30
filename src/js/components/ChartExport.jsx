@@ -31,7 +31,7 @@ var ChartExport = React.createClass({
 	getInitialState: function() {
 		return {
 			enableSvgExport: true,
-			enableJSONExport: true
+			enableJSONExport: false
 		};
 	},
 
