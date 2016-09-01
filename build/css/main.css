@@ -984,8 +984,8 @@ th {
   fill: #005e7f;
 }
 [data-color-index="0"] circle {
-  stroke: #005e7f;
-  stroke-width: 2px;
+  stroke: #fff;
+  stroke-width: 1px;
   fill: #005e7f;
 }
 .color-index-0 {
@@ -1027,8 +1027,8 @@ text[data-color-index="0"] {
   fill: #9ccde4;
 }
 [data-color-index="1"] circle {
-  stroke: #9ccde4;
-  stroke-width: 2px;
+  stroke: #fff;
+  stroke-width: 1px;
   fill: #9ccde4;
 }
 .color-index-1 {
@@ -1070,8 +1070,8 @@ text[data-color-index="1"] {
   fill: #9e0b0f;
 }
 [data-color-index="2"] circle {
-  stroke: #9e0b0f;
-  stroke-width: 2px;
+  stroke: #fff;
+  stroke-width: 1px;
   fill: #9e0b0f;
 }
 .color-index-2 {
@@ -1113,8 +1113,8 @@ text[data-color-index="2"] {
   fill: #df897c;
 }
 [data-color-index="3"] circle {
-  stroke: #df897c;
-  stroke-width: 2px;
+  stroke: #fff;
+  stroke-width: 1px;
   fill: #df897c;
 }
 .color-index-3 {
@@ -1156,8 +1156,8 @@ text[data-color-index="3"] {
   fill: #007c7c;
 }
 [data-color-index="4"] circle {
-  stroke: #007c7c;
-  stroke-width: 2px;
+  stroke: #fff;
+  stroke-width: 1px;
   fill: #007c7c;
 }
 .color-index-4 {
@@ -1199,8 +1199,8 @@ text[data-color-index="4"] {
   fill: #78cdd1;
 }
 [data-color-index="5"] circle {
-  stroke: #78cdd1;
-  stroke-width: 2px;
+  stroke: #fff;
+  stroke-width: 1px;
   fill: #78cdd1;
 }
 .color-index-5 {
@@ -1242,8 +1242,8 @@ text[data-color-index="5"] {
   fill: #dc661e;
 }
 [data-color-index="6"] circle {
-  stroke: #dc661e;
-  stroke-width: 2px;
+  stroke: #fff;
+  stroke-width: 1px;
   fill: #dc661e;
 }
 .color-index-6 {
@@ -1285,8 +1285,8 @@ text[data-color-index="6"] {
   fill: #fcbc7e;
 }
 [data-color-index="7"] circle {
-  stroke: #fcbc7e;
-  stroke-width: 2px;
+  stroke: #fff;
+  stroke-width: 1px;
   fill: #fcbc7e;
 }
 .color-index-7 {
@@ -1328,8 +1328,8 @@ text[data-color-index="7"] {
   fill: #000;
 }
 [data-color-index="8"] circle {
-  stroke: #000;
-  stroke-width: 2px;
+  stroke: #fff;
+  stroke-width: 1px;
   fill: #000;
 }
 .color-index-8 {
@@ -1371,8 +1371,8 @@ text[data-color-index="8"] {
   fill: #808285;
 }
 [data-color-index="9"] circle {
-  stroke: #808285;
-  stroke-width: 2px;
+  stroke: #fff;
+  stroke-width: 1px;
   fill: #808285;
 }
 .color-index-9 {
@@ -1414,8 +1414,8 @@ text[data-color-index="9"] {
   fill: #bcbec0;
 }
 [data-color-index="10"] circle {
-  stroke: #bcbec0;
-  stroke-width: 2px;
+  stroke: #fff;
+  stroke-width: 1px;
   fill: #bcbec0;
 }
 .color-index-10 {
@@ -1458,7 +1458,7 @@ text[data-color-index="10"] {
 }
 [data-color-index="11"] circle {
   stroke: #fff;
-  stroke-width: 2px;
+  stroke-width: 1px;
   fill: #fff;
 }
 .color-index-11 {

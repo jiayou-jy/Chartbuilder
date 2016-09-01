@@ -264,10 +264,12 @@ var using = {
 			})
 			.r(function() {
 				// TODO: remove this hardcoding
-				if (this.width > 600) {
-					return 3;
+				if (this.width < 600 && this.width > 300) {
+					return 2.7;
+				} else if (this.width > 600) {
+					return 4;
 				} else {
-					return 2;
+					return 3.5;
 				}
 			});
 
