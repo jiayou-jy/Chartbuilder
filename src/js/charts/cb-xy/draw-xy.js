@@ -43,6 +43,10 @@ var mixin = [
 		"feature": d4.features.circleSeries
 	},
 	{
+		"name": "stacked-labels",
+		"feature": d4.features.stackedLabels
+	},
+	{
 		"name": "rightAxis",
 		"feature": d4.features.yAxis
 	},
