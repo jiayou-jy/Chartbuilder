@@ -1736,7 +1736,7 @@ svg.renderer-svg tspan {
   fill: #000;
   shape-rendering: crispEdges;
   text-anchor: middle;
-  font-size: 8px;
+  font-size: 7.5px;
 }
 .d4 .axis .tick:first-child text {
   text-anchor: middle;
@@ -1756,12 +1756,14 @@ svg.renderer-svg tspan {
 }
 .d4 .axis.barAxis text {
   font-weight: bold;
+  font-size: 8px;
 }
 .d4 .axis.barAxis line {
   stroke: none;
 }
 .d4 .axis.xAxis text {
   font-weight: bold;
+  font-size: 8px;
 }
 .d4 .axis.rightAxis text {
   text-anchor: end;
@@ -1798,7 +1800,7 @@ svg.renderer-svg tspan {
 }
 .d4 .margins .label {
   font-family: 'Benton Sans Condensed', sans-serif;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: bold;
 }
 .d4 .column-label {
@@ -1828,13 +1830,13 @@ svg.renderer-svg tspan {
   font-style: italic;
 }
 .svg-text.svg-text-credit {
-  font-size: 8px;
+  font-size: 7.5px;
   fill: #666;
   text-anchor: start;
   text-transform: uppercase;
 }
 .svg-text.svg-text-source {
-  font-size: 8px;
+  font-size: 7.5px;
   fill: #666;
   text-transform: uppercase;
 }
@@ -1853,7 +1855,7 @@ svg.renderer-svg tspan {
   fill: #000;
   font-family: 'Benton Sans Condensed', sans-serif;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 10px;
 }
 .svg-source-pipe {
   stroke: #666;
@@ -1861,7 +1863,7 @@ svg.renderer-svg tspan {
   stroke-width: 0.8px;
 }
 .svg-label-text {
-  font-size: 10px;
+  font-size: 9px;
   font-family: 'Benton Sans Condensed', sans-serif;
   font-weight: bold;
 }

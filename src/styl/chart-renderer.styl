@@ -52,7 +52,7 @@ svg
         fill $color-chart-axis-text
         shape-rendering crispEdges
         text-anchor middle
-        font-size $em_size
+        font-size $em_size * 0.9375
       &:first-child
         text
           text-anchor middle
@@ -71,12 +71,14 @@ svg
     &.barAxis
       text
         font-weight bold
+        font-size $em_size
       line
         stroke none  
 
     &.xAxis
       text
         font-weight bold
+        font-size $em_size
 
     &.rightAxis
       text
@@ -113,7 +115,7 @@ svg
         stroke-linejoin round
     .label
       font-family $font-sans
-      font-size $em_size*1.25
+      font-size $em_size*1.125
       font-weight bold
 
   .column-label
@@ -143,12 +145,12 @@ svg
       font-style italic
 
   &.svg-text-credit // Customize credit text
-    font-size $em_size
+    font-size $em_size * 0.9375
     fill $color-chart-meta
     text-anchor start
     text-transform uppercase
   &.svg-text-source // Customize source text
-    font-size $em_size
+    font-size $em_size * 0.9375
     fill $color-chart-meta
     text-transform uppercase
     //text
@@ -165,7 +167,7 @@ svg
     fill $color-body-text
     font-family $font-sans
     font-weight bold
-    font-size $em_size*1.5
+    font-size $em_size*1.25
 
 .svg-source-pipe
   stroke $color-chart-meta
@@ -173,7 +175,7 @@ svg
   stroke-width 0.8px
 
 .svg-label-text
-  font-size $em_size*1.25
+  font-size $em_size*1.125
   font-family $font-sans
   font-weight bold
   // cursor move

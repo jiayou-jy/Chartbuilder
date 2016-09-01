@@ -300,7 +300,7 @@ var ChartExport = React.createClass({
 				key="png-export"
 				className="export-button"
 				onClick={this.downloadPNG}
-				text="Download Image"
+				text="Download for Web (png)"
 			/>
 		];
 		if (this.state.enableSvgExport) {
@@ -309,7 +309,7 @@ var ChartExport = React.createClass({
 					key="svg-export"
 					className="export-button"
 					onClick={this.downloadSVG}
-					text="Download SVG"
+					text="Download for Print (svg)"
 				/>
 			);
 		}
