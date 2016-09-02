@@ -129,6 +129,7 @@ function round_to_precision(num, precision, supress_thou_sep) {
 
 	if (!supress_thou_sep) {
 		s[0] = d3.format(",")(parseInt(s[0]));
+		//s[0] = d3.format("s")(parseInt(s[0]));
 	}
 
 	if (precision === 0) {
