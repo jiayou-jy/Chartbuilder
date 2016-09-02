@@ -333,6 +333,8 @@ var cb_xy = d4.chart("cb-xy", function() {
 					return d.type === "column";
 				}).length;
 
+
+
 				if (numColumns === data.length) {
 					this.container.selectAll(".xAxis .tick").attr("data-anchor", "middle");
 				}
@@ -350,9 +352,11 @@ var cb_xy = d4.chart("cb-xy", function() {
 						}
 					});
 				} else {
-					// NEED FIX: wraps long x-axis labels that are not dates - need to fix hard-coded textwrap width
-					this.container.selectAll(".xAxis .tick text").call(help.textwrap, 20);
+					//wraps long x-axis labels if they are not dates
+					var wrapLength = this.groups.rangeBand();
+					this.container.selectAll(".xAxis .tick text").call(help.textwrap, wrapLength);
 				}
+
 				var coords = help.transformCoords(axisNode.attr("transform"));
 				coords[1] = coords[1] + xy_config.xAxisShift;
 				axisNode.attr("transform","translate(" + coords + ")");
