@@ -353,6 +353,9 @@ var cb_xy = d4.chart("cb-xy", function() {
 							});
 						}
 					});
+				} else {
+					// NEED FIX: wraps long x-axis labels that are not dates - need to fix hard-coded textwrap width
+					this.container.selectAll(".xAxis .tick text").call(help.textwrap, 20);
 				}
 				var coords = help.transformCoords(axisNode.attr("transform"));
 				coords[1] = coords[1] + xy_config.xAxisShift;
