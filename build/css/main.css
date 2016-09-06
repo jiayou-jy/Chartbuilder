@@ -1000,6 +1000,9 @@ text[data-color-index="0"] {
 .d4 .axis .tick text[data-color-index="0"] {
   fill: #005e7f;
 }
+.d4 .axis .title text[data-color-index="0"] {
+  fill: #005e7f;
+}
 .cb-colorpicker-color-0 {
   background-color: #005e7f;
 }
@@ -1041,6 +1044,9 @@ text[data-color-index="1"] {
   fill: #9ccde4;
 }
 .d4 .axis .tick text[data-color-index="1"] {
+  fill: #9ccde4;
+}
+.d4 .axis .title text[data-color-index="1"] {
   fill: #9ccde4;
 }
 .cb-colorpicker-color-1 {
@@ -1086,6 +1092,9 @@ text[data-color-index="2"] {
 .d4 .axis .tick text[data-color-index="2"] {
   fill: #9e0b0f;
 }
+.d4 .axis .title text[data-color-index="2"] {
+  fill: #9e0b0f;
+}
 .cb-colorpicker-color-2 {
   background-color: #9e0b0f;
 }
@@ -1127,6 +1136,9 @@ text[data-color-index="3"] {
   fill: #df897c;
 }
 .d4 .axis .tick text[data-color-index="3"] {
+  fill: #df897c;
+}
+.d4 .axis .title text[data-color-index="3"] {
   fill: #df897c;
 }
 .cb-colorpicker-color-3 {
@@ -1172,6 +1184,9 @@ text[data-color-index="4"] {
 .d4 .axis .tick text[data-color-index="4"] {
   fill: #007c7c;
 }
+.d4 .axis .title text[data-color-index="4"] {
+  fill: #007c7c;
+}
 .cb-colorpicker-color-4 {
   background-color: #007c7c;
 }
@@ -1213,6 +1228,9 @@ text[data-color-index="5"] {
   fill: #78cdd1;
 }
 .d4 .axis .tick text[data-color-index="5"] {
+  fill: #78cdd1;
+}
+.d4 .axis .title text[data-color-index="5"] {
   fill: #78cdd1;
 }
 .cb-colorpicker-color-5 {
@@ -1258,6 +1276,9 @@ text[data-color-index="6"] {
 .d4 .axis .tick text[data-color-index="6"] {
   fill: #dc661e;
 }
+.d4 .axis .title text[data-color-index="6"] {
+  fill: #dc661e;
+}
 .cb-colorpicker-color-6 {
   background-color: #dc661e;
 }
@@ -1299,6 +1320,9 @@ text[data-color-index="7"] {
   fill: #fcbc7e;
 }
 .d4 .axis .tick text[data-color-index="7"] {
+  fill: #fcbc7e;
+}
+.d4 .axis .title text[data-color-index="7"] {
   fill: #fcbc7e;
 }
 .cb-colorpicker-color-7 {
@@ -1344,6 +1368,9 @@ text[data-color-index="8"] {
 .d4 .axis .tick text[data-color-index="8"] {
   fill: #000;
 }
+.d4 .axis .title text[data-color-index="8"] {
+  fill: #000;
+}
 .cb-colorpicker-color-8 {
   background-color: #000;
 }
@@ -1385,6 +1412,9 @@ text[data-color-index="9"] {
   fill: #808285;
 }
 .d4 .axis .tick text[data-color-index="9"] {
+  fill: #808285;
+}
+.d4 .axis .title text[data-color-index="9"] {
   fill: #808285;
 }
 .cb-colorpicker-color-9 {
@@ -1430,6 +1460,9 @@ text[data-color-index="10"] {
 .d4 .axis .tick text[data-color-index="10"] {
   fill: #bcbec0;
 }
+.d4 .axis .title text[data-color-index="10"] {
+  fill: #bcbec0;
+}
 .cb-colorpicker-color-10 {
   background-color: #bcbec0;
 }
@@ -1471,6 +1504,9 @@ text[data-color-index="11"] {
   fill: #fff;
 }
 .d4 .axis .tick text[data-color-index="11"] {
+  fill: #fff;
+}
+.d4 .axis .title text[data-color-index="11"] {
   fill: #fff;
 }
 .cb-colorpicker-color-11 {
