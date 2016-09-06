@@ -1940,14 +1940,14 @@ svg.print_two .svg-text.svg-text-sub {
   font-size: 10px;
 }
 svg.online_full .svg-label-text {
-  font-size: 16px;
+  font-size: 15px;
 }
 svg.online_full .d4 .axis .title {
-  font-size: 16px;
-  font-weight: normal;
+  font-size: 18px;
+  font-weight: bold;
 }
 svg.online_full .d4 .axis .tick text {
-  font-size: 12px;
+  font-size: 15px;
 }
 svg.online_full .d4 .axis .tick line {
   fill: none;
@@ -1972,10 +1972,10 @@ svg.online_full .d4 .margins .other-line path {
   stroke-linejoin: round;
 }
 svg.online_full .d4 .concealer-label text {
-  font-size: 12px;
+  font-size: 15px;
 }
 svg.online_full .svg-text {
-  font-size: 12px;
+  font-size: 15px;
 }
 svg.online_full .svg-text.svg-text-credit {
   font-size: 10px;
@@ -1984,24 +1984,24 @@ svg.online_full .svg-text.svg-text-source {
   font-size: 10px;
 }
 svg.online_full .svg-text.svg-text-title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
 }
 svg.online_full .svg-text.svg-text-sub {
-  font-size: 16px;
+  font-size: 18px;
 }
 svg.online_half .svg-label-text,
 svg.online_vertical .svg-label-text {
-  font-size: 16px;
+  font-size: 15px;
 }
 svg.online_half .d4 .axis .title,
 svg.online_vertical .d4 .axis .title {
-  font-size: 16px;
-  font-weight: normal;
+  font-size: 18px;
+  font-weight: bold;
 }
 svg.online_half .d4 .axis .tick text,
 svg.online_vertical .d4 .axis .tick text {
-  font-size: 12px;
+  font-size: 15px;
 }
 svg.online_half .d4 .axis .tick line,
 svg.online_vertical .d4 .axis .tick line {
@@ -2033,11 +2033,11 @@ svg.online_vertical .d4 .margins .other-line path {
 }
 svg.online_half .d4 .concealer-label text,
 svg.online_vertical .d4 .concealer-label text {
-  font-size: 12px;
+  font-size: 15px;
 }
 svg.online_half .svg-text,
 svg.online_vertical .svg-text {
-  font-size: 12px;
+  font-size: 15px;
 }
 svg.online_half .svg-text.svg-text-credit,
 svg.online_vertical .svg-text.svg-text-credit {
@@ -2049,12 +2049,12 @@ svg.online_vertical .svg-text.svg-text-source {
 }
 svg.online_half .svg-text.svg-text-title,
 svg.online_vertical .svg-text.svg-text-title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
 }
 svg.online_half .svg-text.svg-text-sub,
 svg.online_vertical .svg-text.svg-text-sub {
-  font-size: 16px;
+  font-size: 18px;
 }
 .chartbuilder-editor {
   margin-left: 740px;
