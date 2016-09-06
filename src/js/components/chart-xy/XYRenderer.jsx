@@ -791,6 +791,7 @@ function yAxisUsing(location, axis, el, state) {
 	var hasOtherAxis = chartProps._numSecondaryAxis > 0;
 	var scaleId = isPrimary ? "left" : "right";
 
+
 	if(!hasOtherAxis && !isPrimary) {
 		axis.render = function() {
 			this.container.selectAll(".right.axis").remove();
@@ -836,10 +837,12 @@ function yAxisUsing(location, axis, el, state) {
 
 	axis.innerTickSize( innerTickSize );
 	axis.scaleId(scaleId);
-	
-	//NEED FIX: this clears out any .title before the chart renders to avoid multiple axis labels produced with each typing in the axis label field. Need to find cleaner way to do this
 	d3.selectAll(".title").remove();
 	axis.title(scale.axislabel);
+	
+	//NEED FIX: this clears out any .title before the chart renders to avoid multiple axis labels produced with each typing in the axis label field. Need to find cleaner way to do this
+	//d3.selectAll(".title").remove();
+	//axis.title(axislabel);
 
 }
 
