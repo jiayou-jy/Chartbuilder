@@ -1801,9 +1801,6 @@ svg.renderer-svg tspan {
   font-weight: bold;
   font-size: 8px;
 }
-.d4 .axis.rightAxis text {
-  text-anchor: end;
-}
 .d4 .axis[data-scale="time"] .tick:not([data-anchor="middle"]) text {
   text-anchor: middle;
 }
