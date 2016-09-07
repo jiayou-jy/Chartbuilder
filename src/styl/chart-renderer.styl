@@ -111,7 +111,7 @@ svg
         stroke-linejoin round
     .label
       font-family $font-sans
-      font-size $em_size_print
+      font-size 10px
       font-weight bold
 
   .column-label
@@ -123,6 +123,11 @@ svg
     stroke-width 0.3px
     shape-rendering crispEdges
 
+&.barChart
+  .margins
+    .label
+      font-size $em_size_print
+      
 .svg-text
   font-family $font-sans
   font-size $em_size_print
@@ -238,7 +243,7 @@ svg
             stroke none 
       .margins
         .label
-          font-size $em_size_online*1.6
+          font-size $em_size_online*1.8
         .line, .other-line
           path
             fill none
@@ -257,7 +262,7 @@ svg
         font-size $em_size_online*2.8
         font-weight bold
       &.svg-text-sub
-        font-size $em_size_online*1.8
+        font-size $em_size_online*1.7
   &.online_half, &.online_vertical
     .svg-label-text
       font-size $em_size_online*1.5
@@ -281,7 +286,7 @@ svg
             stroke none 
       .margins
         .label
-          font-size $em_size_online*1.6
+          font-size $em_size_online*1.8
         .line, .other-line
           path
             fill none
@@ -300,4 +305,4 @@ svg
         font-size $em_size_online*2.8
         font-weight bold
       &.svg-text-sub
-        font-size $em_size_online*1.8
+        font-size $em_size_online*1.7

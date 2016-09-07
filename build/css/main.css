@@ -1834,7 +1834,7 @@ svg.renderer-svg tspan {
 }
 .d4 .margins .label {
   font-family: 'Benton Sans Condensed', sans-serif;
-  font-size: 7.5px;
+  font-size: 10px;
   font-weight: bold;
 }
 .d4 .column-label {
@@ -1845,6 +1845,9 @@ svg.renderer-svg tspan {
   stroke: #000;
   stroke-width: 0.3px;
   shape-rendering: crispEdges;
+}
+.barChart .margins .label {
+  font-size: 7.5px;
 }
 .svg-text {
   font-family: 'Benton Sans Condensed', sans-serif;
@@ -1963,7 +1966,7 @@ svg.online_full .d4 .axis.barAxis line {
   stroke: none;
 }
 svg.online_full .d4 .margins .label {
-  font-size: 16px;
+  font-size: 18px;
 }
 svg.online_full .d4 .margins .line path,
 svg.online_full .d4 .margins .other-line path {
@@ -1989,7 +1992,7 @@ svg.online_full .svg-text.svg-text-title {
   font-weight: bold;
 }
 svg.online_full .svg-text.svg-text-sub {
-  font-size: 18px;
+  font-size: 17px;
 }
 svg.online_half .svg-label-text,
 svg.online_vertical .svg-label-text {
@@ -2021,7 +2024,7 @@ svg.online_vertical .d4 .axis.barAxis line {
 }
 svg.online_half .d4 .margins .label,
 svg.online_vertical .d4 .margins .label {
-  font-size: 16px;
+  font-size: 18px;
 }
 svg.online_half .d4 .margins .line path,
 svg.online_vertical .d4 .margins .line path,
@@ -2055,7 +2058,7 @@ svg.online_vertical .svg-text.svg-text-title {
 }
 svg.online_half .svg-text.svg-text-sub,
 svg.online_vertical .svg-text.svg-text-sub {
-  font-size: 18px;
+  font-size: 17px;
 }
 .chartbuilder-editor {
   margin-left: 740px;
