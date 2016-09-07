@@ -11,7 +11,7 @@ var chart_sizes = {
 		sizeClass: "online_full"
 	},
 	printTwo: {
-		width: 460,
+		width: 342,
 		height: 300,
 		sizeClass: "print_two"
 	},
