@@ -7,22 +7,22 @@
 var chart_sizes = {
 	auto: {
 		width: 699,
-		height: 425,
+		height: 600,
 		sizeClass: "online_full"
 	},
 	printTwo: {
 		width: 342,
-		height: 300,
+		height: 342,
 		sizeClass: "print_two"
 	},
 	onlineVertical: {
 		width: 300,
-		height: 390,
+		height: 400,
 		sizeClass: "online_vertical"
 	},
 	onlineHalf: {
 		width: 300,
-		height: 400,
+		height: 300,
 		sizeClass: "online_half"
 	}
 };
