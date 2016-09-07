@@ -1882,13 +1882,13 @@ svg.renderer-svg tspan {
 .svg-text.svg-text-sub {
   fill: #000;
   font-family: 'Benton Sans Condensed', sans-serif;
-  font-size: 10px;
+  font-size: 8px;
 }
 .svg-text.svg-text-title {
   fill: #000;
   font-family: 'Benton Sans Condensed', sans-serif;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 12px;
 }
 .svg-source-pipe {
   stroke: #666;
@@ -1937,7 +1937,7 @@ svg.print_two .svg-text.svg-text-title {
   font-weight: bold;
 }
 svg.print_two .svg-text.svg-text-sub {
-  font-size: 10px;
+  font-size: 8px;
 }
 svg.online_full .svg-label-text {
   font-size: 15px;

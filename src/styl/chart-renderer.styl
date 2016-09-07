@@ -2,7 +2,6 @@
 
 $em_size = 8px
 $em_size_online = 10px
-$em_size_large = 24px
 
 div.renderer-wrapper
   font-smoothing antialiased
@@ -158,12 +157,12 @@ svg
   &.svg-text-sub // Customize sub text
     fill $color-chart-axis-text
     font-family $font-sans
-    font-size $em_size*1.25
+    font-size $em_size
   &.svg-text-title // Customize title text
     fill $color-body-text
     font-family $font-sans
     font-weight bold
-    font-size $em_size*1.25
+    font-size $em_size*1.5
 
 .svg-source-pipe
   stroke $color-chart-meta
@@ -214,7 +213,7 @@ svg
         font-size $em_size*1.5
         font-weight bold
       &.svg-text-sub
-        font-size $em_size*1.25
+        font-size $em_size
   &.online_full
     .svg-label-text
       font-size $em_size_online*1.5
