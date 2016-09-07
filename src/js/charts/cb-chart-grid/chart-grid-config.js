@@ -29,7 +29,7 @@ var display = {
 	afterSub: "0.5em", // distance between top of sub and top of legend or chart
 	afterLegend: "1.2em", // distance between top of legend and top of chart
 	blockerRectOffset: 6, // distance between text and background blocker rect
-	paddingPerBar: "0.7em", // extra space around bars
+	paddingPerBar: "0.8em", // extra space around bars
 	barHeight: "0.9em", // height of each bars
 	afterXYBottom: "2em",
 	afterXYRight: "1.1em",
