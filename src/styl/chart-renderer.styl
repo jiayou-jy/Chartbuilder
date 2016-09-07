@@ -1,6 +1,6 @@
 //default settings: what svg export will grab
 
-$em_size = 8px
+$em_size_print = 7.5px
 $em_size_online = 10px
 
 div.renderer-wrapper
@@ -33,12 +33,12 @@ svg
       line-height 1em
 
 .d4
-  font-size $em_size
+  font-size $em_size_print
   .axis
     .title
       font-family $font-sans
       fill $color-chart-axis-text
-      font-size $em_size
+      font-size $em_size_print
       font-weight bold
       
     .tick
@@ -50,14 +50,14 @@ svg
         fill $color-chart-axis-text
         shape-rendering crispEdges
         text-anchor middle
-        font-size $em_size * 0.9375
+        font-size $em_size_print
       &:first-child
         text
           text-anchor middle
       line
         fill none
         stroke $color-chart-gridline
-        stroke-width 0.5px
+        stroke-width 0.3px
         shape-rendering crispEdges
       &.zero
         line
@@ -69,14 +69,14 @@ svg
     &.barAxis
       text
         font-weight bold
-        font-size $em_size
+        font-size $em_size_print
       line
         stroke none  
 
     &.xAxis
       text
         font-weight bold
-        font-size $em_size
+        font-size $em_size_print
         
     &[data-scale="time"]
       .tick:not([data-anchor="middle"])
@@ -90,13 +90,14 @@ svg
     font-family $font-sans
     text
       fill $color-chart-axis-text
-      font-size $em_size
+      font-size $em_size_print
     rect
       fill $color-bg
 
   .connectors line
     fill none
-    stroke-width 0.4px
+    stroke $color-chart-gridline
+    stroke-width 0.3px
 
   line.zero
     stroke none
@@ -110,7 +111,7 @@ svg
         stroke-linejoin round
     .label
       font-family $font-sans
-      font-size $em_size*1.125
+      font-size $em_size_print
       font-weight bold
 
   .column-label
@@ -119,12 +120,12 @@ svg
   line.no-label-tick
     fill none
     stroke $color-chart-gridline
-    stroke-width 0.4px
+    stroke-width 0.3px
     shape-rendering crispEdges
 
 .svg-text
   font-family $font-sans
-  font-size $em_size
+  font-size $em_size_print
   
   tspan
     &.em
@@ -140,12 +141,12 @@ svg
       font-style italic
 
   &.svg-text-credit // Customize credit text
-    font-size $em_size * 0.9375
+    font-size $em_size_print
     fill $color-chart-meta
     text-anchor start
     text-transform uppercase
   &.svg-text-source // Customize source text
-    font-size $em_size * 0.9375
+    font-size $em_size_print
     fill $color-chart-meta
     text-transform uppercase
     //text
@@ -157,12 +158,12 @@ svg
   &.svg-text-sub // Customize sub text
     fill $color-chart-axis-text
     font-family $font-sans
-    font-size $em_size
+    font-size 8px
   &.svg-text-title // Customize title text
     fill $color-body-text
     font-family $font-sans
     font-weight bold
-    font-size $em_size*1.5
+    font-size 12px
 
 .svg-source-pipe
   stroke $color-chart-meta
@@ -170,7 +171,7 @@ svg
   stroke-width 0.8px
 
 .svg-label-text
-  font-size $em_size*1.125
+  font-size $em_size_print
   font-family $font-sans
   font-weight bold
   // cursor move
@@ -189,7 +190,7 @@ svg
 svg
   &.print_two
     .svg-label-text
-      font-size $em_size*1.25
+      font-size $em_size_print
     .d4
       .axis
         .tick   
@@ -204,16 +205,16 @@ svg
           line
             stroke none 
     .svg-text
-      font-size $em_size
+      font-size $em_size_print
       &.svg-text-credit
-        font-size $em_size
+        font-size $em_size_print
       &.svg-text-source
-        font-size $em_size
+        font-size $em_size_print
       &.svg-text-title
-        font-size $em_size*1.5
+        font-size 12px
         font-weight bold
       &.svg-text-sub
-        font-size $em_size
+        font-size 8px
   &.online_full
     .svg-label-text
       font-size $em_size_online*1.5

@@ -1754,12 +1754,12 @@ svg.renderer-svg tspan {
   line-height: 1em;
 }
 .d4 {
-  font-size: 8px;
+  font-size: 7.5px;
 }
 .d4 .axis .title {
   font-family: 'Benton Sans Condensed', sans-serif;
   fill: #000;
-  font-size: 8px;
+  font-size: 7.5px;
   font-weight: bold;
 }
 .d4 .axis .tick {
@@ -1779,8 +1779,8 @@ svg.renderer-svg tspan {
 }
 .d4 .axis .tick line {
   fill: none;
-  stroke: #808285;
-  stroke-width: 0.5px;
+  stroke: #000;
+  stroke-width: 0.3px;
   shape-rendering: crispEdges;
 }
 .d4 .axis .tick.zero line {
@@ -1792,14 +1792,14 @@ svg.renderer-svg tspan {
 }
 .d4 .axis.barAxis text {
   font-weight: bold;
-  font-size: 8px;
+  font-size: 7.5px;
 }
 .d4 .axis.barAxis line {
   stroke: none;
 }
 .d4 .axis.xAxis text {
   font-weight: bold;
-  font-size: 8px;
+  font-size: 7.5px;
 }
 .d4 .axis[data-scale="time"] .tick:not([data-anchor="middle"]) text {
   text-anchor: middle;
@@ -1812,14 +1812,15 @@ svg.renderer-svg tspan {
 }
 .d4 .concealer-label text {
   fill: #000;
-  font-size: 8px;
+  font-size: 7.5px;
 }
 .d4 .concealer-label rect {
   fill: #fff;
 }
 .d4 .connectors line {
   fill: none;
-  stroke-width: 0.4px;
+  stroke: #000;
+  stroke-width: 0.3px;
 }
 .d4 line.zero {
   stroke: none;
@@ -1833,7 +1834,7 @@ svg.renderer-svg tspan {
 }
 .d4 .margins .label {
   font-family: 'Benton Sans Condensed', sans-serif;
-  font-size: 9px;
+  font-size: 7.5px;
   font-weight: bold;
 }
 .d4 .column-label {
@@ -1841,13 +1842,13 @@ svg.renderer-svg tspan {
 }
 .d4 line.no-label-tick {
   fill: none;
-  stroke: #808285;
-  stroke-width: 0.4px;
+  stroke: #000;
+  stroke-width: 0.3px;
   shape-rendering: crispEdges;
 }
 .svg-text {
   font-family: 'Benton Sans Condensed', sans-serif;
-  font-size: 8px;
+  font-size: 7.5px;
 }
 .svg-text tspan.em {
   font-style: italic;
@@ -1864,13 +1865,13 @@ svg.renderer-svg tspan {
 }
 .svg-text.svg-text-credit {
   font-size: 7.5px;
-  fill: #666;
+  fill: #000;
   text-anchor: start;
   text-transform: uppercase;
 }
 .svg-text.svg-text-source {
   font-size: 7.5px;
-  fill: #666;
+  fill: #000;
   text-transform: uppercase;
 }
 .svg-text.svg-text-source.left {
@@ -1891,12 +1892,12 @@ svg.renderer-svg tspan {
   font-size: 12px;
 }
 .svg-source-pipe {
-  stroke: #666;
+  stroke: #000;
   fill: none;
   stroke-width: 0.8px;
 }
 .svg-label-text {
-  font-size: 9px;
+  font-size: 7.5px;
   font-family: 'Benton Sans Condensed', sans-serif;
   font-weight: bold;
 }
@@ -1909,11 +1910,11 @@ svg.renderer-svg tspan {
   visibility: hidden;
 }
 svg.print_two .svg-label-text {
-  font-size: 10px;
+  font-size: 7.5px;
 }
 svg.print_two .d4 .axis .tick line {
   fill: none;
-  stroke: #808285;
+  stroke: #000;
   stroke-width: 1px;
   shape-rendering: crispEdges;
 }
@@ -1924,13 +1925,13 @@ svg.print_two .d4 .axis.barAxis line {
   stroke: none;
 }
 svg.print_two .svg-text {
-  font-size: 8px;
+  font-size: 7.5px;
 }
 svg.print_two .svg-text.svg-text-credit {
-  font-size: 8px;
+  font-size: 7.5px;
 }
 svg.print_two .svg-text.svg-text-source {
-  font-size: 8px;
+  font-size: 7.5px;
 }
 svg.print_two .svg-text.svg-text-title {
   font-size: 12px;
@@ -1951,7 +1952,7 @@ svg.online_full .d4 .axis .tick text {
 }
 svg.online_full .d4 .axis .tick line {
   fill: none;
-  stroke: #808285;
+  stroke: #000;
   stroke-width: 1px;
   shape-rendering: crispEdges;
 }
@@ -2006,7 +2007,7 @@ svg.online_vertical .d4 .axis .tick text {
 svg.online_half .d4 .axis .tick line,
 svg.online_vertical .d4 .axis .tick line {
   fill: none;
-  stroke: #808285;
+  stroke: #000;
   stroke-width: 1px;
   shape-rendering: crispEdges;
 }
