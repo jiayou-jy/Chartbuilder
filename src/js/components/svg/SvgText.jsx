@@ -53,8 +53,8 @@ var SvgText = React.createClass({
 
 	getDefaultProps: function() {
 		return {
-			wrap: false,
-			maxCharacters: 100
+			wrap: true,
+			maxCharacters: 80
 		};
 	},
 
@@ -185,7 +185,7 @@ var SvgText = React.createClass({
 				return (
 					<text
 						dy={(i * config.textLineHeight).toString() + "em"}
-						y="0"
+						y="0.4em"
 						x="0"
 						key={i}
 					>
