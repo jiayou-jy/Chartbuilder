@@ -17,6 +17,7 @@ var config = {
 var SvgText = React.createClass({
 
 	propTypes: {
+		chartSize: PropTypes.string,
 		className: PropTypes.string,
 		heightPerLine: PropTypes.number,
 		onUpdate: PropTypes.func,
@@ -54,7 +55,8 @@ var SvgText = React.createClass({
 	getDefaultProps: function() {
 		return {
 			wrap: true,
-			maxCharacters: 80
+			maxFullCharacters: 80,
+			maxHalfCharacters: 30
 		};
 	},
 
@@ -67,7 +69,11 @@ var SvgText = React.createClass({
 	_wrapLines: function(props) {
 		var lines = [];
 		if (props.wrap) {
-			maxCharacters = props.maxCharacters;
+			if (props.chartSize === "online_half" || props.chartSize === "online_vertical") {
+				maxCharacters = props.maxHalfCharacters;
+			} else {
+				maxCharacters = props.maxFullCharacters;
+			}
 			var newWords = props.text.split(" ");
 			var words = [];
 			var spanLength = 0;

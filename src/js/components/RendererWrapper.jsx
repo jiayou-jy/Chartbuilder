@@ -261,6 +261,7 @@ var RendererWrapper = React.createClass({
 						translate={[translate.left, translate.top]}
 						align="top"
 						className="svg-text-title"
+						chartSize={dimensions.sizeClass}
 					/>
 				);
 				metadataSvg.push(title);
@@ -274,6 +275,7 @@ var RendererWrapper = React.createClass({
 						translate={[translate.left + 2, translate.top + 26]}
 						align="top"
 						className="svg-text-sub"
+						chartSize={dimensions.sizeClass}
 					/>
 				);
 				metadataSvg.push(sub);
