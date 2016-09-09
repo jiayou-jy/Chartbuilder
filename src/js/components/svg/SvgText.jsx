@@ -66,7 +66,6 @@ var SvgText = React.createClass({
 
 	_wrapLines: function(props) {
 		var lines = [];
-
 		if (props.wrap) {
 			maxCharacters = props.maxCharacters;
 			var newWords = props.text.split(" ");
@@ -185,7 +184,7 @@ var SvgText = React.createClass({
 				return (
 					<text
 						dy={(i * config.textLineHeight).toString() + "em"}
-						y="0.4em"
+						y="0.35em"
 						x="0"
 						key={i}
 					>
