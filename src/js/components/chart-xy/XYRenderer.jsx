@@ -136,7 +136,7 @@ var XYRenderer = React.createClass({
 		var labels = _chartProps._annotations.labels;
 		var hasTitle = (this.props.metadata.title.length > 0 && this.props.showMetadata);
 		var hasBoth = (this.props.metadata.title.length > 0 && this.props.metadata.sub.length > 0 && this.props.showMetadata);
-
+		//console.log(this.props.metadata)
 		// compute the max tick width for each scale
 		each(scaleNames, function(scaleKey) {
 			var currScale = scale[scaleKey];

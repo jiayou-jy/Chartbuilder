@@ -62,7 +62,7 @@ var RendererWrapper = React.createClass({
 	getInitialState: function() {
 		return {
 			domNodeWidth: null,
-			extraHeight: 0,
+			extraHeight: 100,
 			emSize: null,
 			svgSizeClass: null,
 			chartConfig: {},
@@ -292,6 +292,8 @@ var RendererWrapper = React.createClass({
 					className="svg-credit-data"
 				/>
 			);
+
+			console.log(metadataSvg);
 		}
 
 		return (

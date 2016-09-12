@@ -56,7 +56,11 @@ var SvgText = React.createClass({
 		return {
 			wrap: true,
 			maxFullCharacters: 80,
-			maxHalfCharacters: 30
+			maxHalfCharacters: 30,
+			heightPerLine: config.textLineHeight,
+			onUpdate: function(textHeight) {
+				console.log(textHeight);
+			}
 		};
 	},
 
@@ -64,6 +68,10 @@ var SvgText = React.createClass({
 		return {
 			lines: [ this.props.text ]
 		};
+	},
+
+	_onTextChanged: function() {
+		console.log(this.state);
 	},
 
 	_wrapLines: function(props) {
@@ -135,11 +143,13 @@ var SvgText = React.createClass({
 		if (this.props.text && this.props.wrap) {
 			var lineSettings = this._wrapLines(this.props, this.state);
 			this.setState(lineSettings);
+			//console.log("props.text is true; props.wrap is true, svgText state is: ", lineSettings);
 		}
 	},
 
 	componentDidMount: function() {
 		if (this.props.onUpdate && this.props.wrap) {
+			//console.log("props onUpdate is true");
 			if (this.state.lines.length === 1) {
 				this.props.onUpdate(0);
 			} else {
@@ -152,6 +162,7 @@ var SvgText = React.createClass({
 		if (this.props.wrap) {
 			var lineSettings = this._wrapLines(nextProps);
 			this.setState(lineSettings);
+			console.log(lineSettings);
 		}
 	},
 
@@ -223,6 +234,7 @@ var SvgText = React.createClass({
 			<g
 				className={["svg-text", this.props.className].join(" ")}
 				transform={"translate(" + this.props.translate + ")"}
+				onChange={this._onTextChanged}
 			>
 				{textNodes}
 			</g>
