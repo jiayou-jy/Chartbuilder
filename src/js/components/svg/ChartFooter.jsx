@@ -70,7 +70,6 @@ var ChartFooter = React.createClass({
 	},
 
 	render: function() {
-		//console.log(this.props.translate);
 		var sourceLineText = this._createSourceLine();
 		var chartSource = null;
 		var chartCredit;

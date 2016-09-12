@@ -136,7 +136,6 @@ var XYRenderer = React.createClass({
 		var labels = _chartProps._annotations.labels;
 		var hasTitle = (this.props.metadata.title.length > 0 && this.props.showMetadata);
 		var hasBoth = (this.props.metadata.title.length > 0 && this.props.metadata.sub.length > 0 && this.props.showMetadata);
-		//console.log(this.props.metadata)
 		// compute the max tick width for each scale
 		each(scaleNames, function(scaleKey) {
 			var currScale = scale[scaleKey];
@@ -312,9 +311,9 @@ var XYChart = React.createClass({
 	componentWillReceiveProps: function(nextProps) {
 		var yOffset;
 		if (nextProps.hasBoth) {
-			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.dimensions.extraHeight;
+			yOffset = nextProps.displayConfig.margin.top + nextProps.dimensions.extraHeight;
 		} else if (nextProps.hasTitle) {
-			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle;
+			yOffset = nextProps.displayConfig.margin.top + nextProps.dimensions.titleHeight;
 		} else {
 			yOffset = nextProps.displayConfig.margin.top;
 		}
@@ -425,9 +424,9 @@ var XYLabels = React.createClass({
 		// on presence (or not) of a title
 		var yOffset;
 		if (nextProps.hasBoth) {
-			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.dimensions.extraHeight;
+			yOffset = nextProps.displayConfig.margin.top + nextProps.dimensions.extraHeight;
 		} else if (nextProps.hasTitle) {
-			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle;
+			yOffset = nextProps.displayConfig.margin.top + nextProps.dimensions.titleHeight;
 		} else {
 			yOffset = nextProps.displayConfig.margin.top;
 		}
@@ -857,10 +856,10 @@ function computePadding(props, chartHeight) {
 	var _top = (props.labelYMax * props.chartAreaDimensions.height) + displayConfig.afterLegend;
 
 	if (props.hasBoth) {
-		_top += displayConfig.afterTitle + props.dimensions.extraHeight;
+		_top += props.dimensions.extraHeight;
 
 	} else if (props.hasTitle) {
-		_top += displayConfig.afterTitle;
+		_top += props.dimensions.titleHeight;
 	} 
 
 	// Maintain space between legend and chart area unless all legend labels

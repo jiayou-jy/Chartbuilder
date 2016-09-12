@@ -18,7 +18,6 @@ function calculate_xy_dimensions(width, opts) {
 		// use current width
 	} else {
 		width = chartSizes[metadata.size].width;
-
 	}
 
 	switch (metadata.size) {
@@ -44,6 +43,8 @@ function calculate_xy_dimensions(width, opts) {
 	return {
 		width: width,
 		height: height + opts.extraHeight,
+		titleHeight: opts.titleHeight,
+		subHeight: opts.subHeight,
 		extraHeight: opts.extraHeight,
 		sizeClass: sizeClass
 	};

@@ -30,7 +30,7 @@ var SvgText = React.createClass({
 	shouldComponentUpdate: function(nextProps, nextState) {
 		if ((nextState.lines.length !== this.state.lines.length) && nextProps.onUpdate && nextProps.wrap) {
 			this.props.onUpdate((nextState.lines.length) * this.props.heightPerLine * this.props.emSize);
-			return false;
+			return true;
 		}
 		if (nextProps.text !== this.props.text) {
 			return true;
@@ -44,6 +44,9 @@ var SvgText = React.createClass({
 		if (this.props.maxWidth !== nextProps.maxWidth) {
 			return true;
 		}
+		if (this.props.chartSize !== nextProps.chartSize) {
+			return true;
+		}
 
 		return true;
 	},
@@ -51,12 +54,11 @@ var SvgText = React.createClass({
 	getDefaultProps: function() {
 		return {
 			wrap: true,
-			maxFullCharacters: 80,
-			maxHalfCharacters: 30,
-			heightPerLine: config.textLineHeight,
-			onUpdate: function(textHeight) {
-				console.log(textHeight);
-			}
+			maxTitleFullChar: 50,
+			maxTitleHalfChar: 19,
+			maxSubFullChar: 84,
+			maxSubHalfChar: 33,
+			heightPerLine: config.textLineHeight
 		};
 	},
 
@@ -66,17 +68,13 @@ var SvgText = React.createClass({
 		};
 	},
 
-	_onTextChanged: function(height) {
-		console.log(height);
-	},
-
 	_wrapLines: function(props) {
 		var lines = [];
 		if (props.wrap) {
 			if (props.chartSize === "online_half" || props.chartSize === "online_vertical") {
-				maxCharacters = props.maxHalfCharacters;
+				props.className === "svg-text-title" ?  maxCharacters = props.maxTitleHalfChar : maxCharacters = props.maxSubHalfChar;
 			} else {
-				maxCharacters = props.maxFullCharacters;
+				props.className === "svg-text-title" ?  maxCharacters = props.maxTitleFullChar : maxCharacters = props.maxSubFullChar;
 			}
 			var newWords = props.text.split(" ");
 			var words = [];
@@ -139,13 +137,11 @@ var SvgText = React.createClass({
 		if (this.props.text && this.props.wrap) {
 			var lineSettings = this._wrapLines(this.props, this.state);
 			this.setState(lineSettings);
-			//console.log("props.text is true; props.wrap is true, svgText state is: ", lineSettings);
 		}
 	},
 
 	componentDidMount: function() {
 		if (this.props.onUpdate && this.props.wrap) {
-			//console.log("props onUpdate is true");
 			this.props.onUpdate((this.state.lines.length) * this.props.heightPerLine * this.props.emSize);
 		}
 	},
@@ -154,7 +150,6 @@ var SvgText = React.createClass({
 		if (this.props.wrap) {
 			var lineSettings = this._wrapLines(nextProps);
 			this.setState(lineSettings);
-			console.log(lineSettings);
 		}
 	},
 
@@ -226,7 +221,6 @@ var SvgText = React.createClass({
 			<g
 				className={["svg-text", this.props.className].join(" ")}
 				transform={"translate(" + this.props.translate + ")"}
-				onChange={this._onTextChanged}
 			>
 				{textNodes}
 			</g>

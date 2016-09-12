@@ -62,6 +62,8 @@ var RendererWrapper = React.createClass({
 	getInitialState: function() {
 		return {
 			domNodeWidth: null,
+			titleHeight: 0,
+			subHeight: 0,
 			extraHeight: 0,
 			emSize: null,
 			svgSizeClass: null,
@@ -164,8 +166,6 @@ var RendererWrapper = React.createClass({
 		var newSetting = {};
 		newSetting[k] = v;
 		this.setState(update(this.state, { $merge: newSetting }));
-		console.log("new setting", newSetting);
-		console.log("this state: ", this.state);
 	},
 
 	_calculateDimensions: function(width, displayConfig) {
@@ -174,7 +174,9 @@ var RendererWrapper = React.createClass({
 			model: this.props.model,
 			displayConfig: displayConfig,
 			enableResponsive: this.props.enableResponsive,
-			extraHeight: this.state.extraHeight,
+			titleHeight: this.state.titleHeight,
+			subHeight: this.state.subHeight,
+			extraHeight: this.state.titleHeight + this.state.subHeight,
 			showMetadata: this.props.showMetadata
 		});
 	},
@@ -264,6 +266,9 @@ var RendererWrapper = React.createClass({
 						align="top"
 						className="svg-text-title"
 						chartSize={dimensions.sizeClass}
+						titleHeight={this.state.titleHeight}
+						emSize={this.state.emSize * 1.4}
+						onUpdate={this._handleSvgUpdate.bind(null, "titleHeight")}
 					/>
 				);
 				metadataSvg.push(title);
@@ -274,13 +279,13 @@ var RendererWrapper = React.createClass({
 					<SvgText
 						text={metadata.sub}
 						key="sub"
-						translate={[translate.left + 2, translate.top + 26]}
+						translate={[translate.left + 2, translate.top + this.state.titleHeight]}
 						align="top"
 						className="svg-text-sub"
 						chartSize={dimensions.sizeClass}
-						extraHeight={this.state.extraHeight}
-						emSize={this.state.emSize}
-						onUpdate={this._handleSvgUpdate.bind(null, "extraHeight")}
+						subHeight={this.state.subHeight}
+						emSize={this.state.emSize * 0.85}
+						onUpdate={this._handleSvgUpdate.bind(null, "subHeight")}
 					/>
 				);
 				metadataSvg.push(sub);
@@ -296,8 +301,6 @@ var RendererWrapper = React.createClass({
 					className="svg-credit-data"
 				/>
 			);
-
-			console.log(metadataSvg);
 		}
 
 		return (
@@ -320,6 +323,8 @@ var RendererWrapper = React.createClass({
 					</g>
 					<Renderer
 						width={width}
+						titleHeight={this.state.titleHeight}
+						subHeight={this.state.subHeight}
 						extraHeight={this.state.extraHeight}
 						chartProps={chartProps}
 						dimensions={dimensions}
