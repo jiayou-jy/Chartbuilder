@@ -62,7 +62,7 @@ var RendererWrapper = React.createClass({
 	getInitialState: function() {
 		return {
 			domNodeWidth: null,
-			extraHeight: 100,
+			extraHeight: 0,
 			emSize: null,
 			svgSizeClass: null,
 			chartConfig: {},
@@ -164,6 +164,8 @@ var RendererWrapper = React.createClass({
 		var newSetting = {};
 		newSetting[k] = v;
 		this.setState(update(this.state, { $merge: newSetting }));
+		console.log("new setting", newSetting);
+		console.log("this state: ", this.state);
 	},
 
 	_calculateDimensions: function(width, displayConfig) {
@@ -276,6 +278,9 @@ var RendererWrapper = React.createClass({
 						align="top"
 						className="svg-text-sub"
 						chartSize={dimensions.sizeClass}
+						extraHeight={this.state.extraHeight}
+						emSize={this.state.emSize}
+						onUpdate={this._handleSvgUpdate.bind(null, "extraHeight")}
 					/>
 				);
 				metadataSvg.push(sub);
@@ -287,7 +292,6 @@ var RendererWrapper = React.createClass({
 					extraHeight={this.state.extraHeight}
 					key="chartFooter"
 					translate={translate}
-					onUpdate={this._handleSvgUpdate.bind(null, "extraHeight")}
 					chartWidth={dimensions.width - margin.left - margin.right}
 					className="svg-credit-data"
 				/>

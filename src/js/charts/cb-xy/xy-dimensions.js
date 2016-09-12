@@ -44,6 +44,7 @@ function calculate_xy_dimensions(width, opts) {
 	return {
 		width: width,
 		height: height + opts.extraHeight,
+		extraHeight: opts.extraHeight,
 		sizeClass: sizeClass
 	};
 }

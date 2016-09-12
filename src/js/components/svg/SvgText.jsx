@@ -29,11 +29,7 @@ var SvgText = React.createClass({
 
 	shouldComponentUpdate: function(nextProps, nextState) {
 		if ((nextState.lines.length !== this.state.lines.length) && nextProps.onUpdate && nextProps.wrap) {
-			if (nextState.lines.length === 1) {
-				this.props.onUpdate(0);
-			} else {
-				this.props.onUpdate((nextState.lines.length) * this.props.heightPerLine);
-			}
+			this.props.onUpdate((nextState.lines.length) * this.props.heightPerLine * this.props.emSize);
 			return false;
 		}
 		if (nextProps.text !== this.props.text) {
@@ -70,8 +66,8 @@ var SvgText = React.createClass({
 		};
 	},
 
-	_onTextChanged: function() {
-		console.log(this.state);
+	_onTextChanged: function(height) {
+		console.log(height);
 	},
 
 	_wrapLines: function(props) {
@@ -150,11 +146,7 @@ var SvgText = React.createClass({
 	componentDidMount: function() {
 		if (this.props.onUpdate && this.props.wrap) {
 			//console.log("props onUpdate is true");
-			if (this.state.lines.length === 1) {
-				this.props.onUpdate(0);
-			} else {
-				this.props.onUpdate((this.state.lines.length) * this.props.heightPerLine);
-			}
+			this.props.onUpdate((this.state.lines.length) * this.props.heightPerLine * this.props.emSize);
 		}
 	},
 

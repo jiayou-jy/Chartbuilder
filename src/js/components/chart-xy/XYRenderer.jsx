@@ -312,11 +312,7 @@ var XYChart = React.createClass({
 	componentWillReceiveProps: function(nextProps) {
 		var yOffset;
 		if (nextProps.hasBoth) {
-			if (nextProps.chartSize === "online_half" || nextProps.chartSize === "online_vertical") {
-				yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.displayConfig.afterSubHalf;
-			} else {
-				yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.displayConfig.afterSub;
-			}
+			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.dimensions.extraHeight;
 		} else if (nextProps.hasTitle) {
 			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle;
 		} else {
@@ -429,11 +425,7 @@ var XYLabels = React.createClass({
 		// on presence (or not) of a title
 		var yOffset;
 		if (nextProps.hasBoth) {
-			if (nextProps.chartSize === "online_half" || nextProps.chartSize === "online_vertical") {
-				yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.displayConfig.afterSubHalf;
-			} else {
-				yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.displayConfig.afterSub;
-			}
+			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.dimensions.extraHeight;
 		} else if (nextProps.hasTitle) {
 			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle;
 		} else {
@@ -865,11 +857,8 @@ function computePadding(props, chartHeight) {
 	var _top = (props.labelYMax * props.chartAreaDimensions.height) + displayConfig.afterLegend;
 
 	if (props.hasBoth) {
-		if (props.chartSize === "online_half" || props.chartSize === "online_vertical") {
-			_top += displayConfig.afterTitle + displayConfig.afterSubHalf;
-		} else {
-			_top += displayConfig.afterTitle + displayConfig.afterSub;
-		}
+		_top += displayConfig.afterTitle + props.dimensions.extraHeight;
+
 	} else if (props.hasTitle) {
 		_top += displayConfig.afterTitle;
 	} 
