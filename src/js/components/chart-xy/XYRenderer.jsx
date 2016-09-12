@@ -66,7 +66,8 @@ var XYRenderer = React.createClass({
 		metadata: PropTypes.object,
 		showMetadata: PropTypes.bool,
 		editable: PropTypes.bool,
-		useMobileSettings: PropTypes.bool
+		useMobileSettings: PropTypes.bool,
+		chartSize: PropTypes.string
 	},
 
 	getInitialState: function() {
@@ -206,6 +207,7 @@ var XYRenderer = React.createClass({
 					labelYMax={this.state.labelYMax}
 					maxTickWidth={this.state.maxTickWidth}
 					axisTicks={axisTicks}
+					chartSize={this.props.chartSize}
 				/>
 				<XYLabels
 					key="xy-labels"
@@ -222,6 +224,7 @@ var XYRenderer = React.createClass({
 					dimensions={dimensions}
 					updateLabelYMax={this._updateLabelYMax}
 					labelYMax={this.state.labelYMax}
+					chartSize={this.props.chartSize}
 				/>
 				{HiddenAxes}
 			</g>
@@ -309,7 +312,11 @@ var XYChart = React.createClass({
 	componentWillReceiveProps: function(nextProps) {
 		var yOffset;
 		if (nextProps.hasBoth) {
-			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.displayConfig.afterSub;
+			if (nextProps.chartSize === "online_half" || nextProps.chartSize === "online_vertical") {
+				yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.displayConfig.afterSubHalf;
+			} else {
+				yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.displayConfig.afterSub;
+			}
 		} else if (nextProps.hasTitle) {
 			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle;
 		} else {
@@ -422,7 +429,11 @@ var XYLabels = React.createClass({
 		// on presence (or not) of a title
 		var yOffset;
 		if (nextProps.hasBoth) {
-			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.displayConfig.afterSub;
+			if (nextProps.chartSize === "online_half" || nextProps.chartSize === "online_vertical") {
+				yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.displayConfig.afterSubHalf;
+			} else {
+				yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle + nextProps.displayConfig.afterSub;
+			}
 		} else if (nextProps.hasTitle) {
 			yOffset = nextProps.displayConfig.margin.top + nextProps.displayConfig.afterTitle;
 		} else {
@@ -854,7 +865,11 @@ function computePadding(props, chartHeight) {
 	var _top = (props.labelYMax * props.chartAreaDimensions.height) + displayConfig.afterLegend;
 
 	if (props.hasBoth) {
-		_top += displayConfig.afterTitle + displayConfig.afterSub;
+		if (props.chartSize === "online_half" || props.chartSize === "online_vertical") {
+			_top += displayConfig.afterTitle + displayConfig.afterSubHalf;
+		} else {
+			_top += displayConfig.afterTitle + displayConfig.afterSub;
+		}
 	} else if (props.hasTitle) {
 		_top += displayConfig.afterTitle;
 	} 

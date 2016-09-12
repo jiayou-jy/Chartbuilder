@@ -301,6 +301,7 @@ var RendererWrapper = React.createClass({
 					className={["renderer-svg", dimensions.sizeClass].join(" ")}
 					width={dimensions.width}
 					height={dimensions.height}
+					chartSize={dimensions.sizeClass}
 				>
 					<g className="svg-background-wrap">
 						<rect
@@ -323,6 +324,7 @@ var RendererWrapper = React.createClass({
 						metadata={metadata}
 						editable={this.props.editable}
 						enableResponsive={this.props.enableResponsive}
+						chartSize={dimensions.sizeClass}
 					/>
 					{metadataSvg}
 				</svg>
