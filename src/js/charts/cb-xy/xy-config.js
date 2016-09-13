@@ -46,7 +46,7 @@ var display = {
 	aspectRatio: {
 		wide: (9 / 16),
 		vertical: (4 / 3),
-		horizontal: (9 / 10),
+		horizontal: (3 / 4),
 		square: (1 / 1)
 	},
 	margin: {
