@@ -172,6 +172,7 @@ var ChartCreditText = React.createClass({
 		return (
 			<SvgText
 				text={this.props.text}
+				wrap={false}
 				translate={this.props.translate}
 				className="svg-text-credit"
 			/>
