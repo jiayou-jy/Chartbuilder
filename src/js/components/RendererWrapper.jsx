@@ -266,7 +266,7 @@ var RendererWrapper = React.createClass({
 						align="top"
 						className="svg-text-title"
 						chartSize={dimensions.sizeClass}
-						titleHeight={dimensions.titleHeight}
+						titleHeight={this.state.titleHeight}
 						emSize={this.state.emSize * 1.4}
 						onUpdate={this._handleSvgUpdate.bind(null, "titleHeight")}
 					/>
@@ -279,11 +279,11 @@ var RendererWrapper = React.createClass({
 					<SvgText
 						text={metadata.sub}
 						key="sub"
-						translate={[translate.left + 2, translate.top + dimensions.titleHeight]}
+						translate={[translate.left + 2, translate.top + this.state.titleHeight]}
 						align="top"
 						className="svg-text-sub"
 						chartSize={dimensions.sizeClass}
-						subHeight={dimensions.subHeight}
+						subHeight={this.state.subHeight}
 						emSize={this.state.emSize * 0.85}
 						onUpdate={this._handleSvgUpdate.bind(null, "subHeight")}
 					/>
@@ -323,9 +323,9 @@ var RendererWrapper = React.createClass({
 					</g>
 					<Renderer
 						width={width}
-						titleHeight={dimensions.titleHeight}
-						subHeight={dimensions.subHeight}
-						extraHeight={dimensions.extraHeight}
+						titleHeight={this.state.titleHeight}
+						subHeight={this.state.subHeight}
+						extraHeight={this.state.extraHeight}
 						chartProps={chartProps}
 						dimensions={dimensions}
 						isSmall={isSmall}

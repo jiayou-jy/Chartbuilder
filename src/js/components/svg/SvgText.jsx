@@ -56,8 +56,8 @@ var SvgText = React.createClass({
 			wrap: true,
 			maxTitleFullChar: 50,
 			maxTitleHalfChar: 19,
-			maxSubFullChar: 84,
-			maxSubHalfChar: 33,
+			maxSubFullChar: 80,
+			maxSubHalfChar: 30,
 			heightPerLine: config.textLineHeight
 		};
 	},
@@ -127,7 +127,7 @@ var SvgText = React.createClass({
 		} else {
 			lines = [props.text];
 		}
-
+		
 		return {
 			lines: lines
 		};
