@@ -165,6 +165,8 @@ var RendererWrapper = React.createClass({
 	_handleSvgUpdate: function(k, v) {
 		var newSetting = {};
 		newSetting[k] = v;
+		console.log(k, v);
+		console.log(newSetting);
 		this.setState(update(this.state, { $merge: newSetting }));
 	},
 
@@ -243,6 +245,8 @@ var RendererWrapper = React.createClass({
 		} else {
 			metadata = this.props.model.metadata;
 		}
+
+		console.log(this.state);
 
 		var margin = this.state.chartConfig.display.margin;
 		var metadataSvg = [];
