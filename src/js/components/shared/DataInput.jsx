@@ -11,6 +11,7 @@ var validateChartModel = require("../../util/validate-chart-model");
 var chartbuilderUI = require("chartbuilder-ui");
 var TextArea = chartbuilderUI.TextArea;
 var Alert = chartbuilderUI.Alert;
+var DataSeriesTypeSettings = require("../shared/DataSeriesTypeSettings.jsx");
 
 var inputAlerts = {
 	"EMPTY": {
@@ -67,7 +68,8 @@ var DataInput = React.createClass({
 			input: PropTypes.shape({
 				raw: PropTypes.string,
 				status: PropTypes.string,
-				valid: PropTypes.bool
+				valid: PropTypes.bool,
+				type: PropTypes.string
 			}).isRequired,
 			chartSettings: PropTypes.array,
 			data: PropTypes.array,
@@ -86,9 +88,21 @@ var DataInput = React.createClass({
 	},
 
 	_handleReparseUpdate: function(k, v) {
-		// reset the raw input value
-		var input = update(this.props.chartProps.input, { $merge: { raw: v }});
-		ChartViewActions.updateInput(k, input);
+		if (k == "input") {
+			input = update(this.props.chartProps.input, { $merge: {
+				raw: v,
+				type: undefined
+			}});
+			ChartViewActions.updateInput(k, input);
+		} else if (k == "type") {
+			input = update(this.props.chartProps.input, { $set: {
+				raw: v.raw,
+				type: v.type
+			}});
+			ChartViewActions.updateAndReparse("input", input);
+		} else {
+			return;
+		}
 	},
 
 	componentDidMount: function() {
@@ -144,10 +158,9 @@ var DataInput = React.createClass({
 					className="data-input"
 					defaultValue={this.props.chartProps.input.raw}
 				/>
-				<Alert
-					alertType={this.state.alertType}
-					alertText={this.state.alertText}
-					boldText={this.state.boldText}
+				<DataSeriesTypeSettings
+					onUpdate={this._handleReparseUpdate.bind(null, "type")}
+					chartProps={this.props.chartProps}
 				/>
 			</div>
 		);

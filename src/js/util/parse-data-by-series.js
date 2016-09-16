@@ -14,7 +14,8 @@ var validateDataInput = require("./validate-data-input");
 function dataBySeries(input, opts) {
 	opts = opts || {};
 	var parsedInput = parseDelimInput(input, {
-		checkForDate: opts.checkForDate
+		checkForDate: opts.checkForDate,
+		type: opts.type
 	});
 	var columnNames = parsedInput.columnNames;
 	var keyColumn = columnNames.shift();
@@ -33,6 +34,7 @@ function dataBySeries(input, opts) {
 	});
 
 	validatedInput = validateDataInput(input, series, parsedInput.hasDate);
+	console.log("object returned by parse-by-series", validatedInput);
 
 	return {
 		series: series,

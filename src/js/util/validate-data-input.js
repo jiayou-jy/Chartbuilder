@@ -5,15 +5,22 @@ var map = require("lodash/map");
 var filter = require("lodash/filter");
 var some = require("lodash/some");
 
+types = {
+	"number": "numeric",
+	"object": "date",
+	"string": "ordinal"
+};
+
 function makeInputObj(rawInput, status, isValid) {
 	return {
 		raw: rawInput,
 		status: status,
-		valid: isValid
+		valid: isValid,
+		type: "type in validate-data-input"
 	};
 }
 
-function validateDataInput(input, series, hasDate) {
+function validateDataInput(input, series, hasDate, isNumeric) {
 	if (input.length === 0) {
 		// Check whether we have input
 		return makeInputObj(input, "EMPTY", false);
