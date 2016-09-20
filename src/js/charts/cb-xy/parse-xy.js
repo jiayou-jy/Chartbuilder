@@ -22,13 +22,11 @@ function parseXY(config, _chartProps, callback, parseOpts) {
 	// clone so that we aren't modifying original
 	// this can probably be avoided by applying new settings differently
 	var chartProps = JSON.parse(JSON.stringify(_chartProps));
-	console.log("parse XY gets this chartProps.input from somewhere: ", chartProps.input);
 
 	var bySeries = dataBySeries(chartProps.input.raw, { 
 		checkForDate: true,
 		type: "type in parse-xy"
 	});
-	console.log("parse by Series returns this object to parse XY: ", bySeries);
 	var labels = chartProps._annotations.labels;
 	var allColumn = true;
 	// check if either scale contains columns, as we'll need to zero the axis

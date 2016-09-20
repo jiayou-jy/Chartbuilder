@@ -34,7 +34,6 @@ function dataBySeries(input, opts) {
 	});
 
 	validatedInput = validateDataInput(input, series, parsedInput.hasDate);
-	console.log("object returned by parse-by-series", validatedInput);
 
 	return {
 		series: series,

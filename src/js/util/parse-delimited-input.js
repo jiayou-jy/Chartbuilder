@@ -24,13 +24,10 @@ function parseDelimInput(input, opts) {
 	opts = opts || {};
 	delimiter = opts.delimiter || parseUtils.detectDelimiter(input);
 	type = opts.type;
-	console.log("type in parseDelimInput comes from", type);
 
 	if (opts.checkForDate === false) {
 		type = "ordinal";
 	}
-
-	console.log("type in parseDelimInput is now: ", type);
 
 	// create regex of special characters we want to strip out as well as our
 	// computed locale-specific thousands separator.
@@ -46,7 +43,6 @@ function parseDelimInput(input, opts) {
 	if (opts.checkForDate) {
 		hasDate = parseUtils.matchDatePattern(columnNames[0]);
 		isNumeric = type ? type == "numeric" : columnNames[0] === "number";
-		console.log( "is Numeric is: ", isNumeric);
 	}
 
 	var dsv = d3.dsv(delimiter, "text/plain");
