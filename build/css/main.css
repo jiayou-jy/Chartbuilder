@@ -1709,6 +1709,9 @@ svg.renderer-svg tspan {
 .d4 .leftAxis path.domain {
   display: none;
 }
+.d4 .rightAxis path.domain {
+  display: none;
+}
 .d4 .xAxis path.domain {
   display: none;
 }
@@ -1766,40 +1769,40 @@ svg.renderer-svg tspan {
 .d4 .xAxislabel {
   fill: #000;
 }
->>>>>>> origin/master .concealer-label {
+.d4 .concealer-label {
   font-family: 'Benton Sans Condensed', sans-serif;
 }
->>>>>>> origin/master .concealer-label text {
+.d4 .concealer-label text {
   fill: #000;
   font-size: 7.5px;
 }
->>>>>>> origin/master .concealer-label rect {
+.d4 .concealer-label rect {
   fill: #fff;
 }
->>>>>>> origin/master .connectors line {
+.d4 .connectors line {
   fill: none;
   stroke: #000;
   stroke-width: 0.3px;
 }
->>>>>>> origin/master line.zero {
+.d4 line.zero {
   stroke: none;
 }
->>>>>>> origin/master .margins .line path,
->>>>>>> origin/master .margins .other-line path {
+.d4 .margins .line path,
+.d4 .margins .other-line path {
   fill: none;
   stroke-width: 2px;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
->>>>>>> origin/master .margins .label {
+.d4 .margins .label {
   font-family: 'Benton Sans Condensed', sans-serif;
   font-size: 10px;
   font-weight: bold;
 }
->>>>>>> origin/master .column-label {
+.d4 .column-label {
   fill: #000;
 }
->>>>>>> origin/master line.no-label-tick {
+.d4 line.no-label-tick {
   fill: none;
   stroke: #000;
   stroke-width: 0.3px;
