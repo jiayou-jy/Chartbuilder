@@ -74,6 +74,7 @@ var XYRenderer = React.createClass({
 
 	getInitialState: function() {
 		return {
+			yOffset: 10,
 			labelYMax: 0,
 			maxTickWidth: {
 				primaryScale: 0,
@@ -484,6 +485,7 @@ var XYLabels = React.createClass({
 		}, this), {});
 
 		this.setState({
+			yOffset: yOffset,
 			undraggedLabels: updateUndragged,
 			dateScaleInfo: nextProps.chartProps.scale.hasDate ? this.generateDateScale(nextProps) : null
 		});
@@ -634,7 +636,7 @@ var XYLabels = React.createClass({
 						enableDrag={this._enableDrag}
 						onPositionUpdate={this._handleLabelPositionUpdate}
 						editable={props.editable}
-						offset={{ x: displayConfig.margin.left, y: this.props.yOffset}}
+						offset={{ x: displayConfig.margin.left, y: this.state.yOffset}}
 						colorIndex={chartSetting.colorIndex}
 						settings={labelSettings}
 						prevNode={prevNode}
@@ -648,7 +650,7 @@ var XYLabels = React.createClass({
 			<g
 				ref="chartAnnotations"
 				className="renderer-annotations"
-				transform={"translate(" + [displayConfig.margin.left, this.props.yOffset] + ")" }
+				transform={"translate(" + [displayConfig.margin.left, this.state.yOffset] + ")" }
 			>
 				{labelComponents}
 			</g>
