@@ -446,6 +446,7 @@ var XYLabels = React.createClass({
 
 	getInitialState: function() {
 		return {
+			yOffset: 10,
 			undraggedLabels: {},
 			dateScaleInfo: null
 		};
