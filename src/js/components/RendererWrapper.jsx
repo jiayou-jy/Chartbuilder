@@ -6,7 +6,7 @@
 */
 
 var React = require("react");
-var ReactDOM = require("react-dom")
+var ReactDOM = require("react-dom");
 var PropTypes = React.PropTypes;
 
 var assign = require("lodash/assign");
@@ -49,11 +49,15 @@ var RendererWrapper = React.createClass({
 		}),
 		width: PropTypes.number,
 		enableResponsive: PropTypes.bool,
-		showMetadata: PropTypes.bool
+		showMetadata: PropTypes.bool,
+		className: PropTypes.string,
+		svgClassName: PropTypes.string
 	},
 
 	shouldComponentUpdate: function(nextProps, nextState) {
-		if (!nextProps.model.chartProps.input.valid) {
+		if (!nextProps.model.errors) {
+			return true;
+		} else if (!nextProps.model.errors.valid) {
 			return false;
 		}
 		return true;
@@ -104,7 +108,6 @@ var RendererWrapper = React.createClass({
 			_chartProps.data = newData;
 			chartProps = _chartProps;
 		}
-
 		var state = assign({}, { chartProps: chartProps }, size_calcs);
 		this.setState(state);
 	},
@@ -185,6 +188,7 @@ var RendererWrapper = React.createClass({
 		var chartType = this.props.model.metadata.chartType;
 		var width = this.props.width || this.state.domNodeWidth;
 		var displayConfig = this.state.chartConfig.display;
+		var svgClassName = this.props.svgClassName || '';
 
 		if (!width) {
 			return <div style={{ width: "100%" }}></div>;
@@ -302,7 +306,6 @@ var RendererWrapper = React.createClass({
 				/>
 			);
 		}
-
 		return (
 			<div className={["renderer-wrapper", this.state.svgSizeClass, this.props.className].join(" ")}>
 				<svg

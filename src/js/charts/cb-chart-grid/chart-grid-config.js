@@ -89,7 +89,15 @@ var defaultProps = {
 			},
 			dateSettings: {
 				dateFrequency: "auto",
-				dateFormat: "auto"
+				dateFormat: "auto",
+				inputTZ: null,
+				displayTZ: "as-entered"
+			},
+			numericSettings: {
+				ticks: null,
+				precision: 0,
+				prefix: "",
+				suffix: ""
 			}
 		},
 		chartSettings: [

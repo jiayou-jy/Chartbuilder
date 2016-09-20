@@ -34,6 +34,10 @@ svg
 
 .d4
   font-size $em_size_print
+  .leftAxis path.domain
+    display none
+  .xAxis path.domain
+    display none
   .axis
     .title
       font-family $font-sans
@@ -86,6 +90,9 @@ svg
         text
           text-anchor middle
 
+  .xAxislabel
+    fill $color-chart-axis-text
+>>>>>>> origin/master
   .concealer-label
     font-family $font-sans
     text
@@ -135,7 +142,7 @@ svg
   tspan
     &.em
       font-style italic
-      
+
     &.strong
       font-family $font-sans
       font-weight bold

@@ -175,7 +175,6 @@ var ChartGridBars = React.createClass({
 				key="hiddenLabel"
 			/>
 		);
-
 		var gridCharts = map(chartProps.data.slice(0, numCharts), bind(function(d, i) {
 			// Get the props we need for each chart
 			var gridChartProps = {
@@ -186,18 +185,20 @@ var ChartGridBars = React.createClass({
 				extraPadding: extraPadding
 			};
 
-			return <GridChart
-				chartProps={gridChartProps}
-				rendererFunc={drawBarChartGrid}
-				displayConfig={displayConfig}
-				styleConfig={this.props.styleConfig}
-				key={i}
-				index={i}
-				barLabelOverlap={this.state.barLabelOverlap}
-				grid={chartProps._grid}
-				dimensions={dimensionsPerGrid}
-				padding={displayConfig.padding}
-			/>
+			return (
+				<GridChart
+					chartProps={gridChartProps}
+					rendererFunc={drawBarChartGrid}
+					displayConfig={displayConfig}
+					styleConfig={this.props.styleConfig}
+					key={i}
+					index={i}
+					barLabelOverlap={this.state.barLabelOverlap}
+					grid={chartProps._grid}
+					dimensions={dimensionsPerGrid}
+					padding={displayConfig.padding}
+				/>
+			);
 		}, this));
 
 		/*
@@ -240,7 +241,7 @@ function drawBarChartGrid(el, state) {
 	var chart = cb_bar_grid()
 		.outerHeight(state.dimensions.height)
 		.margin(chartProps.margin)
-		.padding(state.padding)
+		.padding(state.padding);
 
 	chart
 	.using("series-label",function(lab){

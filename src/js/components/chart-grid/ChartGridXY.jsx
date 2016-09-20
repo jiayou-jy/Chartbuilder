@@ -216,6 +216,8 @@ function drawXYChartGrid(el, state) {
 	var colorIndex = chartProps.chartSettings.colorIndex;
 	var gridType = state.grid.type;
 	var dateSettings = state.dateSettings;
+	var numericSettings = state.numericSettings;
+
 
 	xyConfig = displayConfig.xy;
 
@@ -267,7 +269,29 @@ function drawXYChartGrid(el, state) {
 		.using("leftAxis", function(axis){
 			yAxisUsing.call(this, "primary", axis, state);
 		})
-		.outerWidth(state.dimensions.width + chartProps.extraPadding.left + chartProps.extraPadding.right);
+		.using("x-axis-label", function(label) {
+			label.beforeRender(function(data){
+
+				return [{
+					ypos: numericSettings ? state.dimensions.height - state.padding.bottom + state.styleConfig.overtick_bottom : 0,
+					xval: numericSettings ? scale.numericSettings.domain[0] : 0,
+					text: numericSettings ? numericSettings.suffix : "",
+					dy: state.grid.rows == 1 ? "1.2em" : 0
+				}]
+			})			
+			
+		})
+		.using("xAxis", function(axis) {
+			if(chartProps.scale.isNumeric) {
+				axis.tickValues(chartProps.scale.numericSettings.tickValues)
+				axis.tickFormat(function(d,i) {
+					return (i == 0 ? chartProps.scale.numericSettings.prefix : "") +  help.roundToPrecision(d, chartProps.scale.numericSettings.precision)
+				})
+			}
+
+			axis.innerTickSize(styleConfig.overtick_bottom);
+		})
+		.outerWidth(state.dimensions.width + chartProps.extraPadding.left);
 		// set tick width to left padding for first row
 		extraPadding.left = chartProps.extraPadding.left;
 		chart.extraPadding(extraPadding);
@@ -293,10 +317,29 @@ function drawXYChartGrid(el, state) {
 				return "";
 			});
 		})
-		chart.outerWidth(state.dimensions.width + chartProps.extraPadding.right);
+		.using("xAxis", function(axis) {
+			if(chartProps.scale.isNumeric) {
+				axis.tickValues(chartProps.scale.numericSettings.tickValues)
+				axis.tickFormat(function(d,i) {
+					return help.roundToPrecision(d, chartProps.scale.numericSettings.precision)
+				})
+			}
+
+			axis.innerTickSize(styleConfig.overtick_bottom);
+		})
+		.using("x-axis-label", function(label) {
+			label.beforeRender(function(data){
+				return [{
+					text: "",
+					dy: 0
+				}]
+			})			
+			
+		})
+		chart.outerWidth(state.dimensions.width);
+
 		chart.extraPadding(extraPadding);
 	}
-
 	chart
 	.x(function(x) {
 		x.key("entry");
@@ -306,9 +349,14 @@ function drawXYChartGrid(el, state) {
 			rangeL += displayConfig.columnExtraPadding;
 			rangeR -= displayConfig.columnExtraPadding;
 		}
-		if (chartProps.scale.hasDate) {
+		if (dateSettings) {
 			x.scale("time");
 			x.domain(dateSettings.domain);
+		}
+		else if (numericSettings) {
+			x.scale("linear");
+			x.clamp(false)
+			x.domain(numericSettings.domain);
 		}
 		x.range([rangeL, rangeR]);
 	})
@@ -322,8 +370,16 @@ function drawXYChartGrid(el, state) {
 	.using("xAxis", function(axis) {
 		if (chartProps.scale.hasDate) {
 			axis.tickValues(dateSettings.dateTicks);
-			axis.tickFormat(function(d) {
-				return dateSettings.dateFormatter(d);
+			var curOffset = Date.create().getTimezoneOffset();
+			var displayTZ = state.chartProps.scale.dateSettings.displayTZ;
+			var inputOffset = state.chartProps.scale.dateSettings.inputTZ ? -help.TZOffsetToMinutes(state.chartProps.scale.dateSettings.inputTZ) : curOffset;
+			var timeOffset = 0;
+			axis.tickFormat(function(d,i) {
+				if(displayTZ === "as-entered") {
+					timeOffset = curOffset - inputOffset;
+				}
+
+				return dateSettings.dateFormatter(d.clone(),i,timeOffset);
 			});
 		}
 
