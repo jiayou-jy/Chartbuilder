@@ -96,6 +96,7 @@ var defaultProps = {
 			numericSettings: {
 				ticks: null,
 				precision: 0,
+				axislabel: "",
 				prefix: "",
 				suffix: ""
 			}

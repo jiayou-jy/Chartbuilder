@@ -25,6 +25,7 @@ var NumericScaleMixin = {
 			custom: cur.custom,
 			domain: cur.domain,
 			precision: cur.precision,
+			axislabel: cur.axislabel,
 			prefix: cur.prefix,
 			suffix: cur.suffix,
 			tickValues: cur.tickValues,

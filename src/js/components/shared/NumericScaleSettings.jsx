@@ -102,6 +102,13 @@ var NumericScaleSettings = React.createClass({
 			<div className={this.props.className}>
 				{title_block}
 				<TextInput
+					id="axislabel"
+					className="scale-option"
+					onChange={this._handleScaleUpdate.bind(null, "axislabel")}
+					value={currScale.axislabel}
+					placeholder="Axis label"
+				/>
+				<TextInput
 					className="scale-option"
 					onChange={this._handleScaleUpdate.bind(null, "prefix")}
 					value={currScale.prefix}

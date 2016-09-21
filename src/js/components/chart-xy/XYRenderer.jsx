@@ -810,7 +810,7 @@ function drawXY(el, state) {
 				axis.tickFormat(function(d,i) {
 					return (i == 0 ? numericSettings.prefix : "") +  help.roundToPrecision(d, numericSettings.precision);
 				})
-
+				axis.title(numericSettings.axislabel);
 			}
 
 		})
