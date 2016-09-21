@@ -35,9 +35,7 @@ var DateScaleSettings = React.createClass({
 		dateFrequencyOptions: [
 			{ value: "auto", content: "auto" },
 			{ value: "1h", content: "1 hour" },
-			{ value: "2h", content: "2 hours" },
 			{ value: "3h", content: "3 hours" },
-			{ value: "4h", content: "4 hours" },
 			{ value: "6h", content: "6 hours" },
 			{ value: "1d", content: "1 day" },
 			{ value: "1w", content: "1 week" },
@@ -56,20 +54,15 @@ var DateScaleSettings = React.createClass({
 		// Use ids to look up appropriate date formatter from `util/process-dates.js`
 		dateFormatOptions: [
 			{ value: "auto", content: "auto" },
-			{ value: "lmdy", content: dateParsers["lmdy"] },
-			{ value: "mmdd", content: dateParsers["mmdd"] },
-			{ value: "Mdd", content: dateParsers["Mdd"] },
+			{ value: "hmm", content: dateParsers["hmm"] },
+			{ value: "h", content: dateParsers["h"] },
 			{ value: "ddM", content: dateParsers["ddM"] },
-			{ value: "M1d", content: dateParsers["M1d"] },
-			{ value: "mmyy", content: dateParsers["mmyy"] },
-			{ value: "yy", content: dateParsers["yy"] },
-			{ value: "yyyy", content: dateParsers["yyyy"] },
+			{ value: "ddMyy", content: dateParsers["ddMyy"] },
+			{ value: "M", content: dateParsers["M"] },
+			{ value: "Myy", content: dateParsers["Myy"] },
 			{ value: "QJan", content: "Q2 (Jan. FY)" },
 			{ value: "QJul", content: "Q2 (July FY)"  },
-			{ value: "MM", content: dateParsers["MM"] },
-			{ value: "M", content: dateParsers["M"] },
-			{ value: "hmm", content: dateParsers["hmm"] },
-			{ value: "h", content: dateParsers["h"] }
+			{ value: "yyyy", content: dateParsers["yyyy"] }
 		],
 
 		timeDisplayOptions: [
